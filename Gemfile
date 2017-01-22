@@ -14,6 +14,12 @@ gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'russian', '~> 0.6.0'
 
+gem 'rails_admin', '~> 1.0'
+
+gem 'devise'
+gem 'cancancan', '~> 1.15'
+gem 'rolify'
+
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 

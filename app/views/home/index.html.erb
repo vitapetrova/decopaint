@@ -1,3 +1,7 @@
+<% if user_signed_in? %>
+    <span>Здравствуйте, <%= current_user.email %></span>
+    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+<% end %>
 <!-- фоновый слайдер-скроллер-затемнятель-паралаксер -->
 <div class="slider-bg__wrapper" data-parallax="background" data-opacity="background">
 	<div class="container-fluid reset-paddings">
