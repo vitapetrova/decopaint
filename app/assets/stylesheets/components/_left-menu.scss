@@ -1,7 +1,7 @@
 .left-menu{
 	color: #fff;
 
-	
+
 	&__overlay{
 		/* background: linear-gradient(to right, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.01) 100%);*/
 		background: rgba(0,0,0,0.6);
@@ -20,7 +20,7 @@
 
 		&_active{
 			padding-left: 20px;
-			
+
 
 			&:before{
 				display: block;

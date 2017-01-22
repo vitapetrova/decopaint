@@ -31,10 +31,10 @@
 				content: '';
 				top:15px;
 				right:-10px;
-				width: 0; 
-		        height: 0; 
+				width: 0;
+		        height: 0;
 		        border-top: 10px solid transparent;
-		        border-bottom: 10px solid transparent;       
+		        border-bottom: 10px solid transparent;
 		        border-left: 10px solid #fff;
 			}
 	}
@@ -101,10 +101,10 @@
 				content: '';
 				left:15px;
 				bottom:-10px;
-				width: 1px; 
-		        height: 1px; 
+				width: 1px;
+		        height: 1px;
 		        border-left: 20px solid transparent;
-		        border-right: 20px solid transparent;		        
+		        border-right: 20px solid transparent;
 		        border-top: 20px solid #fff;
 			}
 		}
@@ -135,7 +135,7 @@
 	&:hover{
 		box-shadow: 0 14px 28px rgba(0,0,0,0.65), 0 10px 10px rgba(0,0,0,0.62);
 	}
-	
+
 	&__img-block{
 		position: relative;
 		height: 110px;
@@ -152,12 +152,12 @@
 				content: '';
 				top:15px;
 				right:-9px;
-				width: 0; 
-		        height: 0; 
+				width: 0;
+		        height: 0;
 		        border-top: 10px solid transparent;
-		        border-bottom: 10px solid transparent;       
+		        border-bottom: 10px solid transparent;
 		        border-left: 10px solid #fff;
-			}		
+			}
 	}
 	&__img{
 		width: 80%;
@@ -205,20 +205,20 @@
 		height: 50px;
 		border: 8px solid #fff;
 		box-shadow: 0 6px 20px rgba(0,0,0,0.39), 0 6px 6px rgba(0,0,0,0.43);
-	
+
 		&_chalk{
 			background-image: asset-url("cards/chalk.png");
 		}
 		&_magnet{
 			background-image: asset-url("cards/magnet.png");
-		}	
+		}
 		&_marker{
 			background-image: asset-url("cards/marker.png");
 		}
 		&_bigger{
 			width: 70px;
 			height: 70px;
-		}		
+		}
 	}
 }
 

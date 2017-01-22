@@ -8,7 +8,7 @@
 	&__wrapper{
 		position: fixed;
     	width: 100%;
-     	left: 0; 
+     	left: 0;
      	top: 0;
      	z-index: 1;
      	opacity: 0.9;
@@ -22,7 +22,7 @@
 	}
 	&__img-block{
 		height: 100%;
-		width: 100%;		
+		width: 100%;
 		background-size: cover;
 		background-position: 50% 50%;
 		background-repeat: no-repeat;
@@ -42,14 +42,14 @@
 
 /* верхний блок с ссылками*/
 .header-anchors{
-	
+
 	margin-bottom: 100px;
 	&__row{
 		background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.01) 100%)
 	}
 	&__col{
 		padding: 25px 25px;
-		
+
 	}
 	&__a{
 		color: #fff;
@@ -111,7 +111,7 @@
 				font-family: 'Glyphicons Halflings';
 				content: "\e258";
 				display: block;
-				position: absolute;				
+				position: absolute;
 				width: 50px;
 				height: 25px;
 				right: 0;
@@ -136,7 +136,7 @@
 		border: 2px solid #fff;
 		display: inline-block;
 		margin-right: 10px;
-		
+
 		cursor: pointer;
 		&.active{
 			background: #fff;
@@ -202,7 +202,7 @@
 		margin: 0 auto;
 		margin-bottom: 10px;
 		padding: 0;
-		
+
 	}
 	&__button_examples{
 		width:200px;
@@ -254,7 +254,7 @@
 			cursor: pointer;
 			transform: scale(1.2, 1.2) translateX(10%);
 			& .to-constructor__airplane_img{
-				/*transform: scale(1.2, 1.2) translateX(50px);*/				
+				/*transform: scale(1.2, 1.2) translateX(50px);*/
 			}
 		}
 	}
@@ -290,7 +290,7 @@
 		&:after{
 			display: block;
 			position: absolute;
-			bottom: 0;			
+			bottom: 0;
 			height: 35px;
 			width: 100%;
 			content: '';
@@ -373,7 +373,7 @@
 			& .vertical-card__price{
 				font-size: 48px;
 				line-height: 1;
-			}			
+			}
 		}
 	}
 }
@@ -416,7 +416,7 @@
 
 	}
 	&__slider-nav{
-		
+
 		& .owl-prev,
 		& .owl-next{
 			color: transparent;
@@ -461,7 +461,7 @@
 	}
 	&__img{
 		max-width: 100%;
-		
+
 	}
 	&__title{
 		flex-basis: 40%;
@@ -504,7 +504,7 @@
 			display: block;
 			position: absolute;
 			bottom: 0;
-			left: 0;		
+			left: 0;
 			height: 35px;
 			width: 100%;
 			content: '';
@@ -521,7 +521,7 @@
 		width: 95%;
 		height: 50px;
 		border: 5px solid #fff;
-		box-shadow: 0 0 10px 1px rgba(0, 0, 0, .3) inset; 
+		box-shadow: 0 0 10px 1px rgba(0, 0, 0, .3) inset;
 		background-position: center center;
 		background-size: 100% 100%;
 		background-repeat: no-repeat;
