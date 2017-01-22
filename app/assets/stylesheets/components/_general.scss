@@ -6,23 +6,23 @@ $bg-grey: #e9e9e9;
 
 @font-face {
     font-family: PrCondReg; /* Имя шрифта */
-    src: url(<%= font_path 'ProximaNovaCond-Reg.otf' %>); 
+    src: asset-url("ProximaNovaCond-Reg.otf");
 }
 @font-face {
     font-family: PrCondBlack; /* Имя шрифта */
-    src: url(<%= font_path 'ProximaNovaCond-Black.otf' %>); 
+    src: asset-url("ProximaNovaCond-Black.otf");
 }
 @font-face {
     font-family: PrCondExLight; /* Имя шрифта */
-    src: url(<%= font_path 'ProximaNovaExCn-Light.otf' %>);  
+    src: asset-url("ProximaNovaExCn-Light.otf");
 }
 @font-face {
     font-family: PrCondExThin; /* Имя шрифта */
-    src: url(<%= font_path 'ProximaNovaExCn-Thin.otf' %>); 
+    src: asset-url("ProximaNovaExCn-Thin.otf");
 }
 // @font-face {
 //     font-family: PrCondExThin; /* Имя шрифта */
-//     src: url(../fonts/ProximaNovaExCn-Thin.otf); 
+//     src: url(../fonts/ProximaNovaExCn-Thin.otf);
 // }
 
 body, html{
@@ -40,7 +40,7 @@ a:active{
 	color:#fff;
 }
 .blur-page{
-	
+
 }
 .blur-on{
 	filter: blur(5px);
@@ -68,7 +68,7 @@ a:active{
 	display: inline-block;
 	text-align: center;
 	margin: 0 auto;
-	
+
 	&__wrapper{
 		text-align: center;
 		margin-top: 25px;
