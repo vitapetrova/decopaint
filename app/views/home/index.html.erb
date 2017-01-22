@@ -1,2 +1,358 @@
-<h1>Init index page</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+
+
+
+<!-- фоновый слайдер-скроллер-затемнятель-паралаксер -->
+<div class="slider-bg__wrapper" data-parallax="background" data-opacity="background">
+	<div class="container-fluid reset-paddings">
+		<div class="row reset-margins">
+			<div class="col-xs-12 reset-paddings">
+				<div class="slider-bg owl-carousel">
+
+					<div class="slider-bg__item">
+						<div class="slider-bg__img-block slider-bg__img_1"></div>
+					</div>
+					<div class="slider-bg__item">
+						<div class="slider-bg__img-block slider-bg__img_2"></div>
+					</div>
+					<div class="slider-bg__item">
+						<div class="slider-bg__img-block slider-bg__img_3"></div>
+					</div>
+
+				</div><!-- /.back slider	 -->			
+			</div>
+		</div>
+	</div>
+</div><!-- /.back slider block -->
+
+<!-- блок ссылок над лого -->
+<section class="content-block header-anchors">
+	<div class="container-fluid">
+		<div class="row header-anchors__row">
+			<div class="col-xs-12 col-sm-11 col-sm-offset-1 col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-6 header-anchors__col">
+				<a href="#" class="header-anchors__a">
+					<div class="header-anchors__title">Помощь в нанесении</div>
+					<div class="header-anchors__small-text">Наши работы</div>
+				</a>
+			
+				<a href="#" class="header-anchors__a">
+					<div class="header-anchors__title">Гарантия качества</div>
+					<div class="header-anchors__small-text">Сертификаты</div>
+				</a>
+			
+				<a href="#" class="header-anchors__a">
+					<div class="header-anchors__title">Бесплатная доставка</div>
+					<div class="header-anchors__small-text">Доставка и оплата</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- лого и кнопка -->
+<section class="content-block logo-block">
+	<div class="logo__wrapper">
+		<a href="/" class="logo logo_big" title="На главную">
+			<div class="logo__title">MAGMASTER.BY</div>
+			<div class="logo__description">лучшая грифельная краска и услуги по нанесению</div>
+		</a>
+	</div>
+	<a class="btn btn__grey-bg btn__constructor" href="#">Конструктор</a>
+</section>
+
+<!-- строчка с управлением слайдером -->
+<section class="content-block dots-block">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+				<div class="back-slider__dots">
+					
+				</div>
+			</div>
+			<div class="col-md-3 col-md-offset-7">
+				<a href="#" class="dots-block__anchor">Выгодные предложения</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- блок с тремя большими блоками -->
+<section class="content-block big-cards">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<div class="big-card big-card_1"><!-- card1 -->
+					<div class="big-card__title text-center">В офис</div>
+					<div class="big-card__img-block">
+						<img src="<℅= asset_path('home/big-card1.jpg') %>" alt="В офис" class="big-card__img">
+					</div>
+					<div class="big-card__content">
+						<p>Использовать краску можно:</p>
+						<ul>
+							<li>В переговорной или конференц зале.</li>
+							<li>В кабинете руководителя.</li>
+							<li>В холле или коридоре.</li>
+							<li>В комнате отдыха или на кухне.</li>
+							<li>На складе и других технических помещениях</li>
+							<li>На дверях, колоннах, шкафах.</li>
+							<li>Ну и конечно же на своем рабочем месте, как на столе, так и на стене перед ним.</li>
+						</ul>
+					</div>
+					<div class="big-card__buttons">
+							<a href="#" class="btn btn__grey-bg big-card__button_catalog" type="submit">Краска в каталоге</a>
+							<a href="#" class="btn btn__grey-bg big-card__button_examples" type="submit">Примеры работ</a>
+					</div>
+				</div><!-- /.card1 -->
+			</div>
+
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<div class="big-card big-card_2"><!-- card2 -->
+					<div class="big-card__title text-center">В детскую</div>
+					<div class="big-card__img-block">
+						<img src="<℅= asset_path('home/big-card2.jpg') %>" alt="В офис" class="big-card__img">
+					</div>
+					<div class="big-card__content">
+						<p>Меловая школьная доска теперь неактуальна, ведь есть маркерная краска, с помощью которой можно из обычной стены сделать безграничное пространство для письма и рисования маркером.</p>
+						<p>Покрытие хорошо подходит для любых учебных заведений: детских садов, школ, ВУЗов и др.</p>
+					</div>
+					<div class="big-card__buttons">
+							<a href="#" class="btn btn__grey-bg big-card__button_catalog" type="submit">Краска в каталоге</a>
+							<a href="#" class="btn btn__grey-bg big-card__button_examples" type="submit">Примеры работ</a>
+					</div>
+				</div><!-- /.card2 -->				
+			</div>
+
+			<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-0">
+				<div class="big-card big-card_3"><!-- card3 -->
+					<div class="big-card__title text-center">Для обучения</div>
+					<div class="big-card__img-block">
+						<img src="<℅= asset_path('home/big-card3.jpg') %>" alt="В офис" class="big-card__img">
+					</div>
+					<div class="big-card__content">
+						<p>Маркерную краску можно наносить на гладкую поверхность в любой части вашего дома. Можно покрыть маркерной краской стены нескольких комнат, например, в детской и в коридоре. Таким образом, привычное помещение каждый день будет необычным и новым.</p>
+					</div>
+					<div class="big-card__buttons">
+							<a href="#" class="btn btn__grey-bg big-card__button_catalog" type="submit">Краска в каталоге</a>
+							<a href="#" class="btn btn__grey-bg big-card__button_examples" type="submit">Примеры работ</a>
+					</div>
+				</div><!-- /.card3 -->				
+			</div>
+
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</section><!-- /.big-cards -->
+
+<!-- блок с самолетом и ссылкой на конструктор -->
+<section class="to-constructor content-block">
+	<div class="container">
+		<a class="row to-constructor__row" href="#" title="Перейти к выбору">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-5">
+				<div class="to-constructor__title">Все сразу - выгоднее!</div>
+				<div class="to-constructor__description">Закажите полный набор для работы - получите скидку до 20%</div>
+			</div>
+			<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-7 col-md-7">
+				<div class="to-constructor__airplane">
+					<img src="<℅= asset_path('home/airplane.png') %>" alt="Конструктор" class="to-constructor__airplane_img">
+				</div>
+			</div>
+		</a><!-- /.row -->
+	</div><!-- /.container -->
+</section><!-- ./to-constructor -->
+
+<!-- блок выгодных предложений -->
+<section class="content-block profit">
+	<div class="profit__title-block">
+		<h2 class="profit__title">Выгодные предложения этой недели</h2>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-md-4 profit__col profit__col_1">
+				
+				<a href="#" class="vertical-card__a profit__card_a1">
+				    <div class="thumbnail vertical-card profit__vcard profit__card_1">
+				      <div class="vertical-card__img_wrap">
+				      	<img src="<℅= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+						<div class="card__type card__type_chalk">							
+						</div>
+				      	</div>
+				      <div class="caption">
+						<div class="vertical-card__description">
+							Грифельная краска с эффектом школьной доски Siberia колеруемая
+						</div>
+						<div class="vertical-card__price">115 руб</div>
+				      </div>
+				    </div>
+				</a>
+
+<!-- 				<a href="#" class="horizontal-card__a profit__card_a2">
+					<div class="media horizontal-card profit__hcard profit__card_2">
+					  <div class="media-left media-middle horizontal-card__left">
+					      <img class="media-object horizontal-card__img" src="{{root}}assets/img/product/pot2.jpg" alt="product1">
+					      <div class="card__type card__type_marker"></div>
+					  </div>
+					  <div class="media-body horizontal-card__right">
+							<div class="horizontal-card__description">
+								Грифельная краска с эффектом школьной доски Siberia колеруемая
+							</div>
+							<div class="horizontal-card__price">115 руб</div>
+					  </div>
+					</div>
+				</a> -->
+				<a href="#" class="horizontal-card__a profit__card_a2">
+					<div class="hcard-flex ">
+					  <div class="hcard-flex__img-block">
+					      <img class="hcard-flex__img" src="<℅= asset_path('product/pot2.jpg') %>" alt="product1">
+					      <div class="card__type card__type_marker"></div>
+					  </div>
+					  <div class="hcard-flex__text-block">
+							<div class="hcard-flex__text">
+								Грифельная краска с эффектом школьной доски Siberia колеруемая
+							</div>
+							<div class="hcard-flex__price">115 руб</div>
+					  </div>
+					</div>
+				</a>				
+			</div>
+			<div class="col-sm-6 col-md-3 profit__col profit__col_2">
+				
+				<a href="#" class="vertical-card__a profit__card_a3">
+				    <div class="thumbnail vertical-card profit__vcard profit__card_3">
+				      <div class="vertical-card__img_wrap">
+				      	<img src="<℅= asset_path('product/pot-wide1.jp') %>" class="vertical-card__img" alt="ptoduct title">
+						<div class="card__type card__type_chalk">							
+						</div>
+				      	</div>
+				      <div class="caption">
+						<div class="vertical-card__description">
+							Грифельная краска с эффектом школьной доски Siberia колеруемая
+						</div>
+						<div class="vertical-card__price">115 руб</div>
+				      </div>
+				    </div>
+				</a>
+
+				<a href="#" class="vertical-card__a profit__card_a4">
+				    <div class="thumbnail vertical-card profit__vcard profit__card_4">
+				      <div class="vertical-card__img_wrap">
+				      	<img src="<℅= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+						<div class="card__type card__type_chalk">							
+						</div>
+				      	</div>
+				      <div class="caption">
+						<div class="vertical-card__description">
+							Грифельная краска с эффектом школьной доски Siberia колеруемая
+						</div>
+						<div class="vertical-card__price">115 руб</div>
+				      </div>
+				    </div>
+				</a>
+
+			</div>
+			<div class="col-sm-6 col-sm-offset-3 col-md-5 col-md-offset-0 profit__col profit__col_3">
+		
+				<a href="#" class="vertical-card__a profit__card_a5">
+				    <div class="thumbnail vertical-card profit__vcard  profit__card_5">
+				      <div class="vertical-card__img_wrap">
+				      	<img src="<℅= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+						<div class="card__type card__type_chalk card__type_bigger">							
+						</div>
+				      	</div>
+				      <div class="caption">
+						<div class="vertical-card__description">
+							Грифельная краска с эффектом школьной доски Siberia колеруемая
+						</div>
+						<div class="vertical-card__price">115 руб</div>
+				      </div>
+				    </div>
+				</a>		
+
+
+			</div>
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</section><!-- /.profit -->
+
+<!-- блок отзывов -->
+<section class="content-block reviews">
+	<div class="reviews__slider-nav"></div>
+	<div class="container-fluid">
+		<div class="row">
+
+			<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+				
+				<div class="owl-carousel reviews__carousel">
+
+				  <div class="reviews__item">
+				  	<div class="reviews__top-line">
+				  			<div class="reviews__img-block">
+				  				<img src="<℅= asset_path('home/reviews-slider/epam.png') %>" alt="Company logo" class="reviews__img">
+				  			</div>
+				  			<div class="reviews__title">Компания Epam</div>
+				  	</div>										
+					<div class="reviews__review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque facilis, atque reprehenderit rerum. Itaque, doloribus. Alias ut vero deleniti repellat excepturi a atque similique, pariatur rerum iste accusantium impedit ducimus! Alias ut vero deleniti repellat excepturi a atque similique, pariatur rerum iste accusantium impedit ducimus!
+					</div>
+				  </div>
+
+				  <div class="reviews__item">
+				  	<div class="reviews__top-line">
+				  			<div class="reviews__img-block">
+				  				<img src="<℅= asset_path('ihome/reviews-slider/velcom.pn') %>" alt="Company logo" class="reviews__img">
+				  			</div>
+				  			<div class="reviews__title">Компания Velcom</div>
+				  	</div>										
+					<div class="reviews__review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque facilis, atque reprehenderit rerum. Itaque, doloribus. Alias ut vero deleniti repellat excepturi a atque similique, pariatur rerum iste accusantium impedit ducimus! Alias ut vero deleniti repellat excepturi a atque similique, pariatur rerum iste accusantium impedit ducimus !Alias ut vero deleniti repellat excepturi a atque similique, pariatur rerum iste accusantium impedit ducimus!
+					</div>
+				  </div>
+
+				  <div class="reviews__item">
+				  	<div class="reviews__top-line">
+				  			<div class="reviews__img-block">
+				  				<img src="<℅= asset_path('home/reviews-slider/epam.png') %>" alt="Company logo" class="reviews__img">
+				  			</div>
+				  			<div class="reviews__title">Компания Epam</div>
+				  	</div>										
+					<div class="reviews__review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque facilis, atque reprehenderit rerum. Itaque, doloribus. Alias ut vero deleniti repellat excepturi a atque similique, pariatur rerum iste accusantium impedit ducimus! Alias ut vero deleniti repellat excepturi a atque similique, pariatur rerum iste accusantium impedit ducimus!
+					</div>
+				  </div>
+
+				</div><!-- /.owl-carousel -->
+
+			</div>
+
+		</div><!-- /.row -->
+	</div><!-- /.container-fluid -->
+	<div class="reviews__bottom-text text-center"><a href="#">Ещё больше отзывов и проектов ищите тут</a></div>
+</section><!-- /.reviews -->
+
+<!-- блок слайдер с производителями -->
+<section class="content-block brands">
+	<div class="brands__title-block">
+		<h2 class="brands__title">Производители</h2>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				
+				<div class="owl-carousel brands__carousel">
+
+					<div class="brands__item brands__item_1"></div>
+					<div class="brands__item brands__item_2"></div>
+					<div class="brands__item brands__item_3"></div>
+					<div class="brands__item brands__item_4"></div>
+					<div class="brands__item brands__item_5"></div>
+					<div class="brands__item brands__item_6"></div>
+					<div class="brands__item brands__item_3"></div>
+					<div class="brands__item brands__item_4"></div>
+					<div class="brands__item brands__item_5"></div>
+					<div class="brands__item brands__item_6"></div>
+
+				</div><!-- /.brands carousel -->
+
+			</div>
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+	<div class="brands__dots-block text-center">
+		<div class="brands__dots"></div>
+	</div>
+</section><!-- /.brands -->

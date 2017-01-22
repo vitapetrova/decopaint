@@ -1,0 +1,139 @@
+/* стили основного верхнего фиксированного меню*/
+.main-menu{
+	background: rgba(0,0,0,0.8);
+	border-bottom: 2px solid #fff;
+
+	&__navbar-collapse{
+		float: left;
+		width: 94%; /* чтобы кнопка и меню стакались в одну строку */
+
+		&:after{
+			clear: none;
+		}
+	}
+	&__anchors{
+		& a{
+			font-size: 16px;
+			color:#fff;
+			&:hover{
+				background-color: rgba(255,255,255,0.35) !important;
+			}
+			&:focus{
+				background-color: rgba(255,255,255,0.35) !important;
+			}
+			&:active{
+				background-color: rgba(255,255,255,0.35) !important;
+			}
+		}
+	}
+	&__dropdown-menu{
+		background-color: rgba(0,0,0,0.8);
+		box-shadow: none;
+		border: none;
+		border-left: 2px solid #fff;
+		border-radius: 0;
+		margin-top: 1px !important;
+
+		& li a{
+			color:#fff;
+		}
+		& a:hover{
+			color:#fff !important;
+			background-color:transparent !important;
+            background: linear-gradient(to right, rgba(255, 255, 255,0.2) 0%, rgba(255, 255, 255,0.01) 70%);
+		}
+	}
+	&__phones{
+		color:#fff;
+		font-size: 36px;
+		margin-right: 5px;
+
+		&_phone{
+
+		}
+		&_phone-icon{
+			display: inline-block;
+		}
+	}
+}	
+.phone-icon{
+	&__viber{
+		@include sprite($icon-viber)
+	}
+	&__whatsapp{
+		@include sprite($icon-whatsapp)
+	}
+}
+
+
+/* переопределение мешающих стилей BS */
+.nav .open > a{
+	background-color: transparent;
+}
+.navbar-toggle{
+	float: left;
+	padding: 9px 10px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	margin-left: 0;
+	border-radius: 4px;
+	border:none;
+	background-color: transparent;
+
+	&:hover{
+		background-color:rgba(0,0,0,0.6);
+	}
+	& .icon-bar{
+		background-color: #fff;
+		display: block;
+		width: 22px;
+		height: 2px;
+		border-radius: 1px;
+
+		& +.icon-bar{
+			margin-top: 4px;
+		}
+	}
+}
+
+/*xs */
+@media all and (max-width: 767px){
+	.offcanvas__toggle-button{
+		display: none;
+	}
+	.main-menu__phones{
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+/*sm */
+@media all and (min-width: 768px) and (max-width: 991px){
+
+
+}
+/*md */
+@media all and (min-width: 992px) and (max-width: 1199px){
+
+
+}
+/*lg */
+@media all and (min-width: 1200px){
+
+
+}
+
+
+/*  фикс для телефона в меню*/
+@media all and (min-width: 1300px){
+	.main-menu__navbar-collapse{
+		width: auto;
+	}
+}
+/*  еще фикс для телефона чтобы он поднимался наверх*/
+@media all and (min-width: 768px) and (max-width: 972px){
+	.main-menu__phones{
+		margin-top: -55px;
+	}
+
+}

@@ -1,0 +1,139 @@
+.footer{
+	position: relative;
+	z-index: 10;
+	margin-top: 40px;
+	padding-top: 35px;
+	padding-bottom: 18px;
+	border-top: 1px solid rgba(255, 255, 255, 0.4);
+	background-color: rgba(0,0,0,0.8);
+
+	&__top-row{
+		margin-bottom: 40px;
+	}
+	&__bottom-row{
+		margin-top: 40px;
+		padding-top: 5px;
+	}
+	&__menu{
+
+	}
+	&__info{
+		color:#fff;
+		font-size: 16px;
+	}
+	&__button{
+		&_column{
+			margin-top: -20px;
+			padding: 60px 15px;
+			background: asset-url("footer/cloud.png");
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
+		}
+		&_outer{
+
+		}
+		&_ask{
+
+		}
+	}
+	&__social-icon{
+		margin: 0 auto;
+
+		&_1{
+			margin-left: 30px;
+		}
+		&_2{
+			margin-right: 30px;
+		}
+		&:hover{
+			opacity: 0.8;
+		}
+	}
+	&__copyright{
+		color: $grey-text;
+		margin-right: 55px;
+	}
+	&__autor{
+		color: $grey-text;
+
+		&_a{
+			color: $red-text;
+			&:hover{
+				color:lighten($red-text, 10%);
+				text-decoration: none;
+			}
+		}
+	}
+}
+.footer-menu{
+
+	&__item{
+		margin-bottom: 18px;
+
+		& a{
+			color: $grey-text;
+			text-decoration: none;
+			border-bottom: 1px solid $dark-grey;
+			font-size: 16px;
+			&:hover{
+				color:$red-text;
+				border-color: $red-text;
+			}
+		}
+	}
+}
+.footer-social__wrapper{
+	width: 190px;
+	margin: 35px auto;
+}
+.footer-icon{
+
+	&__instagramm{
+		@include sprite($icon-instagramm)
+	}	
+	&__vk{
+		@include sprite($icon-vk)
+	}
+	&__youtube{
+		@include sprite($icon-youtube)
+	}
+	&__facebook{
+		@include sprite($icon-facebook)
+	}
+	&__googleplus{
+		@include sprite($icon-googleplus)
+	}
+}
+
+
+/*xs */
+@media all and (max-width: 767px){
+	.footer__menu,
+	.footer__info{
+		text-align: center;
+	}
+	.footer__button_column{
+		margin-top: 10px;
+	}
+}
+/*sm */
+@media all and (min-width: 768px) and (max-width: 991px){
+	.footer__menu,
+	.footer__info{
+		text-align: center;
+	}
+	.footer__button_column{
+		margin-top: 0;
+	}
+}
+/*md */
+@media all and (min-width: 992px) and (max-width: 1199px){
+
+
+}
+/*lg */
+@media all and (min-width: 1200px){
+
+
+}

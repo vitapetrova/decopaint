@@ -1,0 +1,102 @@
+$grey-text: #cdcdcd;
+$red-text: #a11d1d;
+$dark-grey: #5f5e5d;
+$text-active: #e02525;
+$bg-grey: #e9e9e9;
+
+@font-face {
+    font-family: PrCondReg; /* Имя шрифта */
+    src: url(<%= font_path 'ProximaNovaCond-Reg.otf' %>); 
+}
+@font-face {
+    font-family: PrCondBlack; /* Имя шрифта */
+    src: url(<%= font_path 'ProximaNovaCond-Black.otf' %>); 
+}
+@font-face {
+    font-family: PrCondExLight; /* Имя шрифта */
+    src: url(<%= font_path 'ProximaNovaExCn-Light.otf' %>);  
+}
+@font-face {
+    font-family: PrCondExThin; /* Имя шрифта */
+    src: url(<%= font_path 'ProximaNovaExCn-Thin.otf' %>); 
+}
+// @font-face {
+//     font-family: PrCondExThin; /* Имя шрифта */
+//     src: url(../fonts/ProximaNovaExCn-Thin.otf); 
+// }
+
+body, html{
+	height: 100%;
+	min-height: 100%;
+}
+
+body{
+	font-family: PrCondReg, Arial, Helvetica, sans-serif;
+}
+a:hover,
+a:focus,
+a:active{
+	text-decoration: none;
+	color:#fff;
+}
+.blur-page{
+	
+}
+.blur-on{
+	filter: blur(5px);
+}
+.btn__grey-bg{
+	font-family: PrCondExLight, Arial, Helvetica, sans-serif;
+	background: asset-url("grey-button-bg.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 17px 30px;
+	font-size: 36px;
+	color:#fff;
+
+	&:hover{
+		color: $red-text;
+	}
+}
+.logo{
+	display: block;
+	padding: 5px;
+	color:#fff;
+	line-height: 1;
+	border: 1px solid #fff;
+	display: inline-block;
+	text-align: center;
+	margin: 0 auto;
+	
+	&__wrapper{
+		text-align: center;
+		margin-top: 25px;
+	}
+	&__title{
+		font-size: 40px;
+		font-family: PrCondExThin, Arial, Helvetica, sans-serif;
+	}
+	&__description{
+		font-size: 9px;
+	}
+}
+
+.overlay{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: rgba(0,0,0,0.55);
+}
+.reset-margins{
+	margin: 0 auto;
+}
+.reset-paddings{
+	padding: 0;
+}
+.content-block{
+	position: relative;
+	z-index: 10;
+}

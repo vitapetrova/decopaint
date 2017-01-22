@@ -1,0 +1,247 @@
+/* стили карточек товара   */
+
+/*  первая версия горизонтальной карточки товара*/
+.horizontal-card{
+	background: #fff;
+	width: 85%;
+	border: 1px solid #a29f9f;
+	border-radius: 3px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.56), 0 3px 6px rgba(0,0,0,0.63);
+	overflow:inherit;
+	&:hover{
+		box-shadow: 0 14px 28px rgba(0,0,0,0.65), 0 10px 10px rgba(0,0,0,0.62);
+	}
+
+	&__a:hover{
+		text-decoration: none;
+	}
+
+	&__left{
+		background: #fff;
+		width: 35%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		position: relative;
+			&:before{
+				display: block;
+				position: absolute;
+				z-index: 7;
+				content: '';
+				top:15px;
+				right:-10px;
+				width: 0; 
+		        height: 0; 
+		        border-top: 10px solid transparent;
+		        border-bottom: 10px solid transparent;       
+		        border-left: 10px solid #fff;
+			}
+	}
+	&__right{
+		position: relative;
+		z-index: 5;
+		background: $bg-grey;
+		padding: 7px;
+	}
+	&__img{
+		max-width: 100%;
+		height: auto;
+		margin: 0 auto;
+	}
+	&__description{
+		font-size: 16px;
+		color: #000;
+		padding-bottom: 25px;
+		padding-left: 5px;
+	}
+	&__price{
+		position: absolute;
+		bottom: 2px;
+		right: 4px;
+		font-family: PrCondBlack, Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		color: #000;
+		text-align: right;
+	}
+}
+
+.vertical-card{
+	position: relative;
+	background: $bg-grey;
+	width: 100%;
+	border: 1px solid #a29f9f;
+	border-radius: 3px;
+	padding: 0;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.56), 0 3px 6px rgba(0,0,0,0.63);
+	&:hover{
+		box-shadow: 0 14px 28px rgba(0,0,0,0.65), 0 10px 10px rgba(0,0,0,0.62);
+	}
+
+	&__a:hover{
+		text-decoration: none;
+	}
+
+	&__img{
+		position: relative;
+		display: block;
+	    max-width: 100%;
+	    height: auto;
+	    margin-left: auto;
+	    margin-right: auto;
+
+		&_wrap{
+			position: relative;
+			background: #fff;
+			&:before{
+				display: block;
+				position: absolute;
+				content: '';
+				left:15px;
+				bottom:-10px;
+				width: 1px; 
+		        height: 1px; 
+		        border-left: 20px solid transparent;
+		        border-right: 20px solid transparent;		        
+		        border-top: 20px solid #fff;
+			}
+		}
+	}
+	&__description{
+		padding-bottom: 30px;
+		font-size: 18px;
+		color: #000;
+	}
+	&__price{
+		position: absolute;
+		bottom: 0;
+		right: 5px;
+		font-family: PrCondBlack, Arial, Helvetica, sans-serif;
+		font-size: 23px;
+		color: #000;
+		text-align: right;
+	}
+}
+/* нормальная версия горизонтально карточки продукта на флексбоксах, подстраивается под контент, обрезает лишний текст */
+.hcard-flex{
+	height: 110px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 3px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.56), 0 3px 6px rgba(0,0,0,0.63);
+	&:hover{
+		box-shadow: 0 14px 28px rgba(0,0,0,0.65), 0 10px 10px rgba(0,0,0,0.62);
+	}
+	
+	&__img-block{
+		position: relative;
+		height: 110px;
+		width: 110px;
+		display: flex;
+		flex-grow: 2;
+		background: #fff;
+		border-top-left-radius:3px;
+		border-bottom-left-radius:3px;
+			&:before{
+				display: block;
+				position: absolute;
+				z-index: 7;
+				content: '';
+				top:15px;
+				right:-9px;
+				width: 0; 
+		        height: 0; 
+		        border-top: 10px solid transparent;
+		        border-bottom: 10px solid transparent;       
+		        border-left: 10px solid #fff;
+			}		
+	}
+	&__img{
+		width: 80%;
+		height: 80%;
+		margin: auto;
+	}
+	&__text-block{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-content: space-between;
+		flex-grow: 1;
+		flex-shrink: 3;
+		padding: 10px;
+		background: $bg-grey;
+		border-top-right-radius:3px;
+		border-bottom-right-radius:3px;
+	}
+	&__text{
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-size: 16px;
+		color: #000;
+	}
+	&__price{
+		align-self: flex-end;
+		font-family: PrCondBlack, Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		color: #000;
+	}
+}
+
+.card{
+
+	&__type{
+		position: absolute;
+		z-index: 7;
+		bottom: -5px;
+		right: -5px;
+		background-color: #303030;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: 90% 90%;
+		width: 50px;
+		height: 50px;
+		border: 8px solid #fff;
+		box-shadow: 0 6px 20px rgba(0,0,0,0.39), 0 6px 6px rgba(0,0,0,0.43);
+	
+		&_chalk{
+			background-image: asset-url("cards/chalk.png");
+		}
+		&_magnet{
+			background-image: asset-url("cards/magnet.png");
+		}	
+		&_marker{
+			background-image: asset-url("cards/marker.png");
+		}
+		&_bigger{
+			width: 70px;
+			height: 70px;
+		}		
+	}
+}
+
+/*xs */
+@media all and (max-width: 767px){
+	.horizontal-card__price{
+		right: 10px;
+	}
+}
+/*sm */
+@media all and (min-width: 768px) and (max-width: 991px){
+
+
+}
+/*md */
+@media all and (min-width: 992px) and (max-width: 1199px){
+	.horizontal-card{
+		width: 100%;
+	}
+
+}
+/*lg */
+@media all and (min-width: 1200px){
+
+
+}

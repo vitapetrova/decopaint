@@ -1,0 +1,219 @@
+<div class="product-page__bg"></div>
+<div class="product-page">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-xs-6 col-sm-4 col-md-3 left-menu__overlay">
+
+			 {{> left-menu}}
+
+			</div><!-- /.left col -->
+			<div class="col-xs-6 col-sm-8 col-md-9">
+				
+				<section class="product-info">
+					<div class="row product-info__row">
+						<div class="col-xs-12 col-sm-12 col-md-6 product-info__left-col">
+							<!-- <img src="{{root}}assets/img/product-page/main-img.png" alt="Краска збс" class="img-responsive product-info__main-img"> -->
+							<div class="product-slider__block"><!-- сдайдер маленьких изображений -->
+								<div class="product-slider__navigation"></div>
+								<div class="owl-carousel product-slider">
+
+									<div class="product-slider__item">
+										<img src="<℅= asset_path('product/pot3.jpg') %>" alt="" class="product-slider__img">
+									</div>
+									<div class="product-slider__item">
+										<img src="<℅= asset_path('home/big-card1.jpg') %>" alt="" class="product-slider__img">
+									</div>
+									<div class="product-slider__item">
+										<img src="<℅= asset_path('home/big-card2.jpg') %>" alt="" class="product-slider__img">
+									</div>
+									<div class="product-slider__item">
+										<img src="<℅= asset_path('home/big-card3.jpg') %>" alt="" class="product-slider__img">
+									</div>
+									<div class="product-slider__item">
+										<img src="<℅= asset_path('back-slider/bg1.jpg') %>" alt="" class="product-slider__img">
+									</div>
+
+								</div>
+							</div><!-- /. product-slider__block -->
+						</div><!-- /.product-info left -->
+						<div class="col-xs-12 col-sm-12 col-md-6 product-info__right-col">
+							<h1 class="product-info__title">Маркерное покрытие Unibud прозрачное полуматовое обычное</h1>
+							<!-- варианты для смены картинки - availability_custom, availability_ok, availability_no -->
+							<div class="product-info__availability availability_custom">Под заказ</div>
+
+							<form class="form-horizontal product-info__form" name="product-info__form">
+
+								<div class="product-info__form-text">Выберите объём*</div>
+								  <div class="form-group">
+								    <div class="col-md-5">
+								        <select class="form-control product-info__volume" name="product-info__volume">
+										  <option value="volume1">0.5 литра</option>
+										  <option value="volume2">1.5 литра</option>
+										  <option value="volume3">Бочка</option>
+										</select>
+								    </div>
+								    <div class="col-md-7">
+								      <div class="product-info__price">115 руб.</div>
+								    </div>
+								  </div><!-- /.строка с объемом и ценой -->
+
+								  <div class="checkbox product-info__need-painting">
+									  <label>
+									    <input type="checkbox" value="need-painting" name="need-painting">
+									    Необходимо нанесение
+									  </label>
+								  </div><!-- /.чекбокс -->
+								  <a href="#" class="product-info__to-portfolio">Посмотреть наши работы</a>
+								  <div class="product-info__note">*Набора 1 литр хватает на поверхность примерно 5,5-6 кв.м. при нанесении в 2 слоя.</div>
+								  <div class="form-group">
+									    <div class="col-xs-12 col-sm-6 col-md-5">
+									      <div class="input-group product-info__amount_group">
+											  <span class="input-group-btn">											  	
+											  	 <button class="btn btn-default product-info__amount_left" type="button">
+											  	 	<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+											  	 </button>
+											  </span>
+											  <input type="text" class="form-control product-info__amount" value="1" disabled>
+											  <span class="input-group-btn">											  	
+											  	 <button class="btn btn-default product-info__amount_right" type="button">
+											  	 	<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+											  	 </button>
+											  </span>
+											</div>
+									    </div>
+									    <div class="col-xs-12 col-sm-6 col-md-7 text-center">
+									      <button class="btn btn__grey-bg btn__product-form" type="submit">Заказать</button>
+									    </div>
+								  </div><!-- /.количество и кнопка заказать -->
+
+							</form><!-- /. форма с данными для заказа -->
+							
+
+
+						</div><!-- /.product-info right -->
+					</div><!-- /.product-info row -->
+				</section><!-- /.product-info -->
+
+				<section class="product-description">
+
+				  <!-- Nav tabs -->
+				  <ul class="nav nav-tabs product-description__tabs">
+				    <li class="product-description__tabs_item active">
+				    	<a href="#pane1" data-toggle="tab" class="product-description__tabs_a">Описание товара</a>
+				    </li>
+				    <li class="product-description__tabs_item">
+				    	<a href="#pane2" data-toggle="tab" class="product-description__tabs_a">Нанесение</a>
+				    </li>
+				  </ul><!-- / nav tabs for product-description -->
+
+				  <!-- Tab panes -->
+				  <div class="tab-content product-description__content">
+				    <div class="tab-pane fade in active product-description__pane" id="pane1">
+						<p>Маркерное двухкомпонентное покрытие от производителя Unibud позволяет создать эффект маркерной доски на любой гладкой окрашенной поверхности.</p>
+						<p>Покрытие имеет полуматовую фактуру, что позволят демонстрировать на поверхности изображение с помощью кинопроектора и при этом сохранять отличные функции стирания следа маркеров, в отличие от обычных матовых покрытий</p>
+						<p>Маркерное двухкомпонентное покрытие от производителя Unibud (Новая формула!) позволяет создать эффект маркерной доски на любой гладкой окрашенной поверхности.</p>
+						<p>Покрытие имеет полуматовую фактуру, что позволят демонстрировать на поверхности изображение кинопроектором, и при этом сохранять отличные функции стирания следа маркеров, в отличие от матовых покрытий. </p>
+						<h2>Основные характеристики</h2>
+						<ul>
+							<li>не имеет запаха</li>
+							<li>выполнено на уретановой высокотехнологичной основе,</li>
+							<li>наносится в два слоя, что позволяет получить наиболее равномерную гладкую поверхность,</li>
+							<li>после высыхания становится абсолютно прозрачным, что позволяет получить маркерное покрытие не только привычного белого, а вообще любого цвета,</li>
+							<li>не желтеет и не меняет цвет со временем, </li>
+							<li>не имеет в составе формальдегидов и токсичных соединений,</li>
+							<li>легко наносится велюровыми и ниточными валиками с мелким ворсом. </li>
+						</ul>
+						<p>Состав набора: маркерный лак, отвердитель, мерный стакан, палочка для перемешивания, инструкция.</p>
+						<p>Расход: одного набора 1 кг хватает на 5-6 кв.м. при нанесении в два слоя. </p>
+						<h2>Подготовка поверхности:</h2>
+						<p>Поверхность для нанесения должна быть ровной гладкой сухой обезжиренной покрытой латексным или акриловым грунтом или краской нужного цвета. Любые неровности — шероховатости, выбоины, подтеки, поры и т.п. — после окраски маркерным покрытием не исчезнут, а наоборот станут еще заметнее, и впоследствии создадут помехи при стирании следов маркера. Наносить маркерное покрытие следует не ранее чем через 24 после нанесения грунта или краски для основы. Для нанесения оптимально подходит температура +20С — +25С и относительная влажность около 60%.</p>
+						<p>Для нанесения потребуются:</p>
+						<ul>
+							<li>валик велюровый или ниточный (можно Титекс, фельт или микрофибра) с ворсом 3-6 мм,</li>
+							<li>лоток для валика,</li>
+							<li>перчатки,</li>
+							<li>малярный скотч, </li>
+							<li>пленка для укрытия прилежащих поверхностей.</li>
+						</ul>
+
+				    </div><!-- / pane1 -->
+				    <div class="tab-pane fade in product-description__pane" id="pane2">
+					    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates dolores molestiae alias reiciendis natus ipsam ad aut sunt, tempora veniam, corporis eos pariatur assumenda similique tenetur labore enim vero voluptate.</div>
+					    <div>Adipisci doloribus aperiam aliquid est libero culpa, at voluptates iusto, ipsum molestias omnis, asperiores, placeat vel magnam repudiandae quia autem dolores debitis id dolorem! Quod consequuntur sed dolorem voluptas obcaecati.</div>
+					    <div>Fugit ullam voluptate dolore quasi necessitatibus sunt quae atque architecto at tempore totam dignissimos ipsum blanditiis repellat sed, quibusdam eligendi et. Minus aliquid, molestias rem quaerat, iste at rerum porro.</div>
+					    <div>Laboriosam, adipisci modi, autem veritatis nam omnis laudantium, eveniet expedita explicabo deleniti harum? Quaerat quae fugit ipsa assumenda quos consectetur quis dolorum? Ex eveniet odio, distinctio aut sapiente cum enim!</div>
+					    <div>Maxime nobis, qui, asperiores ipsam quam dolorem soluta. Sed dolorum quaerat obcaecati, unde laudantium dolorem eos nihil culpa, quia distinctio quas dolore natus quam quo aut iure cum sunt facere!</div>
+				    </div><!-- / pane2 -->
+				  </div><!-- /.tab-content -->
+
+
+				</section>
+
+				<section class="related-products">
+					<h2 class="related-products__title">Вместе с этим товаром покупают:</h2>
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-4">
+
+							<a href="#" class="vertical-card__a">
+							    <div class="thumbnail vertical-card related-products__card">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<℅= asset_path('product/pot-wide1.jpgg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_chalk">							
+									</div>
+							      	</div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+									<div class="vertical-card__price">115 руб</div>
+							      </div>
+							    </div>
+							</a>
+							
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-4">
+
+							<a href="#" class="vertical-card__a">
+							    <div class="thumbnail vertical-card related-products__card">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<℅= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_chalk">							
+									</div>
+							      	</div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+									<div class="vertical-card__price">115 руб</div>
+							      </div>
+							    </div>
+							</a>
+							
+						</div>
+						<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-0">
+
+							<a href="#" class="vertical-card__a">
+							    <div class="thumbnail vertical-card related-products__card">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<℅= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_chalk">							
+									</div>
+							      	</div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+									<div class="vertical-card__price">115 руб</div>
+							      </div>
+							    </div>
+							</a>
+							
+						</div>
+					</div><!-- /.row -->
+				</section><!-- /.related-products -->
+
+			</div><!-- /.right col -->
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</div><!-- /.product-page -->

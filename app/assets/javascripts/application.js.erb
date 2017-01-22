@@ -1,0 +1,259 @@
+// This is a manifest file that'll be compiled into application.js, which will include all the files
+// listed below.
+//
+// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
+// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
+//
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// compiled file. JavaScript code in this file should be added after the last require_* statement.
+//
+// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
+// about supported directives.
+//
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require_tree .
+
+$( document ).ready(function() {
+
+    //при загрузке где то в середине страницы обновить свистоперделки
+    refreshParallax();
+    refreshOpacity();
+
+    $(window).scroll(function(){
+        refreshBgSlider();
+    });
+
+    //паралакс фона на главной
+    $(window).scroll(function () {
+        var scroll_size = $(this).scrollTop(); //прокрутка от верха
+        var parallaxTarget = $('[data-parallax="background"]');//к чему применяется паралакс
+        // магическая формула    
+        var transformTop = scroll_size * .05;
+        //паралакс
+        parallaxTarget.css('top', (scroll_size * .035));
+    });
+
+
+    //изменение прозрачности фона на главной
+    $(window).scroll(function () {
+        var scroll_size = $(this).scrollTop(); //прокрутка от верха
+        var opacityTarget = $('[data-opacity="background"]');//к чему применяется прозрачность
+        // магическая формула    
+        var optionsOpacity = (((($(window).height() - scroll_size) - $(window).height()) / 1500) + 1) < 0.1 ? 0.1 : (((($(window).height() - scroll_size) - $(window).height()) / 1500) + 1);
+        //смена прозрачности
+        opacityTarget.css('opacity', optionsOpacity);
+    });
+
+    
+    //добавление и настройки выезжающего бокового меню
+	$('.offcanvas__toggle-button').sidr({
+		side: 'right',
+		displace: false,
+        onOpenEnd: function(){//поменять кнопку,  
+            $('body').css('overflow', 'hidden');
+            $('.blur-page').addClass('blur-on');
+            $('.offcanvas__toggle-button').find('.icon-bar').css('display', 'none');
+            $('.offcanvas__toggle-button').find('.offcanvas__toggle-button_back').css('display', 'block');
+        },
+        onCloseEnd: function(){//поменять кнопку
+            $('body').css('overflow', 'auto');
+            $('.blur-page').removeClass('blur-on');
+            $('.offcanvas__toggle-button').find('.icon-bar').css('display', 'block');
+            $('.offcanvas__toggle-button').find('.offcanvas__toggle-button_back').css('display', 'none');
+        }
+	});
+
+    //высота карточке в каталоге (дефолтные настройки)
+    $('.catalog__card').matchHeight({
+	    byRow: true,
+	    property: 'height',
+	    target: null,
+	    remove: false
+	});
+
+    //высота трех блоков на главной
+	$('.big-card').matchHeight({
+	    byRow: true,
+	    property: 'height',
+	    target: null,
+	    remove: false
+	});
+
+	//высота колонок выгодных предложений
+	$('.profit__col').matchHeight({
+	    byRow: true,
+	    property: 'height',
+	    target: null,
+	    remove: false
+	});
+
+	//высота блоков в отзывах
+	$('.reviews__item').matchHeight({
+	    byRow: true,
+	    property: 'height',
+	    target: null,
+	    remove: true
+	});
+
+	//фоновая карусель на главной с кнопками управления на странице
+	$(".slider-bg").owlCarousel({
+    	loop: true,
+    	margin: 0,
+    	mouseDrag: false,
+    	touchDrag: false,
+    	pullDrag: false,
+    	freeDrag: false,
+    	nav: false,
+    	dots: true,
+    	items: 1,
+    	navContainer: '.main-navigation',
+    	dotsContainer: '.back-slider__dots',
+    	autoplayHoverPause: false,
+    	autoplay: true,
+    	autoplayTimeout: 5000,
+    	navSpeed: 500,
+    	dotsSpeed: 500
+    });
+
+    //карусель отзывов на главной
+	$(".reviews__carousel").owlCarousel({
+		items:2,
+    	loop: true,
+    	margin: 0,
+    	mouseDrag: true,
+    	touchDrag: true,
+    	pullDrag: true,
+    	freeDrag: false,
+    	nav: true,
+    	dots: false,
+    	navContainer: '.reviews__slider-nav',
+    	navText: ['next','prev'],
+    	//dotsContainer: '.back-slider__dots',
+    	autoplayHoverPause: false,
+    	autoplay: false,
+    	autoplayTimeout: 5000,
+    	navSpeed: 500,
+    	dotsSpeed: 500,
+    	onChanged: function(){
+    		$('.reviews__item').matchHeight({
+    			byRow: true,
+			    property: 'height',
+			    target: null,
+			    remove: false
+			});
+    	},
+    	responsive : {
+			    // breakpoint from 0 up
+			    0 : {
+			        items: 1
+			        
+			    },
+			    768 : {
+			        items: 2
+			    }
+			}
+    });
+
+    //карусель на главной с производителями
+	$(".brands__carousel").owlCarousel({
+    	loop: true,
+    	margin: 0,
+    	mouseDrag: true,
+    	touchDrag: true,
+    	pullDrag: true,
+    	freeDrag: false,
+    	nav: false,
+    	dots: true,
+    	items: 6,
+    	// navContainer: '.main-navigation',
+    	dotsContainer: '.brands__dots',
+    	autoplayHoverPause: false,
+    	autoplay: false,
+    	autoplayTimeout: 5000,
+    	navSpeed: 500,
+    	dotsSpeed: 500,
+    	responsive : {
+			    // breakpoint from 0 up
+			    0 : {
+			        items: 3
+			        
+			    },
+			    768 : {
+			        items: 4
+			    },
+			    992 : {
+			        items: 6
+			    }
+			}
+    });
+
+    $(".product-slider").owlCarousel({
+        loop: true,
+        items: 3,
+        margin: 7,
+        autoWidth: true,
+        mouseDrag: true,
+        touchDrag: true,
+        pullDrag: true,
+        freeDrag: false,
+        nav: true,
+        dots: false,
+        navContainer: '.product-slider__navigation',
+        autoplayHoverPause: false,
+        autoplay: false,
+        autoplayTimeout: 5000,
+        navSpeed: 500,
+        dotsSpeed: 500
+    });
+
+	//костыль для фона кнопки
+	var cacheImg = new  Image();
+    cacheImg.src=  "<℅= asset_path('grey-button-bg-hover.png') %>";
+
+    //исчезновение блока лого на главной через пять секунд, и появление при наведении
+    var opacityFlag = false;
+    $(".logo_big").delay(5000).queue(function () { 
+        $(this).css('opacity', '0.3'); 
+        $(this).dequeue();
+        opacityFlag = true;
+    });
+
+    $(".logo_big").hover(function(){
+        $(".logo_big").css('opacity', '1');
+    },function(){
+        if (opacityFlag)
+        $(".logo_big").css('opacity', '0.3');
+    });
+
+
+});
+
+//обновляет параллакс фонового слайдера
+function refreshParallax(){
+    if ($(window).scrollTop() < 800) 
+        $('[data-parallax="background"]').css('top', ($(window).scrollTop() * 0));
+    else
+        $('[data-parallax="background"]').css('top', ($(window).scrollTop() * .035));   
+}
+//обновляет прозрачность фонового слайдера
+function refreshOpacity(){
+        var scroll_size = $(window).scrollTop(); //прокрутка от верха
+        var opacityTarget = $('[data-opacity="background"]');//к чему применяется прозрачность
+        // магическая формула    
+        var optionsOpacity = (((($(window).height() - scroll_size) - $(window).height()) / 1500) + 1) < 0.1 ? 0.1 : (((($(window).height() - scroll_size) - $(window).height()) / 1500) + 1);
+        //смена прозрачности
+        opacityTarget.css('opacity', optionsOpacity);
+}
+
+
+//вырубает слайдер если пролистать страницу
+function refreshBgSlider(){
+    if ($(window).scrollTop() > 600) 
+        $('.slider-bg').trigger('stop.owl.autoplay');
+    if ($(window).scrollTop() == 0) 
+        $('.slider-bg').trigger('play.owl.autoplay');   
+}
+
+

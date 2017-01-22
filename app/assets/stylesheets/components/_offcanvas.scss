@@ -1,0 +1,172 @@
+/* Стили выезжающего бокового меню */
+.offcanvas__toggle-button{
+	padding: 9px 10px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	margin-left: 0;
+	border-radius: 4px;
+	border:none;
+	background-color: transparent;
+
+	&:hover{
+		background-color:rgba(0,0,0,0.6);
+	}
+	& .icon-bar{
+		background-color: #fff;
+		display: block;
+		width: 22px;
+		height: 2px;
+		border-radius: 1px;
+
+		& +.icon-bar{
+			margin-top: 4px;
+		}
+	}
+	&_back{
+		display: none;
+		margin-left: 4px;
+		margin-right: 4px;
+	}
+}
+.logo_offcanvas{
+
+}
+/* общие*/
+.offcanvas{
+	top:55px;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.7);
+
+	&__right-col{
+		padding-left: 30px;
+	}
+
+}
+
+/* правая часть с каталогом*/
+.offcanvas-catalog{
+
+	&__title{
+		font-family: PrCondExLight, Arial, Helvetica, sans-serif;
+		font-size: 48px;
+		margin-top: 35px;
+		margin-bottom: 35px;
+	}
+	&__ul{
+
+	}
+	&__li{
+		margin-bottom: 10px;
+	}	
+	&__a{
+		color: #fff;
+		font-size: 18px;
+		&:hover{
+			color:$text-active;
+		}
+	}
+}
+/* лого и меню*/
+.offcanvas-menu{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	
+	&__logo-block{
+		text-align: center;
+	}
+	&__list{
+		display: inline-block;
+		margin-top: 15px;
+
+		& li{
+			margin-right: 30px;
+		}
+	}
+	&__a{
+		color: #fff;
+		font-size: 18px;
+		&:hover{
+			color:$text-active;
+		}	
+	}
+}
+/* выбор покупателей*/
+.offcanvas-choice{
+	margin-bottom: 15px;
+
+	&__title{
+		font-size: 48px;
+		font-family: PrCondExLight, Arial, Helvetica, sans-serif;
+		margin-bottom: 15px;
+		margin-top: 0;
+	}
+}
+.offcanvas__hcard{
+
+}
+/*лучшие дизайн проекты */
+.offcanvas-projects{
+	margin-bottom: 20px;
+
+	&__title{
+		font-size: 48px;
+		font-family: PrCondExLight, Arial, Helvetica, sans-serif;
+		margin-bottom: 15px;
+		margin-top: 0;
+	}
+	&__item{
+		display: block;
+		border: 1px solid #fff;
+		overflow: hidden;
+		padding: 10px;
+		margin-bottom: 15px;
+		background: rgba(0,0,0,0.7);
+		&:hover{
+			border: 1px solid $red-text;
+		}
+
+		&_img{
+			height: 135px;
+			width: 100%;
+
+		}
+	}
+}
+
+/* строка с контактами */
+.offcanvas-contacts{
+	margin-bottom: 65px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 18px;
+
+	&__address{
+
+	}
+	&__email{
+
+	}
+}
+
+/*xs */
+@media all and (max-width: 767px){
+
+}
+/*sm */
+@media all and (min-width: 768px) and (max-width: 991px){
+	.offcanvas__right-col{
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+}
+/*md */
+@media all and (min-width: 992px) and (max-width: 1199px){
+
+
+}
+/*lg */
+@media all and (min-width: 1200px){
+
+
+}

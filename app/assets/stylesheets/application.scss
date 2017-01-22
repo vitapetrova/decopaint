@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@charset 'utf-8';
+
+/* vendors */
+@import 'bootstrap';
+@import 'owl/owl.carousel';
+@import 'jquery.sidr.dark';
+@import 'lightgallery';
+
+
+//тут собираются импорты компонентов этого проекта
+@import 'components/general';
+@import 'components/sprites';
+@import 'components/card';
+@import 'components/menu';
+@import 'components/offcanvas';
+@import 'components/left-menu';
+
+@import 'pages/home';
+@import 'pages/catalog';
+@import 'pages/product';
+
+@import 'components/footer';
+
+
+.content-bg{
+	position: relative;
+	z-index: 10;
+}
+body{
+	background: asset-url("back-slider/bg1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	background-color: #000;
+	padding-top: 55px;
+	color:#fff;	
+}
+.back-slider-page{
+	background: #000;
+}
+
+
+
+/*lg */
+@media all and (min-width: 768px) and (max-width: 1300px){
+	body{
+		padding-top: 100px;
+	}
+
+}
