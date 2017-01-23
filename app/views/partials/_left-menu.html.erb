@@ -8,13 +8,11 @@
 	<div class="left-menu">
 		<h2 class="left-menu__title">Каталог</h2>
 		<ul class="list-unstyled left-menu__list">
-			<li class="left-menu__item"><a href="#" class="left-menu__a">Маркерные краски</a></li>
-			<li class="left-menu__item"><a href="#" class="left-menu__a">Магнитные краски</a></li>
-			<li class="left-menu__item left-menu__item_active"><a href="#" class="left-menu__a">Грифельные краски</a></li>
-			<li class="left-menu__item"><a href="#" class="left-menu__a">Комплекты</a></li>
-			<li class="left-menu__item"><a href="#" class="left-menu__a">Грунтовки и шпатлевки</a></li>
-			<li class="left-menu__item"><a href="#" class="left-menu__a">Валики</a></li>
-			<li class="left-menu__item"><a href="#" class="left-menu__a">Аксессуары</a></li>
+			<%@category_products_menu.each do |category|%>
+				<li class="left-menu__item <%='left-menu__item_active' if @category_product == category%>">
+					<%=link_to category.title, category_product_path(category), class:'left-menu__a'%>
+				</li>
+			<%end%>
 		</ul>
 	</div>
 	<div class="recent">
