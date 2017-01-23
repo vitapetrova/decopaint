@@ -169,8 +169,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6 col-md-4 profit__col profit__col_1">
-
-				<a href="#" class="vertical-card__a profit__card_a1">
+				<% if @products_menu[1]%>
+				<%=link_to product_path(@products_menu[1]), class:'vertical-card__a profit__card_a1' do %>
 				    <div class="thumbnail vertical-card profit__vcard profit__card_1">
 				      <div class="vertical-card__img_wrap">
 				      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
@@ -179,13 +179,13 @@
 				      	</div>
 				      <div class="caption">
 						<div class="vertical-card__description">
-							Грифельная краска с эффектом школьной доски Siberia колеруемая
+							<%=@products_menu[1].title%>
 						</div>
-						<div class="vertical-card__price">115 руб</div>
+						<div class="vertical-card__price"><%=@products_menu[1].price%> руб</div>
 				      </div>
 				    </div>
-				</a>
-
+				<%end%>
+				<%end%>
 <!-- 				<a href="#" class="horizontal-card__a profit__card_a2">
 					<div class="media horizontal-card profit__hcard profit__card_2">
 					  <div class="media-left media-middle horizontal-card__left">
@@ -200,7 +200,8 @@
 					  </div>
 					</div>
 				</a> -->
-				<a href="#" class="horizontal-card__a profit__card_a2">
+				<% if @products_menu[2]%>
+				<%=link_to product_path(@products_menu[2]), class:'vertical-card__a profit__card_a2' do %>
 					<div class="hcard-flex ">
 					  <div class="hcard-flex__img-block">
 					      <img class="hcard-flex__img" src="<%= asset_path('product/pot2.jpg') %>" alt="product1">
@@ -208,16 +209,18 @@
 					  </div>
 					  <div class="hcard-flex__text-block">
 							<div class="hcard-flex__text">
-								Грифельная краска с эффектом школьной доски Siberia колеруемая
+								<%=@products_menu[2].title%>
 							</div>
-							<div class="hcard-flex__price">115 руб</div>
+							<div class="hcard-flex__price"><%=@products_menu[2].price%> руб</div>
 					  </div>
 					</div>
 				</a>
+				<%end%>
+				<%end%>
 			</div>
 			<div class="col-sm-6 col-md-3 profit__col profit__col_2">
-
-				<a href="#" class="vertical-card__a profit__card_a3">
+				<% if @products_menu[3]%>
+				<%=link_to product_path(@products_menu[3]), class:'vertical-card__a profit__card_a3' do %>
 				    <div class="thumbnail vertical-card profit__vcard profit__card_3">
 				      <div class="vertical-card__img_wrap">
 				      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
@@ -226,14 +229,15 @@
 				      	</div>
 				      <div class="caption">
 						<div class="vertical-card__description">
-							Грифельная краска с эффектом школьной доски Siberia колеруемая
+							<%=@products_menu[3].title%>
 						</div>
-						<div class="vertical-card__price">115 руб</div>
+						<div class="vertical-card__price"><%=@products_menu[3].price%> руб</div>
 				      </div>
 				    </div>
-				</a>
-
-				<a href="#" class="vertical-card__a profit__card_a4">
+				<%end%>
+				<%end%>
+				<% if @products_menu[4]%>
+				<%=link_to product_path(@products_menu[4]), class:'vertical-card__a profit__card_a4' do %>
 				    <div class="thumbnail vertical-card profit__vcard profit__card_4">
 				      <div class="vertical-card__img_wrap">
 				      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
@@ -242,17 +246,18 @@
 				      	</div>
 				      <div class="caption">
 						<div class="vertical-card__description">
-							Грифельная краска с эффектом школьной доски Siberia колеруемая
+							<%=@products_menu[4].title%>
 						</div>
-						<div class="vertical-card__price">115 руб</div>
+						<div class="vertical-card__price"><%=@products_menu[4].price%> руб</div>
 				      </div>
 				    </div>
-				</a>
+				<%end%>
+				<%end%>
 
 			</div>
 			<div class="col-sm-6 col-sm-offset-3 col-md-5 col-md-offset-0 profit__col profit__col_3">
-
-				<a href="#" class="vertical-card__a profit__card_a5">
+				<% if @products_menu[0]%>
+				<%=link_to product_path(@products_menu[0]), class:'vertical-card__a profit__card_a5' do %>
 				    <div class="thumbnail vertical-card profit__vcard  profit__card_5">
 				      <div class="vertical-card__img_wrap">
 				      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
@@ -261,12 +266,13 @@
 				      	</div>
 				      <div class="caption">
 						<div class="vertical-card__description">
-							Грифельная краска с эффектом школьной доски Siberia колеруемая
+							<%=@products_menu[0].title%>
 						</div>
-						<div class="vertical-card__price">115 руб</div>
+						<div class="vertical-card__price"><%=@products_menu[0].price%> руб</div>
 				      </div>
 				    </div>
-				</a>
+				<%end%>
+				<%end%>
 
 
 			</div>

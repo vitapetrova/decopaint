@@ -14,160 +14,38 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 ">
 
-					<h1 class="catalog__title">Грифельные краски</h1>
+					<h1 class="catalog__title"><%=@category_product.title%></h1>
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
-							<div class="catalog__descroption">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.</div>
+							<div class="catalog__descroption">
+								<%=@category_product.description.html_safe%>
+							</div>
 						</div>
 					</div>
 
 					<div class="row">
-
+						<%@products.each do |product|%>
 						<div class="col-xs-12 col-sm-6 col-md-4">
-							<a href="#" class="vertical-card__a">
+							<%=link_to product_path(product) do %>
 							    <div class="thumbnail vertical-card catalog__card">
 							      <div class="vertical-card__img_wrap">
+							      	<!-- добавить какое-то другое изображение при наведении  -->
 							      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<!-- убрать в css картинку, добавить через style 10 пункт -->
 									<div class="card__type card__type_chalk">
 
 									</div>
 							      	</div>
 							      <div class="caption">
 									<div class="vertical-card__description">
-										Грифельная краска с эффектом школьной доски Siberia колеруемая
+										<%=product.title%>
 									</div>
-									<div class="vertical-card__price">115 руб</div>
+									<div class="vertical-card__price"><%=product.price%> руб</div>
 							      </div>
 							    </div>
-							</a>
+							<%end%>
 						</div>
-						<div class="col-xs-12 col-sm-6 col-md-4">
-							<a href="#" class="vertical-card__a">
-							    <div class="thumbnail vertical-card catalog__card">
-							      <div class="vertical-card__img_wrap">
-							      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
-									<div class="card__type card__type_magnet">
-
-									</div>
-							      	</div>
-							      <div class="caption">
-									<div class="vertical-card__description">
-										Грифельная краска с эффектом школьной доски Siberia колеруемая
-									</div>
-									<div class="vertical-card__price">115 руб</div>
-							      </div>
-							    </div>
-							</a>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-4">
-							<a href="#" class="vertical-card__a">
-							    <div class="thumbnail vertical-card catalog__card">
-							      <div class="vertical-card__img_wrap">
-							      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
-									<div class="card__type card__type_marker">
-
-									</div>
-							      	</div>
-							      <div class="caption">
-									<div class="vertical-card__description">
-										Грифельная краска с эффектом школьной доски Siberia колеруемая
-									</div>
-									<div class="vertical-card__price">115 руб</div>
-							      </div>
-							    </div>
-							</a>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-4">
-							<a href="#" class="vertical-card__a">
-							    <div class="thumbnail vertical-card catalog__card">
-							      <div class="vertical-card__img_wrap">
-							      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
-									<div class="card__type card__type_chalk">
-
-									</div>
-							      	</div>
-							      <div class="caption">
-									<div class="vertical-card__description">
-										Грифельная краска с эффектом школьной доски Siberia колеруемая
-									</div>
-									<div class="vertical-card__price">115 руб</div>
-							      </div>
-							    </div>
-							</a>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-4">
-							<a href="#" class="vertical-card__a">
-							    <div class="thumbnail vertical-card catalog__card">
-							      <div class="vertical-card__img_wrap">
-							      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
-									<div class="card__type card__type_chalk">
-
-									</div>
-							      	</div>
-							      <div class="caption">
-									<div class="vertical-card__description">
-										Грифельная краска с эффектом школьной доски Siberia колеруемая
-									</div>
-									<div class="vertical-card__price">115 руб</div>
-							      </div>
-							    </div>
-							</a>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-4">
-							<a href="#" class="vertical-card__a">
-							    <div class="thumbnail vertical-card catalog__card">
-							      <div class="vertical-card__img_wrap">
-							      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
-									<div class="card__type card__type_chalk">
-
-									</div>
-							      	</div>
-							      <div class="caption">
-									<div class="vertical-card__description">
-										Грифельная краска с эффектом школьной доски Siberia колеруемая
-									</div>
-									<div class="vertical-card__price">115 руб</div>
-							      </div>
-							    </div>
-							</a>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-4">
-							<a href="#" class="vertical-card__a">
-							    <div class="thumbnail vertical-card catalog__card">
-							      <div class="vertical-card__img_wrap">
-							      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
-									<div class="card__type card__type_chalk">
-
-									</div>
-							      	</div>
-							      <div class="caption">
-									<div class="vertical-card__description">
-										Грифельная краска с эффектом школьной доски Siberia колеруемая
-									</div>
-									<div class="vertical-card__price">115 руб</div>
-							      </div>
-							    </div>
-							</a>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-4">
-							<a href="#" class="vertical-card__a">
-							    <div class="thumbnail vertical-card catalog__card">
-							      <div class="vertical-card__img_wrap">
-							      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
-									<div class="card__type card__type_chalk">
-
-									</div>
-							      	</div>
-							      <div class="caption">
-									<div class="vertical-card__description">
-										Грифельная краска с эффектом школьной доски Siberia колеруемая
-									</div>
-									<div class="vertical-card__price">115 руб</div>
-							      </div>
-							    </div>
-							</a>
-						</div>
-
+						<%end%>
 					</div><!-- /.product cards row -->
 
 				</div><!-- /.right col inner row -->
@@ -178,6 +56,8 @@
 		</div><!-- /.right col -->
 
 	</div><!-- /.row -->
+	<!-- стилизовать, перенести в нужное место  -->
+	<%=@category_product.description2.html_safe%>
 </div><!-- /.container -->
 
 

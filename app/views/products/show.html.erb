@@ -5,7 +5,7 @@
 
 			<div class="col-xs-6 col-sm-4 col-md-3 left-menu__overlay">
 
-			 {{> left-menu}}
+			 <%= render "partials/left-menu" %>
 
 			</div><!-- /.left col -->
 			<div class="col-xs-6 col-sm-8 col-md-9">
@@ -38,9 +38,12 @@
 							</div><!-- /. product-slider__block -->
 						</div><!-- /.product-info left -->
 						<div class="col-xs-12 col-sm-12 col-md-6 product-info__right-col">
-							<h1 class="product-info__title">Маркерное покрытие Unibud прозрачное полуматовое обычное</h1>
+							<h1 class="product-info__title"><%@product.title%></h1>
 							<!-- варианты для смены картинки - availability_custom, availability_ok, availability_no -->
-							<div class="product-info__availability availability_custom">Под заказ</div>
+							<% class_style = 'availability_custom' if @product.status == 'Под заказ'
+							 	 class_style = 'availability_ok' if @product.status == 'В наличии'
+							   class_style = 'availability_no' if @product.status == 'Нет в наличии' %>
+							<div class="product-info__availability <%=class_style%>"><%=@product.status%></div>
 
 							<form class="form-horizontal product-info__form" name="product-info__form">
 
@@ -54,18 +57,21 @@
 										</select>
 								    </div>
 								    <div class="col-md-7">
-								      <div class="product-info__price">115 руб.</div>
+								      <div class="product-info__price"><%=@product.price%> руб.</div>
+								      <!-- добавить зачеркнутую(вторую цену) стили-->
+								      <%=@product.price2%>
 								    </div>
 								  </div><!-- /.строка с объемом и ценой -->
 
 								  <div class="checkbox product-info__need-painting">
 									  <label>
 									    <input type="checkbox" value="need-painting" name="need-painting">
+									    <!-- ??? -->
 									    Необходимо нанесение
 									  </label>
 								  </div><!-- /.чекбокс -->
 								  <a href="#" class="product-info__to-portfolio">Посмотреть наши работы</a>
-								  <div class="product-info__note">*Набора 1 литр хватает на поверхность примерно 5,5-6 кв.м. при нанесении в 2 слоя.</div>
+								  <div class="product-info__note"><%=@product.min_description%></div>
 								  <div class="form-group">
 									    <div class="col-xs-12 col-sm-6 col-md-5">
 									      <div class="input-group product-info__amount_group">
@@ -110,40 +116,10 @@
 				  <!-- Tab panes -->
 				  <div class="tab-content product-description__content">
 				    <div class="tab-pane fade in active product-description__pane" id="pane1">
-						<p>Маркерное двухкомпонентное покрытие от производителя Unibud позволяет создать эффект маркерной доски на любой гладкой окрашенной поверхности.</p>
-						<p>Покрытие имеет полуматовую фактуру, что позволят демонстрировать на поверхности изображение с помощью кинопроектора и при этом сохранять отличные функции стирания следа маркеров, в отличие от обычных матовых покрытий</p>
-						<p>Маркерное двухкомпонентное покрытие от производителя Unibud (Новая формула!) позволяет создать эффект маркерной доски на любой гладкой окрашенной поверхности.</p>
-						<p>Покрытие имеет полуматовую фактуру, что позволят демонстрировать на поверхности изображение кинопроектором, и при этом сохранять отличные функции стирания следа маркеров, в отличие от матовых покрытий. </p>
-						<h2>Основные характеристики</h2>
-						<ul>
-							<li>не имеет запаха</li>
-							<li>выполнено на уретановой высокотехнологичной основе,</li>
-							<li>наносится в два слоя, что позволяет получить наиболее равномерную гладкую поверхность,</li>
-							<li>после высыхания становится абсолютно прозрачным, что позволяет получить маркерное покрытие не только привычного белого, а вообще любого цвета,</li>
-							<li>не желтеет и не меняет цвет со временем, </li>
-							<li>не имеет в составе формальдегидов и токсичных соединений,</li>
-							<li>легко наносится велюровыми и ниточными валиками с мелким ворсом. </li>
-						</ul>
-						<p>Состав набора: маркерный лак, отвердитель, мерный стакан, палочка для перемешивания, инструкция.</p>
-						<p>Расход: одного набора 1 кг хватает на 5-6 кв.м. при нанесении в два слоя. </p>
-						<h2>Подготовка поверхности:</h2>
-						<p>Поверхность для нанесения должна быть ровной гладкой сухой обезжиренной покрытой латексным или акриловым грунтом или краской нужного цвета. Любые неровности — шероховатости, выбоины, подтеки, поры и т.п. — после окраски маркерным покрытием не исчезнут, а наоборот станут еще заметнее, и впоследствии создадут помехи при стирании следов маркера. Наносить маркерное покрытие следует не ранее чем через 24 после нанесения грунта или краски для основы. Для нанесения оптимально подходит температура +20С — +25С и относительная влажность около 60%.</p>
-						<p>Для нанесения потребуются:</p>
-						<ul>
-							<li>валик велюровый или ниточный (можно Титекс, фельт или микрофибра) с ворсом 3-6 мм,</li>
-							<li>лоток для валика,</li>
-							<li>перчатки,</li>
-							<li>малярный скотч, </li>
-							<li>пленка для укрытия прилежащих поверхностей.</li>
-						</ul>
-
+							<%=@product.description.html_safe%>
 				    </div><!-- / pane1 -->
 				    <div class="tab-pane fade in product-description__pane" id="pane2">
-					    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates dolores molestiae alias reiciendis natus ipsam ad aut sunt, tempora veniam, corporis eos pariatur assumenda similique tenetur labore enim vero voluptate.</div>
-					    <div>Adipisci doloribus aperiam aliquid est libero culpa, at voluptates iusto, ipsum molestias omnis, asperiores, placeat vel magnam repudiandae quia autem dolores debitis id dolorem! Quod consequuntur sed dolorem voluptas obcaecati.</div>
-					    <div>Fugit ullam voluptate dolore quasi necessitatibus sunt quae atque architecto at tempore totam dignissimos ipsum blanditiis repellat sed, quibusdam eligendi et. Minus aliquid, molestias rem quaerat, iste at rerum porro.</div>
-					    <div>Laboriosam, adipisci modi, autem veritatis nam omnis laudantium, eveniet expedita explicabo deleniti harum? Quaerat quae fugit ipsa assumenda quos consectetur quis dolorum? Ex eveniet odio, distinctio aut sapiente cum enim!</div>
-					    <div>Maxime nobis, qui, ℅ asperiores ipsam quam dolorem soluta. Sed dolorum quaerat obcaecati, unde laudantium dolorem eos nihil culpa, quia distinctio quas dolore natus quam quo aut iure cum sunt facere!</div>
+							<%=@product.additional_description.html_safe%>
 				    </div><!-- / pane2 -->
 				  </div><!-- /.tab-content -->
 
