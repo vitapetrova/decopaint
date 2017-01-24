@@ -18,6 +18,9 @@
 @import 'pages/home';
 @import 'pages/catalog';
 @import 'pages/product';
+@import 'pages/our-works-list';
+@import 'pages/our-works-main';
+@import 'pages/static-page';
 
 @import 'components/footer';
 
@@ -49,3 +52,23 @@ body{
 	}
 
 }
+
+
+
+/*xs */
+@media all and (max-width: 767px){
+
+}
+/*sm */
+@media all and (min-width: 768px) and (max-width: 991px){
+
+}
+/*md */
+@media all and (min-width: 992px) and (max-width: 1199px){
+
+}
+/*lg */
+@media all and (min-width: 1200px){
+
+}
+
