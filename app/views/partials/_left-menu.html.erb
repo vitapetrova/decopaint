@@ -8,6 +8,7 @@
 	<div class="left-menu">
 		<h2 class="left-menu__title">Каталог</h2>
 		<ul class="list-unstyled left-menu__list">
+			<% @category_products_menu = CategoryProduct.where(show_menu: true) %>
 			<%@category_products_menu.each do |category|%>
 				<li class="left-menu__item <%='left-menu__item_active' if @category_product == category%>">
 					<%=link_to category.title, category_product_path(category), class:'left-menu__a'%>
