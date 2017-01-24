@@ -105,16 +105,12 @@
 			<div class="col-sm-2 col-md-3 offcanvas__right-col">
 				<div class="offcanvas-catalog__title">Каталог</div>
 				<ul class="list-unstyled offcanvas-catalog__ul">
-					<li class="offcanvas-catalog__li"><a href="#" class="offcanvas-catalog__a">Краска 1</a></li>
-					<li class="offcanvas-catalog__li"><a href="#" class="offcanvas-catalog__a">Краска 2</a></li>
-					<li class="offcanvas-catalog__li"><a href="#" class="offcanvas-catalog__a">Краска 3</a></li>
-					<li class="offcanvas-catalog__li"><a href="#" class="offcanvas-catalog__a">Краска 4</a></li>
-					<li class="offcanvas-catalog__li"><a href="#" class="offcanvas-catalog__a">Краска 5</a></li>
-					<li class="offcanvas-catalog__li"><a href="#" class="offcanvas-catalog__a">Краска 6</a></li>
-					<li class="offcanvas-catalog__li"><a href="#" class="offcanvas-catalog__a">Краска 7</a></li>
-					<li class="offcanvas-catalog__li"><a href="#" class="offcanvas-catalog__a">Краска 8</a></li>
-					<li class="offcanvas-catalog__li"><a href="#" class="offcanvas-catalog__a">Краска 9</a></li>
-					<li class="offcanvas-catalog__li"><a href="#" class="offcanvas-catalog__a">Краска 10</a></li>
+					<% all_category_products = CategoryProduct.all%>
+					<% all_category_products.each do |category| %>
+						<li class="offcanvas-catalog__li">
+							<%=link_to category.title, category_product_path(category), class:'offcanvas-catalog__a' %>
+						</li>
+					<%end%>
 				</ul>
 			</div><!-- /right col -->
 		</div><!-- /.row -->
