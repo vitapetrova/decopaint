@@ -3,11 +3,10 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'home#index'
   get 'home/index'
-  resources :products, only:[:show]
+  resources :products, only:[:index, :show]
   resources :category_products, only:[:show]
+  resources :works, only:[:index, :show]
 
   #временные страницы
-  get '/our-works-list', to: 'home#our-works-list'
-  get '/our-works-main', to: 'home#our-works-main'
   get '/delivery', to: 'home#delivery'
 end
