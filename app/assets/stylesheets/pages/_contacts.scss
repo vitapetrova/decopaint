@@ -1,0 +1,136 @@
+.contacts{
+	position: relative;
+	z-index: 5;
+	margin-bottom: 120px;
+	&__logo{
+		margin-top: 25px;
+		margin-bottom: 50px;
+		position: relative;
+		margin-top: 25px;
+		left: -35px;
+	}
+	&__main-content{
+		margin-bottom: 0;
+	}
+	&__left-col{
+		margin-bottom: 30px;
+	}
+	&__main-title{
+		font-family: PrCondExLight, Arial, Helvetica, sans-serif;
+		font-size: 48px;
+		margin-bottom: 50px;
+		margin-top: 0;
+	}
+	&__secondary-title{
+		font-family: PrCondExLight, Arial, Helvetica, sans-serif;
+		font-size: 48px;
+		margin-bottom: 50px;
+		margin-top: 0;
+	}
+	&__phone{
+		font-family: PrCondExLight, Arial, Helvetica, sans-serif;
+		font-size: 35px;
+		margin-bottom: 50px;
+	}
+	&__address{
+		font-family: PrCondExLight, Arial, Helvetica, sans-serif;
+		font-size: 35px;
+		line-height: 1.2;
+	}
+}
+
+.contacts-form{
+
+	&__input{
+		background: rgba(0,0,0,0.9);
+		color: #fff;
+		margin-bottom: 10px;
+		font-size: 20px;
+		border-color: #fff;
+		text-overflow: ellipsis
+	}
+	&__name{
+		height: 38px;
+	}
+	&__phone{
+		height: 38px;
+	}
+	&__email{
+		height: 38px;
+	}
+	&__message{
+		resize: vertical;
+	}
+	&__button-block{
+		margin-top: 30px;
+	}
+	&__button{
+		padding: 11px 50px;
+	}
+}
+
+
+.contacts-form__input::-webkit-input-placeholder{
+	color: #fff;
+}
+.contacts-form__input::-moz-placeholder{
+	color: #fff;
+}
+.contacts-form__input:-moz-placeholder{
+	color: #fff;
+}
+.contacts-form__input:-ms-input-placeholder{
+	color: #fff;
+}
+.contacts__googlemaps-block{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+.contacts__googlemaps{
+	height: 100%;
+}
+
+
+/*xs */
+@media all and (max-width: 767px){
+	.contacts__logo{
+		position: static;
+		text-align: center;
+	}
+	.contacts__logo-block{
+		text-align: center;
+	}
+	.contacts__left-col{
+		text-align: center;
+	}
+	.contacts__main-title{
+		margin-bottom: 20px;
+	}
+	.contacts__secondary-title{
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	.contacts__phone{
+		margin-bottom: 20px;
+	}
+}
+/*sm */
+@media all and (min-width: 768px) and (max-width: 991px){
+	.contacts__logo{
+		left: 5px;
+	}
+}
+/*md */
+@media all and (min-width: 992px) and (max-width: 1199px){
+	.contacts__logo{
+		left: -20px;
+	}
+}
+/*lg */
+@media all and (min-width: 1200px){
+
+}

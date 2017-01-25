@@ -39,7 +39,7 @@ $( document ).ready(function() {
         // магическая формула
         var transformTop = scroll_size * .05;
         //паралакс
-        parallaxTarget.css('top', (scroll_size * .035));
+        parallaxTarget.css('top', (scroll_size * .015));
     });
 
 
@@ -195,6 +195,12 @@ $( document ).ready(function() {
       remove: false
     });
 
+
+//скрипты для контактов
+
+
+
+
 //разное 
 
     //скрипт слайдера доп изображений на страницы товара
@@ -227,7 +233,7 @@ function refreshParallax(){
     if ($(window).scrollTop() < 800)
         $('[data-parallax="background"]').css('top', ($(window).scrollTop() * 0));
     else
-        $('[data-parallax="background"]').css('top', ($(window).scrollTop() * .035));
+        $('[data-parallax="background"]').css('top', ($(window).scrollTop() * .015));
 }
 //обновляет прозрачность фонового слайдера
 function refreshOpacity(){
@@ -247,4 +253,94 @@ function refreshBgSlider(){
     if ($(window).scrollTop() == 0)
         $('.slider-bg').trigger('play.owl.autoplay');
 }
+
+// Добавление карт гугл
+// The latitude and longitude of your business / place
+var marker = [53.886681, 27.556156];
+var center = [53.886681, 27.562];
+
+function initMap() {
+
+    var mapMarker = new google.maps.LatLng(marker[0], marker[1]);
+    var mapCenter = new google.maps.LatLng(center[0], center[1]);
+
+    var mapOptions = {
+        zoom: 14, // initialize zoom level - the max value is 21
+        mapTypeControl: false,
+        scrollwheel: false,
+        streetViewControl: false, // hide the yellow Street View pegman
+        scaleControl: true, // allow users to zoom the Google Map
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        center: mapCenter
+    };
+
+    map = new google.maps.Map(document.getElementById('googlemaps'), mapOptions);
+
+    map.set('styles', [{
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [{"saturation": 36}, {"color": "#000000"}, {"lightness": 40}]
+    }, {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [{"visibility": "on"}, {"color": "#000000"}, {"lightness": 16}]
+    }, {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [{"visibility": "off"}]
+    }, {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [{"color": "#000000"}, {"lightness": 20}]
+    }, {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [{"color": "#000000"}, {"lightness": 17}, {"weight": 1.2}]
+    }, {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [{"color": "#000000"}, {"lightness": 20}]
+    }, {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [{"color": "#000000"}, {"lightness": 21}]
+    }, {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [{"color": "#000000"}, {"lightness": 17}]
+    }, {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [{"color": "#000000"}, {"lightness": 29}, {"weight": 0.2}]
+    }, {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [{"color": "#000000"}, {"lightness": 18}]
+    }, {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [{"color": "#000000"}, {"lightness": 16}]
+    }, {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [{"color": "#000000"}, {"lightness": 19}]
+    }, {"featureType": "water", "elementType": "geometry", "stylers": [{"color": "#000000"}, {"lightness": 17}]}]);
+
+    var image = new google.maps.MarkerImage('<%= asset_path('contacts/map-marker.png') %>',      
+      new google.maps.Size(50, 70),      
+      new google.maps.Point(0,0),      
+      new google.maps.Point(0, 70));
+
+    // настройки маркера
+    marker = new google.maps.Marker({
+        position: mapMarker,
+        icon: image,
+        map: map,
+        draggable: false,
+        animation: google.maps.Animation.DROP
+    });
+
+}
+//асинхронно не хочет работать потому что
+//google.maps.event.addDomListener(window, 'load', initMap);
 
