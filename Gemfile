@@ -15,6 +15,9 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'russian', '~> 0.6.0'
 
 gem 'rails_admin', '~> 1.0'
+gem 'ckeditor'
+gem 'paperclip'
+gem 'aws-sdk', '~> 2'
 
 gem 'devise'
 gem 'cancancan', '~> 1.15'
