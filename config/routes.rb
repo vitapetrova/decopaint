@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   #временные страницы
   get '/delivery', to: 'home#delivery'
+  get '/to-designers', to: 'home#to-designers'
 end

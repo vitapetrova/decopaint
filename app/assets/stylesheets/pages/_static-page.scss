@@ -38,6 +38,24 @@
 		& p{
 
 		}
+		& a{
+			text-decoration: none;
+			color: $text-active;
+
+			&:hover,
+			&:active,
+			&:focus{
+				text-decoration: underline;
+				color: $text-active;
+			}			
+		}
+	}
+	& h1{
+		color:#fff;
+		font-family: PrCondExLight, Arial, Helvetica, sans-serif;
+		font-size: 58px;
+		margin-top: 25px;
+		margin-bottom: 25px;
 	}
 	& h2{
 		color:#fff;
@@ -46,18 +64,6 @@
 		margin-top: 25px;
 		margin-bottom: 25px;
 	}
-	& a{
-		text-decoration: none;
-		color: $text-active;
-
-		&:hover,
-		&:active,
-		&:focus{
-			text-decoration: underline;
-			color: $text-active;
-		}
-	}
-
 }
 
 /*xs */
@@ -65,6 +71,12 @@
 	.static-page__content-block{
 		width: 100%;
 		margin-bottom: 20px;
+	}
+	.static-page h1,
+	.static-page h2{
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: 15px;
 	}
 }
 /*sm */
@@ -84,4 +96,11 @@
 /*lg */
 @media all and (min-width: 1200px){
 
+}
+
+.to-designers{
+	&__button{
+		margin-top: 25px;
+		margin-bottom: 10px;
+	}
 }

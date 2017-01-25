@@ -64,3 +64,31 @@
 		margin-bottom: 20px;
 	}
 }
+
+
+/*xs */
+@media all and (max-width: 767px){
+	.logo__wrapper{
+		margin-top: 15px;
+	}
+	.left-menu .left-menu__title{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.left-menu__list{
+		padding-left: 0;
+		text-align: center;
+	}
+}
+/*sm */
+@media all and (min-width: 768px) and (max-width: 991px){
+
+}
+/*md */
+@media all and (min-width: 992px) and (max-width: 1199px){
+
+}
+/*lg */
+@media all and (min-width: 1200px){
+
+}
