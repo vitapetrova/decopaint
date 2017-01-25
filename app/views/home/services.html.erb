@@ -1,0 +1,45 @@
+<!-- статичная страница, но с блоком наших работ и блоком остались вопросы -->
+<div class="static-page__overlay"></div>
+
+<div class="container static-page__container static-page">
+	<div class="row">
+
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+
+		  <%= render "partials/left-menu" %>
+
+		</div><!-- /.left col -->
+
+		<div class="col-xs-12 col-sm-8 col-md-8 col-md-offset-1 col-lg-8 col-lg-offset-1"><!-- внутри этого блока лежит контент страницы, текст должен быть внутри блока .static-page__content-block, чтобы был нужный фон -->
+			<h2>Нанесение краски</h2>
+			<div class="static-page__content-block">
+				<p>Наша компания специализируется на работе с уникальными функциональными покрытиями. Мы предлагаем краски, которые расширяют границы творчества, обучения, работы и досуга. Это совершенно новые материалы, предоставляющие возможность рисовать на стенах и мебели, крепить к ним магниты, придать им вид каменной поверхности или другие необычные и очень полезные эффекты.</p>
+				<p>Мы работаем как с зарубежными производителями, так и с российскими, выбирая лучший по качеству товар и добиваясь доступных для потребителя цен. Все покрытия, представленные в нашем магазине мы тестируем самостоятельно. Все наши менеджеры имеют непосредственный опыт нанесения и эксплуатации представленных красок и других аналогов на рынке и готовы подробно рассказать обо всех тонкостях использования этих красок.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut natus, vel vero dolores eius repellat eveniet ullam fuga earum corporis debitis provident tempore, voluptatum non atque impedit sunt nobis quam?</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus nulla autem eaque qui vero laboriosam officia sint quisquam, necessitatibus, fugiat mollitia. Quos laboriosam, id officia amet ratione dicta, perferendis!Numquam voluptas sequi quasi nihil sed optio asperiores eveniet, laboriosam ipsum eum porro dolorem voluptatibus ad impedit nobis sapiente minima quam magnam maiores, iure facere accusantium natus cupiditate minus dolor!</p>
+			</div>
+
+			<!-- блок других проектов, как в нижней части наших "works/show" section.our-works-main__projects, вылетает на works.each -->
+
+			<!-- блок "остались вопросы" -->
+			<section class="have-questions">
+				<h2 class="have-questions__title">Остались вопросы?</h2>
+				<div class="row">
+					<div class="col-sm-12 col-md-4">
+						<div class="have-questions__text">Наши менеджеры готовы проконсультировать вас:</div>
+					</div>
+					<div class="col-sm-12 col-md-4">
+						<div class="have-questions__tel-block text-center">
+							<div class="have-questions__tel">+ 8 800 555 35 35</div>
+							<div class="have-questions__tel_desc">Звонок бесплатный</div>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-4 text-center">
+						<button class="btn btn__grey-bg btn__grey-bg_normal btn__ask-question">Задать вопрос</button>
+					</div>
+				</div>
+			</section>
+
+		</div><!-- /.right col -->
+	</div><!-- /.row -->
+</div><!-- /.container -->

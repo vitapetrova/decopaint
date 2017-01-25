@@ -9,5 +9,12 @@ Rails.application.routes.draw do
 
   #временные страницы
   get '/delivery', to: 'home#delivery'
+
+  # как доставка, но в конце кнопка в конструктор
   get '/to-designers', to: 'home#to-designers'
+  # как доставка, но в конце блоки "наши работы" и "остались вопросы", в блоке наши работы ошибка на "works.each" 
+  # если скопировать страницы наших работ
+  get '/services', to: 'home#services'
+  # о нас
+  get '/about', to: 'home#about'
 end

@@ -39,7 +39,7 @@ $( document ).ready(function() {
         // магическая формула
         var transformTop = scroll_size * .05;
         //паралакс
-        parallaxTarget.css('top', (scroll_size * .035));
+        parallaxTarget.css('top', (scroll_size * .015));
     });
 
 
@@ -227,7 +227,7 @@ function refreshParallax(){
     if ($(window).scrollTop() < 800)
         $('[data-parallax="background"]').css('top', ($(window).scrollTop() * 0));
     else
-        $('[data-parallax="background"]').css('top', ($(window).scrollTop() * .035));
+        $('[data-parallax="background"]').css('top', ($(window).scrollTop() * .015));
 }
 //обновляет прозрачность фонового слайдера
 function refreshOpacity(){
