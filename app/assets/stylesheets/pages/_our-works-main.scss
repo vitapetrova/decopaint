@@ -37,6 +37,14 @@
 			margin-bottom: 0;
 			text-indent: 1em;
 		}
+		& img{
+			display: block;
+			border: 10px solid #464545;
+			width: 90%;
+			height: auto;
+			margin: 20px auto;
+
+		}
 	}
 	&__img-block{
 
