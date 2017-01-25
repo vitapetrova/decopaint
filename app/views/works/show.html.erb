@@ -28,7 +28,7 @@
           <%@else_works.each do |work|%>
             <div class="col-sm-6 col-md-4">
               <%=link_to work_path(work), class:'our-works-main-projects__item' do%>
-                <img src="<%= asset_path('home/big-card1.jpg') %>" alt="Изображение дизайн проекта" class="our-works-main-projects__item_img">
+                <img src="<%=work.image.url%>" alt="Изображение дизайн проекта" class="our-works-main-projects__item_img">
               <%end%>
             </div>
           <%end%>
