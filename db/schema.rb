@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170123214731) do
+ActiveRecord::Schema.define(version: 20170125080408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(version: 20170123214731) do
     t.boolean  "show_menu"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "category_works", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -49,8 +55,13 @@ ActiveRecord::Schema.define(version: 20170123214731) do
     t.text     "description"
     t.text     "additional_description"
     t.integer  "category_product_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.boolean  "show_menu"
+    t.string   "mini_image_file_name"
+    t.string   "mini_image_content_type"
+    t.integer  "mini_image_file_size"
+    t.datetime "mini_image_updated_at"
     t.index ["category_product_id"], name: "index_products_on_category_product_id", using: :btree
   end
 
@@ -87,5 +98,16 @@ ActiveRecord::Schema.define(version: 20170123214731) do
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
   end
 
+  create_table "works", force: :cascade do |t|
+    t.string   "title"
+    t.text     "text_field"
+    t.boolean  "show_menu"
+    t.integer  "category_work_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["category_work_id"], name: "index_works_on_category_work_id", using: :btree
+  end
+
   add_foreign_key "products", "category_products"
+  add_foreign_key "works", "category_works"
 end
