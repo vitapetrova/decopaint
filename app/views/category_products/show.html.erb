@@ -30,7 +30,8 @@
 							    <div class="thumbnail vertical-card catalog__card">
 							      <div class="vertical-card__img_wrap">
 							      	<!-- добавить какое-то другое изображение при наведении  -->
-							      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+							      	<% main_image ||= product.product_images.main.first || product.product_images.first%>
+							      	<img src="<%=main_image.image.url %>" class="vertical-card__img" alt="ptoduct title">
 									<div class="card__type card__type_chalk" style="background-image:url(<%=product.mini_image.url%>);">
 
 									</div>

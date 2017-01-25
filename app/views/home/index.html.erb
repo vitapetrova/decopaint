@@ -173,7 +173,8 @@
 				<%=link_to product_path(@products_menu[1]), class:'vertical-card__a profit__card_a1' do %>
 				    <div class="thumbnail vertical-card profit__vcard profit__card_1">
 				      <div class="vertical-card__img_wrap">
-				      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+				      	<% main_image ||= @products_menu[1].product_images.main.first || @products_menu[1].product_images.first%>
+				      	<img src="<%= main_image.image.url%>" class="vertical-card__img" alt="ptoduct title">
 						<div class="card__type card__type_chalk" style="background-image:url(<%=@products_menu[1].mini_image.url%>);">
 						</div>
 						<img src="<%= @products_menu[1].mini_image.url%>" />
@@ -205,7 +206,8 @@
 				<%=link_to product_path(@products_menu[2]), class:'vertical-card__a profit__card_a2' do %>
 					<div class="hcard-flex ">
 					  <div class="hcard-flex__img-block">
-					      <img class="hcard-flex__img" src="<%= asset_path('product/pot2.jpg') %>" alt="product1">
+					  		<% main_image ||= @products_menu[2].product_images.main.first || @products_menu[2].product_images.first%>
+					      <img class="hcard-flex__img" src="<%= main_image.image.url%>" alt="product1">
 					      <div class="card__type card__type_marker" style="background-image:url(<%=@products_menu[2].mini_image.url%>);"></div>
 					  </div>
 					  <div class="hcard-flex__text-block">
@@ -224,7 +226,8 @@
 				<%=link_to product_path(@products_menu[3]), class:'vertical-card__a profit__card_a3' do %>
 				    <div class="thumbnail vertical-card profit__vcard profit__card_3">
 				      <div class="vertical-card__img_wrap">
-				      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+				      	<% main_image ||= @products_menu[3].product_images.main.first || @products_menu[3].product_images.first%>
+				      	<img src="<%= main_image.image.url%>" class="vertical-card__img" alt="ptoduct title">
 						<div class="card__type card__type_chalk" style="background-image:url(<%=@products_menu[3].mini_image.url%>);">
 						</div>
 				      	</div>
@@ -241,7 +244,8 @@
 				<%=link_to product_path(@products_menu[4]), class:'vertical-card__a profit__card_a4' do %>
 				    <div class="thumbnail vertical-card profit__vcard profit__card_4">
 				      <div class="vertical-card__img_wrap">
-				      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+				      	<% main_image ||= @products_menu[4].product_images.main.first || @products_menu[4].product_images.first%>
+				      	<img src="<%= main_image.image.url%>" class="vertical-card__img" alt="ptoduct title">
 						<div class="card__type card__type_chalk" style="background-image:url(<%=@products_menu[4].mini_image.url%>);">
 						</div>
 				      	</div>
@@ -261,7 +265,8 @@
 				<%=link_to product_path(@products_menu[0]), class:'vertical-card__a profit__card_a5' do %>
 				    <div class="thumbnail vertical-card profit__vcard  profit__card_5">
 				      <div class="vertical-card__img_wrap">
-				      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+				      	<% main_image ||= @products_menu[0].product_images.main.first || @products_menu[0].product_images.first%>
+				      	<img src="<%= main_image.image.url%>" class="vertical-card__img" alt="ptoduct title">
 						<div class="card__type card__type_chalk card__type_bigger" style="background-image:url(<%=@products_menu[0].mini_image.url%>);">
 						</div>
 				      	</div>

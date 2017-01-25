@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :category_product
+  has_many :product_images
 
   enum status: { 'В наличии' => 'in_stock', 'Нет в наличии' => 'not_in_stock', 'Под заказ' => 'custom' }
 
