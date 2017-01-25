@@ -8,16 +8,11 @@
 		<div class="row reset-margins">
 			<div class="col-xs-12 reset-paddings">
 				<div class="slider-bg owl-carousel">
-
+					<%@sliders.each do |slider|%>
 					<div class="slider-bg__item">
-						<div class="slider-bg__img-block slider-bg__img_1"></div>
+						<div class="slider-bg__img-block slider-bg__img_1" style="background-image:url(<%=slider.image.url%>);"></div>
 					</div>
-					<div class="slider-bg__item">
-						<div class="slider-bg__img-block slider-bg__img_2"></div>
-					</div>
-					<div class="slider-bg__item">
-						<div class="slider-bg__img-block slider-bg__img_3"></div>
-					</div>
+					<%end%>
 
 				</div><!-- /.back slider	 -->
 			</div>
