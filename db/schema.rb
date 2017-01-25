@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170124223809) do
+ActiveRecord::Schema.define(version: 20170125215646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,35 @@ ActiveRecord::Schema.define(version: 20170124223809) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.string   "data_fingerprint"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+    t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+  end
+
+  create_table "product_images", force: :cascade do |t|
+    t.integer  "product_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.boolean  "main"
+    t.integer  "priority",           default: 1000
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.index ["product_id"], name: "index_product_images_on_product_id", using: :btree
+  end
+
   create_table "products", force: :cascade do |t|
     t.string   "title"
     t.float    "price"
@@ -39,9 +68,13 @@ ActiveRecord::Schema.define(version: 20170124223809) do
     t.text     "description"
     t.text     "additional_description"
     t.integer  "category_product_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.boolean  "show_menu"
+    t.string   "mini_image_file_name"
+    t.string   "mini_image_content_type"
+    t.integer  "mini_image_file_size"
+    t.datetime "mini_image_updated_at"
     t.index ["category_product_id"], name: "index_products_on_category_product_id", using: :btree
   end
 
@@ -83,8 +116,12 @@ ActiveRecord::Schema.define(version: 20170124223809) do
     t.text     "text_field"
     t.boolean  "show_menu"
     t.integer  "category_work_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["category_work_id"], name: "index_works_on_category_work_id", using: :btree
   end
 

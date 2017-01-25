@@ -17,23 +17,11 @@
 							<div class="product-slider__block"><!-- сдайдер маленьких изображений -->
 								<div class="product-slider__navigation"></div>
 								<div class="owl-carousel product-slider">
-
+									<%@product.product_images.each do |product_image|%>
 									<div class="product-slider__item">
-										<img src="<%= asset_path('product/pot3.jpg') %>" alt="" class="product-slider__img">
+										<img src="<%=product_image.image.url%>" alt="" class="product-slider__img">
 									</div>
-									<div class="product-slider__item">
-										<img src="<%= asset_path('home/big-card1.jpg') %>" alt="" class="product-slider__img">
-									</div>
-									<div class="product-slider__item">
-										<img src="<%= asset_path('home/big-card2.jpg') %>" alt="" class="product-slider__img">
-									</div>
-									<div class="product-slider__item">
-										<img src="<%= asset_path('home/big-card3.jpg') %>" alt="" class="product-slider__img">
-									</div>
-									<div class="product-slider__item">
-										<img src="<%= asset_path('back-slider/bg1.jpg') %>" alt="" class="product-slider__img">
-									</div>
-
+									<%end%>
 								</div>
 							</div><!-- /. product-slider__block -->
 						</div><!-- /.product-info left -->
