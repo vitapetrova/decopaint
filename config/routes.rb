@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   get '/services', to: 'home#services'
   # о нас
   get '/about', to: 'home#about'
+  # контакты
+  get '/contacts', to: 'home#contacts'
 end
