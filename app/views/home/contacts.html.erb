@@ -1,0 +1,42 @@
+<div class="contacts__googlemaps-block">
+	<div class="contacts__googlemaps" id="googlemaps"></div>
+</div>
+
+<div class="contacts container">
+
+		<div class="row">
+			<div class="col-xs-12 contacts__logo-block">
+				<a href="/" class="logo contacts__logo" title="На главную">
+		        	<div class="logo__title">MAGMASTER.BY</div>
+		        	<div class="logo__description">лучшая грифельная краска и услуги по нанесению</div>
+		      	</a>
+			</div>
+		</div><!-- /.row -->
+
+	<!-- блок с адресом и формой -->
+		<div class="row contacts__main-content">
+			<div class="col-xs-12 col-sm-6 col-md-3 col-md-offset-2 contacts__left-col">
+				<h1 class="contacts__main-title">Контакты</h1>
+				<div class="contacts__phone">+ 375 29 627 62 73</div>
+				<div class="contacts__address">
+					info@magmaster.by<br>
+					г. Минск<br>
+					улица Нормальная, 69
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-1">
+				<h2 class="contacts__secondary-title">Задать вопрос</h2>
+				<form class="contacts-form">
+					<input type="text" class="form-control contacts-form__input contacts-form__name" name="contacts__name" placeholder="Имя">
+					<input type="text" class="form-control contacts-form__input contacts-form__phone" name="contacts__phone" placeholder="Номер телефона">
+					<input type="email" class="form-control contacts-form__input contacts-form__email" name="contacts__email" placeholder="E-mail">
+					<textarea class="form-control contacts-form__input contacts-form__message" rows="3" placeholder="Сообщение"></textarea>
+					<div class="text-center contacts-form__button-block"><!-- кнопка на конструктор -->
+						<button class="btn btn__grey-bg btn__grey-bg_normal contacts-form__button" type="submit">Отправить</button>
+					</div>
+			</div>
+		</div><!-- /.row -->
+
+</div><!-- /.contacts container -->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsbs2_8wXBSmpsMZ5nLnMEfaKpjbu5o74&callback=initMap"></script>
