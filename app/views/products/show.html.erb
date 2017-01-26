@@ -9,17 +9,17 @@
 
 			</div><!-- /.left col -->
 			<div class="col-xs-12 col-sm-8 col-md-9">
-
+				<!-- добавил лайтбокс, обычная картинка лежит src, та которая откроется во всплывающем окне в data-src -->
 				<section class="product-info">
-					<div class="row product-info__row">
+					<div class="row product-info__row"> 
 						<div class="col-xs-12 col-sm-12 col-md-6 product-info__left-col">
-							<!-- <img src="{{root}}assets/img/product-page/main-img.png" alt="Краска збс" class="img-responsive product-info__main-img"> -->
+							<img src="<%= asset_path('product-page/main-img.png') %>" alt="Краска збс" class="img-responsive product-info__main-img product__lg_item" data-src="<%= asset_path('product-page/main-img.png') %>">
 							<div class="product-slider__block"><!-- сдайдер маленьких изображений -->
 								<div class="product-slider__navigation"></div>
 								<div class="owl-carousel product-slider">
 									<%@product.product_images.each do |product_image|%>
 									<div class="product-slider__item">
-										<img src="<%=product_image.image.url%>" alt="" class="product-slider__img">
+										<img src="<%=product_image.image.url%>" alt="" class="product-slider__img product__lg_item" data-src="<%=product_image.image.url%>" >
 									</div>
 									<%end%>
 								</div>

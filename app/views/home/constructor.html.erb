@@ -1,0 +1,345 @@
+<!-- страница конструктора -->
+<!-- добавить на этой странице на body класс .back-slider-page чтобы фон вокруг был черный -->
+<div class="constructor">
+
+	<!-- верхний блок конструктора -->
+	<div class="constructor__top">
+		<div class="constructor__table"></div>
+		<div class="container">	
+			<div class="row constructor__top_row">
+				<div class="col-xs-12 col-sm-6 col-md-8 constructor__top_left">
+					<a href="/" class="logo constructor__logo" title="На главную">
+						<div class="logo__title">MAGMASTER.BY</div>
+						<div class="logo__description">лучшая грифельная краска и услуги по нанесению</div>
+					</a>
+					<div class="constructor__top_left_bg"></div>
+					
+					<!-- есть три типа картинок - доски во весь размер блока, высокие но узкие предметы, широкие но низкие предметы поэтому нужно три разных класса для отображения по разному -
+					.constructor-area__img_full, .constructor-area__img_tall, .constructor-area__img_wide,
+					предполагается что все картинки будут в png чтобы скриптом генерировать имя -->
+					<img src="<%= asset_path('constructor/surface/constructor-img-1-1-1-1.png') %>" alt="" class="constructor-area__img constructor-area__img_tall">
+										
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 constructor__top_right">
+					<div class="constructor__slogan">Соберите полный набор необходимых инструментов и получите скидку!</div>
+					<div class="constructor__price-block">
+						<div class="constructor__price-text">Итоговая стоимость</div>
+						<div class="constructor__price">236 руб</div>						
+					</div>
+					<div class="text-center">
+						<div class="">
+							<button class="btn btn__grey-bg btn__grey-bg_normal constructor__btn-order" type="submit">Заказать</button>
+						</div>
+						<div class="">
+							<button class="btn btn__grey-bg btn__grey-bg_normal constructor__btn-callback" type="submit">Обратный звонок</button>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.row constructor__top -->
+		</div><!-- /.container -->
+	</div><!-- /.constructor__top-->
+
+	<!-- нижний блок конструктора -->
+	<div class="constructor__bottom">
+		<div class="container">
+			
+			<div class="row constructor__bottom_row">
+				<div class="col-sx-12">
+					
+					<!-- кнопки управляющие переключением вкладок -->
+					<ul class="nav constructor__tab_ul">
+						<li class="constructor__tab_li active">
+							<a href="#constructor-pane1" data-toggle="tab" class="constructor__tab_a">
+								<div class="constructor__tab_title">Поверхность</div>
+								<div class="constructor__tab_desc">Выберите поверхность</div>
+							</a>
+						<li class="constructor__tab_li">
+							<a href="#constructor-pane2" data-toggle="tab" class="constructor__tab_a">
+								<div class="constructor__tab_title">Грунтовка</div>
+								<div class="constructor__tab_desc">Выберите поверхность</div>
+							</a>
+						</li>
+						<li class="constructor__tab_li">
+							<a href="#constructor-pane3" data-toggle="tab" class="constructor__tab_a">
+								<div class="constructor__tab_title">Покрытие</div>
+								<div class="constructor__tab_desc">Выберите поверхностьvdf d fdddfdfd df d f Выберите поверхно Выберите поверхно</div>
+							</a>
+						</li>
+						<li class="constructor__tab_li">
+							<a href="#constructor-pane4" data-toggle="tab" class="constructor__tab_a">
+								<div class="constructor__tab_title">Акссесуары</div>
+								<div class="constructor__tab_desc">Выберите поверхность</div>
+							</a>
+						</li>
+					</ul>
+					<!-- конец кнопкок управляющих переключением вкладок -->
+
+
+
+				  <!-- 4 панели в которых можно выбирать варианты -->
+				  <div class="tab-content constructor__tab-content">
+
+					<!-- панель 1 поверхности -->
+				    <div class="tab-pane fade in active" id="constructor-pane1">
+				    	<div class="row reset-margins">
+
+				    		<div class="col-xs-6 col-sm-4 col-md-3 constructor-pane__item_active">
+				    			<div class="constructor-pane__item">
+				    				<div class="constructor-pane__img-block">
+				    					<img src="<%= asset_path('constructor/surface/constructor-img-1-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_tall">
+				    				</div>
+				    				<div class="constructor-pane__desc">Дверь</div>
+				    			</div>
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">
+				    			<div class="constructor-pane__item">
+				    				<div class="constructor-pane__img-block">
+				    					<img src="<%= asset_path('constructor/surface/constructor-img-2-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_full">
+				    				</div>
+				    				<div class="constructor-pane__desc">Стена</div>
+				    			</div>				    			
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">
+				    			<div class="constructor-pane__item">
+				    				<div class="constructor-pane__img-block">
+				    					<img src="<%= asset_path('constructor/surface/constructor-img-3-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_wide">
+				    				</div>
+				    				<div class="constructor-pane__desc">Кирпич</div>
+				    			</div>				    			
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">
+				    			<div class="constructor-pane__item">
+				    				<div class="constructor-pane__img-block">
+				    					<img src="<%= asset_path('constructor/surface/constructor-img-2-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_full">
+				    				</div>
+				    				<div class="constructor-pane__desc">Дверь</div>
+				    			</div>				    			
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">
+				    			<div class="constructor-pane__item">
+				    				<div class="constructor-pane__img-block">
+				    					<img src="<%= asset_path('constructor/surface/constructor-img-3-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_wide">
+				    				</div>
+				    				<div class="constructor-pane__desc">Дверь</div>
+				    			</div>				    			
+				    		</div>
+
+				    	</div>
+				    </div>
+				    <!--  конец панели поверхностей -->
+
+					<!--  2 панель грунтовок -->
+				    <div class="tab-pane fade" id="constructor-pane2">
+				    	<div class="row reset-margins">
+
+				    		<div class="col-xs-6 col-sm-4 col-md-3">								
+							    <div class="thumbnail vertical-card constructor-vcard">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<%= asset_path('product/pot4.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_magnet"></div>								
+							      </div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+									<div class="vertical-card__price">115 руб</div>
+							      </div>
+							    </div>								
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">								
+							    <div class="thumbnail vertical-card constructor-vcard">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<%= asset_path('product/pot4.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_magnet"></div>								
+							      </div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+									<div class="vertical-card__price">115 руб</div>
+							      </div>
+							    </div>								
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">								
+							    <div class="thumbnail vertical-card constructor-vcard">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<%= asset_path('product/pot4.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_magnet"></div>								
+							      </div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+									<div class="vertical-card__price">115 руб</div>
+							      </div>
+							    </div>								
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">								
+							    <div class="thumbnail vertical-card constructor-vcard">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<%= asset_path('product/pot4.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_magnet"></div>								
+							      </div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+									<div class="vertical-card__price">115 руб</div>
+							      </div>
+							    </div>								
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">								
+							    <div class="thumbnail vertical-card constructor-vcard">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<%= asset_path('product/pot4.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_magnet"></div>								
+							      </div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+									<div class="vertical-card__price">115 руб</div>
+							      </div>
+							    </div>								
+				    		</div>
+
+				    	</div>
+				    </div>
+					<!--  конец панели грунтовок -->
+
+					<!--  3 панель покрытий -->
+				    <div class="tab-pane fade" id="constructor-pane3">
+				    	<div class="row reset-margins">
+
+				    		<div class="col-xs-6 col-sm-4 col-md-3">
+				    			<div class="constructor-pane__item">
+				    				<div class="constructor-pane__img-block">
+				    					<img src="<%= asset_path('constructor/surface/constructor-img-1-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_tall">
+				    				</div>
+				    				<div class="constructor-pane__desc">Дверь</div>
+				    			</div>
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">
+				    			<div class="constructor-pane__item">
+				    				<div class="constructor-pane__img-block">
+				    					<img src="<%= asset_path('constructor/surface/constructor-img-2-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_full">
+				    				</div>
+				    				<div class="constructor-pane__desc">Стена</div>
+				    			</div>				    			
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">
+				    			<div class="constructor-pane__item">
+				    				<div class="constructor-pane__img-block">
+				    					<img src="<%= asset_path('constructor/surface/constructor-img-3-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_wide">
+				    				</div>
+				    				<div class="constructor-pane__desc">Кирпич</div>
+				    			</div>				    			
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">
+				    			<div class="constructor-pane__item">
+				    				<div class="constructor-pane__img-block">
+				    					<img src="<%= asset_path('constructor/surface/constructor-img-2-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_full">
+				    				</div>
+				    				<div class="constructor-pane__desc">Дверь</div>
+				    			</div>				    			
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">
+				    			<div class="constructor-pane__item">
+				    				<div class="constructor-pane__img-block">
+				    					<img src="<%= asset_path('constructor/surface/constructor-img-3-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_wide">
+				    				</div>
+				    				<div class="constructor-pane__desc">Дверь</div>
+				    			</div>				    			
+				    		</div>
+				    		
+				    	</div>				    	
+				    </div>
+				    <!--  конец панели покрытий -->
+
+				    <!-- 4 панель акссесуаров -->
+				    <div class="tab-pane fade" id="constructor-pane4">
+				    	<div class="row reset-margins">
+
+				    		<div class="col-xs-6 col-sm-4 col-md-3">								
+							    <div class="thumbnail vertical-card constructor-vcard">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<%= asset_path('product/pot4.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_magnet"></div>								
+							      </div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+									<div class="vertical-card__price">115 руб</div>
+							      </div>
+							    </div>								
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">								
+							    <div class="thumbnail vertical-card constructor-vcard">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<%= asset_path('product/pot4.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_magnet"></div>								
+							      </div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+									<div class="vertical-card__price">115 руб</div>
+							      </div>
+							    </div>								
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">								
+							    <div class="thumbnail vertical-card constructor-vcard">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<%= asset_path('product/pot4.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_magnet"></div>								
+							      </div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+									<div class="vertical-card__price">115 руб</div>
+							      </div>
+							    </div>								
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">								
+							    <div class="thumbnail vertical-card constructor-vcard">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<%= asset_path('product/pot4.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_magnet"></div>								
+							      </div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+									<div class="vertical-card__price">115 руб</div>
+							      </div>
+							    </div>								
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">								
+							    <div class="thumbnail vertical-card constructor-vcard">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<%= asset_path('product/pot4.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_magnet"></div>								
+							      </div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+									<div class="vertical-card__price">115 руб</div>
+							      </div>
+							    </div>								
+				    		</div>
+
+				    	</div>				    	
+				    </div>
+				    <!--  конец панели акссесуаров -->
+
+				  </div><!-- /.constructor__tab-content -->
+					
+				</div><!-- /.col-xs-12 -->
+			</div><!-- /.row -->
+		</div><!-- /.constainer -->
+	</div><!-- /.constructor__bottom -->
+
+</div><!-- /.constructor -->

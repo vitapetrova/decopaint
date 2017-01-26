@@ -199,7 +199,17 @@ $( document ).ready(function() {
 //скрипты для контактов
 
 
-
+//скрипты для лайтбоксов
+  //лайтбокс сертификатов
+  $('.certificates__row').lightGallery({
+      selector: '.certificates__img-block',
+      download: false
+  });
+  //лайтобокс изображений продукта на странице продукта
+  $('.product-info__left-col').lightGallery({
+      selector: '.product__lg_item',
+      download: false
+  });
 
 //разное 
 

@@ -1,0 +1,354 @@
+/*пиздец */
+
+/* z-index -> 3 для фона стены, 4 тени на стене,  7 стол который перед ней, 9 картинка которая добавляется в основную зону показа  */
+.constructor{
+	background: #000;
+	margin-top: -55px;
+	padding-top: 55px;
+
+	&__table{
+		position: absolute;
+		z-index: 7;
+		bottom: 0;
+		height: 220px;
+		width: 100%;
+		background-image: asset-url("constructor/table.png");
+		background-size: cover;
+		background-position: top center;
+	}
+	&__top{
+		position: relative;
+		padding-bottom: 90px;
+		background-color: #000;
+
+		&__row{
+
+		}
+		&_left{
+			height: 600px;
+			position: relative;
+			&_bg{
+				background-image: asset-url("constructor/bg-wall.jpg");
+				background-size: cover;
+				background-position: center center;
+				position: relative;
+				z-index: 3;
+				height: 100%;
+				width: 100%;
+				&:before{
+					height: 100%;
+					width: 20%;
+					content: '';
+					display: block;
+					position: absolute;
+					z-index: 4;
+					left: 0;
+					background: linear-gradient( to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.03) 100% );
+				}
+				&:after{
+					height: 100%;
+					width: 20%;
+					content: '';
+					display: block;
+					position: absolute;
+					z-index: 4;
+					right: 0;
+					background: linear-gradient( to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.03) 100% );
+				}
+			}
+		}
+		&_right{
+			position: relative;
+			z-index: 10;
+		}
+	}
+	&__logo{
+		margin-top: 25px;
+		margin-left: 35px;
+		position: absolute;
+		z-index: 10;
+	}
+	&__slogan{
+		font-family: PrCondExLight, Arial, Helvetica, sans-serif;
+		font-size: 42px;
+		margin-top: 25px;
+		line-height: 1.2;
+	}	
+	&__price-block{
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	&__price-text{
+		font-size: 42px;
+		line-height: 1;
+	}
+	&__price{
+		font-family: PrCondBlack, Arial, Helvetica, sans-serif;
+		font-size: 42px;
+	}
+	&__btn-order{
+		padding: 12px 55px;
+		margin-bottom: 10px;
+	}
+	&__btn-callback{
+		padding: 12px 10px;
+	}
+
+
+
+
+	&__bottom{
+		&__row{
+
+		}
+	}
+
+}
+
+.constructor-area{
+
+	/*&__img-block{
+		width: 100%;
+		height: 100%;
+		display: flex;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}*/
+	&__img{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+
+		&_full{
+			z-index: 5;
+			width: 100%;
+			height: 100%;
+		}
+		&_tall{
+			z-index: 9;
+			width: auto;
+			height: 75%;
+			margin: auto;
+		}
+		&_wide{
+			z-index: 9;
+			width: 55%;
+			height: auto;
+			bottom: 35px;
+			top: auto;
+		}
+	}
+}
+.constructor__bottom{
+	position: relative;
+	z-index: 9;
+	margin-top: -100px;
+
+}
+.constructor__tab{
+		
+		&_ul{
+
+		}
+		&_li{
+			float: left;
+			width: 25%;
+			background: rgba(0,0,0,0.6);
+			border-left: 1px solid #c5b6a3;
+			border-top: 1px solid #c5b6a3;
+			border-right: 1px solid #c5b6a3;
+			border-bottom: 1px solid #fff;
+			&.active{
+				border-left: 1px solid #fff;
+				border-top: 1px solid #fff;
+				border-right: 1px solid #fff;
+				border-bottom: 1px solid #c5b6a3;
+				background: rgba(0,0,0,0.9);
+			}
+		}
+		&_a{
+			display: block;
+			
+			text-align: center;
+			color: #fff;
+			background: none;
+			&:hover{
+				color: #fff;
+				background: none !important;
+			}
+			&:active{
+				color: #fff;
+				background: none !important;
+			}
+			&:focus{
+				color: #fff;
+				background: none !important;
+			}
+		}
+		&_title{
+			font-family: PrCondExLight, Arial, Helvetica, sans-serif;
+			font-size: 36px;
+		}
+		&_desc{
+			font-size: 20px;
+			height: 50px;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+}
+.constructor__tab-content{
+	background: rgba(0,0,0,0.9);
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+}
+.constructor-vcard{
+	box-shadow: none;
+	cursor: pointer;
+	&:hover{
+		box-shadow: none;
+	}
+
+	& .vertical-card__img_wrap{
+		height: 280px;
+		width: 100%;
+		display: flex;
+	}
+	& .vertical-card__img{
+		width: 80%;
+		height: 90%;
+		margin: auto;
+	}
+	& .vertical-card__description{
+		height: 110px;
+		overflow: hidden;
+	}
+}
+.constructor-pane{
+
+	&__item{
+		position: relative;
+		cursor: pointer;
+		padding: 10px;
+		border: 1px solid $bg-grey;
+		background: rgba(0,0,0,0.8);
+		padding-bottom: 5px;
+		margin-bottom: 10px;
+		margin-top: 10px;
+		&_active{
+			background: #76ce29;
+			&:before{
+				width: 95px;
+				height: 95px;
+				display: block;
+				content: "";
+				position: absolute;
+				z-index: 10;
+				top: 4px;
+				left: -2px;
+				background-image: asset-url("constructor/icon-ok.png"); 
+				background-size: contain;
+				background-position: center center;
+			}
+
+			& .constructor-pane__item{
+				background: #76ce29;
+				border: 1px solid #000;
+			}
+			& .constructor-pane__desc{
+				color: #000;
+			}
+		}
+	}
+	&__img-block{
+		border: 1px solid $bg-grey;
+		display: flex;
+		background: #fff;
+		height: 310px;
+		margin-bottom: 5px;
+	}
+	&__img{
+		margin: auto;
+		
+		&_full{
+			width: 100%;
+			height: 100%;
+		}
+		&_tall{
+			height: 85%;
+			width: auto;
+		}
+		&_wide{
+			width: 90%;
+			height: auto;
+		}
+	}
+	&__desc{
+		font-size: 18px;
+		height: 2em;
+		text-overflow: ellipsis;
+		text-align: center;
+		overflow: hidden;
+	}
+}
+
+
+/*xs */
+@media all and (max-width: 767px){
+	.constructor__table{
+		bottom: 325px;
+	}
+	.constructor__top{
+		padding-bottom: 0;
+	}
+	.constructor__top_left{
+		height: 400px;
+	}
+	.constructor__top_right{
+		text-align: center;
+	}
+	.constructor__tab_li{
+		width: 50%;
+	}
+	.constructor__bottom{
+		margin-top: 0;
+	}
+	.constructor__btn-callback{
+		margin-bottom: 10px;
+	}
+}
+/*sm */
+@media all and (min-width: 768px) and (max-width: 991px){
+	.constructor__top_left{
+		height: 550px;
+	}
+	.constructor__logo{
+		left: 0;
+	}
+	.constructor__bottom{
+		margin-top: -45px;
+	}
+}
+/*md */
+@media all and (min-width: 992px) and (max-width: 1199px){
+	.constructor__top_left{
+		height: 550px;
+	}
+	.constructor__logo{
+		left: 0;
+	}
+	.constructor__bottom{
+		margin-top: -45px;
+	}
+
+}
+/*lg */
+@media all and (min-width: 1200px){
+
+}

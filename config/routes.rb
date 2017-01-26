@@ -20,4 +20,8 @@ Rails.application.routes.draw do
   get '/about', to: 'home#about'
   # контакты
   get '/contacts', to: 'home#contacts'
+  # сертификаты
+  get '/certificates', to: 'home#certificates'
+  # конструктор
+  get '/constructor', to: 'home#constructor'
 end

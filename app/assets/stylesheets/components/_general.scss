@@ -187,6 +187,27 @@ a:active{
 .btn__ask-question{
 	padding: 14px 30px;
 }
+/* lightgallery plugin */
+.lg-icon{
+	font-family: 'Glyphicons Halflings';
+}
+.lg-actions{
+	.lg-prev:after{
+		content: "\e091";	
+	}	
+	.lg-next:before{
+		content: "\e092";	
+	}	
+}
+.lg-toolbar{
+	.lg-close:after{
+		content: "\e014";	
+	}
+}
+
+
+
+
 /*xs */
 @media all and (max-width: 767px){
 	.have-questions{

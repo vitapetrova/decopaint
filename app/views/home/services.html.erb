@@ -20,6 +20,23 @@
 			</div>
 
 			<!-- блок других проектов, как в нижней части наших "works/show" section.our-works-main__projects, вылетает на works.each -->
+		      <section class="our-works-main__projects">
+		        <div class="our-works-main-projects__title-block">
+		          <h3 class="our-works-main-projects__title">Другие проекты</h3>
+		        </div>
+		        <div class="row">
+		          <%# @else_works.each do |work|%>
+		            <div class="col-sm-6 col-md-4">
+		              <%#=link_to work_path(work), class:'our-works-main-projects__item' do%>
+		                <img src="<%=work.image.url%>" alt="Изображение дизайн проекта" class="our-works-main-projects__item_img">
+		              <%#end%>
+		            </div>
+		          <%#end%>
+		        </div><!-- /.row -->
+		        <div class="our-works-main-projects__anchor-block text-center">
+		          <%#=link_to 'Смотреть все работы', works_path%>
+		        </div>
+		      </section><!-- /.our-works-main-projects -->
 
 			<!-- блок "остались вопросы" -->
 			<section class="have-questions">
