@@ -16,3 +16,6 @@ Paperclip::Attachment.default_options.update(
   s3_region: 'eu-central-1',
   s3_protocol: 'https'
 )
+Paperclip.options[:content_type_mappings] = {
+  :jpg => 'application/jpeg'
+}
