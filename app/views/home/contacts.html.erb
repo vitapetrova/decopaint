@@ -30,13 +30,15 @@
 					<input type="text" class="form-control contacts-form__input contacts-form__name" name="contacts__name" placeholder="Имя">
 					<input type="text" class="form-control contacts-form__input contacts-form__phone" name="contacts__phone" placeholder="Номер телефона">
 					<input type="email" class="form-control contacts-form__input contacts-form__email" name="contacts__email" placeholder="E-mail">
-					<textarea class="form-control contacts-form__input contacts-form__message" rows="3" placeholder="Сообщение"></textarea>
-					<div class="text-center contacts-form__button-block"><!-- кнопка на конструктор -->
+					<textarea class="form-control contacts-form__input contacts-form__message" name="contacts__message" rows="3" placeholder="Сообщение"></textarea>
+					<div class="text-center contacts-form__button-block">
 						<button class="btn btn__grey-bg btn__grey-bg_normal contacts-form__button" type="submit">Отправить</button>
 					</div>
+				</form>
 			</div>
 		</div><!-- /.row -->
 
 </div><!-- /.contacts container -->
 
+<!-- работает пока скрипты загружаются сверху страницы, если буду снизу то убрать callback из строки и вызвать вручную из скрипта -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsbs2_8wXBSmpsMZ5nLnMEfaKpjbu5o74&callback=initMap"></script>

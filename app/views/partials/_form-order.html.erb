@@ -1,0 +1,32 @@
+<!-- modal popup with form  to ask questions -->
+<div class="modal fade form-order__modal" tabindex="-1" role="dialog" id="form-order">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title form-ask__title">Заказать</h4>
+      </div>
+
+      <div class="modal-body">
+          <form class="order-form">
+            <div class="form-group">
+              <input type="text" class="form-control order-form__input order-form__name" name="order-form__name" placeholder="Ваше имя" required="required">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control order-form__input order-form__phone" name="order-form__phone" placeholder="Номер телефона" required="required">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control order-form__input order-form__email" name="order-form__email" placeholder="Ваш email" required="required">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control order-form__input order-form__address" rows="3" name="order-form__address" placeholder="Введите адрес для доставки (при необходимости)"></textarea>
+            </div>
+            <div class="text-center order-form__button-block">
+              <button class="btn btn__grey-bg btn__grey-bg_normal order-form__button" type="submit">Отправить</button>
+            </div>
+          </form>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
