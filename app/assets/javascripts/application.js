@@ -7,7 +7,4 @@
 //= require lightgallery
 //= require owl.carousel
 
-//= require ckeditor/override
-//= require ckeditor/init
-
 //= require main.js.erb
