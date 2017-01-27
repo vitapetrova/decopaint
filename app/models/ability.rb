@@ -7,6 +7,7 @@ class Ability
       user ||= User.new # guest user (not logged in)
       if user.has_role? :admin
         can :access, :rails_admin
+        can :access, :ckeditor
         can :dashboard
         can :manage, :all
       else
