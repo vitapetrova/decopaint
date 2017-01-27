@@ -20,6 +20,13 @@ $( document ).ready(function() {
           }
     });
 
+    //плавная прокрутка внутри страницы
+    $('a[href^="#"]').click(function(){
+    //Сохраняем значение атрибута href в переменной:
+    var target = $(this).attr('href');
+    $('html, body').animate({scrollTop: $(target).offset().top}, 500);
+    return false;
+  });
 
 
 //скрипты для главной
@@ -168,8 +175,9 @@ $( document ).ready(function() {
         }
       });
       //костыль для фона кнопки
-      var cacheImg = new  Image();
+      var cacheImg = new  Image(), cacheImg2 = new  Image();
       cacheImg.src=  "<%= asset_path('grey-button-bg-hover.png') %>";
+      cacheImg2.src=  "<%= asset_path('big-block-bg-hover.png') %>";
 
       //исчезновение блока лого на главной через пять секунд, и появление при наведении
       var opacityFlag = false;

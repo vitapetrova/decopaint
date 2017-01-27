@@ -14,11 +14,11 @@
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 ">
 
-         <!--  <h1 class="catalog__title"><</h1> -->
+          <h1 class="catalog__title">Заголовок</h1>
           <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-              <div class="catalog__descroption">
-
+            <div class="col-md-12">
+              <div class="catalog__description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil repellendus ipsum voluptas perspiciatis fugit, dolorem fugiat quo autem incidunt quod! Ratione excepturi iusto rem quisquam vel labore animi quam cum?
               </div>
             </div>
           </div>
@@ -31,8 +31,10 @@
                     <div class="vertical-card__img_wrap">
                       <!-- добавить какое-то другое изображение при наведении  -->
                       <!-- добавить в админке хотя бы одно фото обязательно -->
+                      <!-- добавил, первая картинка видна сразу, вторая при наведении на блок с картинкой -->
                       <% main_image ||= product.product_images.main.first || product.product_images.first%>
                       <img src="<%=main_image.image.url %>" class="vertical-card__img" alt="ptoduct title">
+                      <img src="<%= asset_path('our-works-main/img1.jpg') %>" class="vertical-card__img_secondary" alt="">
                   <div class="card__type card__type_chalk" style="background-image:url(<%=product.mini_image.url%>);">
                   </div>
                       </div>
@@ -59,8 +61,8 @@
              </ul>
           </div> -->
 <!--           <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-              <div class="catalog__descroption_bottom">
+            <div class="col-md-12">
+              <div class="catalog__description_bottom">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptatibus fugit, laborum dolores nulla architecto dolore culpa, quidem consequuntur quis cumque cupiditate vero aliquid quod, voluptas dolorem fuga rerum dicta!</p>
                 <p>Sequi non autem magnam nemo earum, alias beatae repudiandae distinctio officiis, voluptas nisi aspernatur veritatis, velit, quis neque. Eligendi, aliquid. Alias animi non iure dolor excepturi qui cum officia quidem.</p>
               </div>
