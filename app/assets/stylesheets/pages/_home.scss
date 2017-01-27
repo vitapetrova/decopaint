@@ -449,6 +449,7 @@
 		margin: 0 auto;
 		&:hover{
 			background-image: asset-url("big-block-bg-hover.png");
+			transition: 0.3s ease-out;
 			& .reviews__title{
 				color:#000;
 			}

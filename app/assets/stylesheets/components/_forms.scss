@@ -1,0 +1,88 @@
+/* стили формы задать вопрос в футере */
+.form-ask{
+
+	&__title{
+		font-family: PrCondExLight, Arial, Helvetica, sans-serif;
+		font-size: 48px;
+		color: #000;
+		text-align: center;
+		line-height: 1;
+	}
+}
+.ask-form{
+
+	&__input{
+		font-size: 20px;
+	}
+	&__name{
+		height: 38px;
+	}
+	&__phone{
+		height: 38px;
+	}
+	&__message{
+		resize: vertical;
+	}
+	&__button-block{
+
+	}
+	&__button{
+		padding: 11px 50px;
+	}
+}
+.form-ask__modal{
+
+	& .modal-header{
+
+		& .close{
+			font-size: 30px;
+			color: #000;	
+		}
+	}
+}
+
+/* стили формы заказа на странице товара */
+.form-order{
+
+	&__title{
+		font-family: PrCondExLight, Arial, Helvetica, sans-serif;
+		font-size: 48px;
+		color: #000;
+		text-align: center;
+		line-height: 1;
+	}
+}
+.order-form{
+
+	&__input{
+		font-size: 20px;
+	}
+	&__name{
+		height: 38px;
+	}
+	&__phone{
+		height: 38px;
+	}
+	&__email{
+		height: 38px;
+	}
+	&__address{
+		resize: vertical;
+	}
+	&__button-block{
+
+	}
+	&__button{
+		padding: 11px 50px;
+	}
+}
+.form-order__modal{
+
+	& .modal-header{
+
+		& .close{
+			font-size: 30px;
+			color: #000;	
+		}
+	}
+}
