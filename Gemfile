@@ -15,7 +15,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'russian', '~> 0.6.0'
 
 gem 'rails_admin', '~> 1.0'
-gem 'ckeditor'
+gem "ckeditor", :git => "https://github.com/galetahub/ckeditor.git"
 gem 'paperclip'
 gem 'aws-sdk', '~> 2'
 
