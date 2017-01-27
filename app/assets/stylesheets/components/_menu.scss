@@ -45,18 +45,34 @@
 	}
 	&__phones{
 		color:#fff;
-		font-size: 36px;
+		font-size: 30px;
 		margin-right: 5px;
+		height: 50px;
+		line-height: 50px;
 
-		&_phone{
-
-		}
 		&_phone-icon{
 			display: inline-block;
+			vertical-align: middle;
 		}
+	}
+	&__phone{
+		color: #fff;
+		display: inline-block;
 	}
 }
 .phone-icon{
+	&__velcom{
+		width: 27px;
+		height: 27px;
+		background-image: asset-url("sprites/velcom.png");
+		background-size: cover;
+	}
+	&__telegram{
+		width: 27px;
+		height: 27px;
+		background-image: asset-url("sprites/telegram.png");
+		background-size: cover;		
+	}
 	&__viber{
 		@include sprite($icon-viber)
 	}
@@ -131,9 +147,16 @@
 	}
 }
 /*  еще фикс для телефона чтобы он поднимался наверх*/
-@media all and (min-width: 768px) and (max-width: 972px){
+/*@media all and (min-width: 768px) and (max-width: 972px){
 	.main-menu__phones{
 		margin-top: -55px;
 	}
 
+}*/
+
+@media all and (max-width: 767px){
+	.main-menu__phones{
+		font-size: 19px;
+		padding-left: 30px;
+	}
 }
