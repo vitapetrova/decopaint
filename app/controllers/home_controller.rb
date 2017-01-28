@@ -9,4 +9,8 @@ class HomeController < ApplicationController
   def about
     @manufacturers = Manufacturer.all
   end
+
+  def certificates
+    @certificates = Certificate.all
+  end
 end
