@@ -34,35 +34,35 @@
 							   class_style = 'availability_no' if @product.status == 'Нет в наличии' %>
 							<div class="product-info__availability <%=class_style%>"><%=@product.status%></div>
 
-							<form class="form-horizontal product-info__form" name="product-info__form">
-
-								<div class="product-info__form-text">Выберите объём*</div>
+							<%= form_tag(select_product_path, method: :post, remote: true, class:"form-horizontal product-info__form") do |f| %>
+								<%= hidden_field_tag(:name, "#{@product.title}") %>
+								<div class="product-info__form-text" onclick="insert_price()">Выберите объём*</div>
 								  <div class="form-group">
 								    <div class="col-md-5">
-								        <select class="form-control product-info__volume" name="product-info__volume">
-										  <option value="volume1">0.5 литра</option>
-										  <option value="volume2">1.5 литра</option>
-										  <option value="volume3">Бочка</option>
-										</select>
+											<select name="volume" id="volume" class="form-control product-info__volume" onchange="insert_price()">
+													<%@all_volumes.each do |key, value|%>
+														<option data-price1="<%=value[0]%>" data-price2="<%=value[1]%>" value="<%=key%>" ><%=key%></option>
+													<%end%>
+											</select>
+											<%= hidden_field_tag(:price1, "#{@all_volumes.first[1][0]}") %>
+											<%= hidden_field_tag(:price2, "#{@all_volumes.first[1][1]}") %>
 								    </div>
 								    <div class="col-md-7">
 								      <div class="product-info__price"><%=@product.price%> руб.</div>
-								      <!-- добавить зачеркнутую(вторую цену) стили-->
-								      <%=@product.price2%>
+								      <!-- добавить стили  - зачеркнутая(вторая цена) . Класс сохранить, т.к. на нем завязан js-->
+								      <p class="discount_price"> <%=@product.price2%></p>
 								    </div>
 								  </div><!-- /.строка с объемом и ценой -->
 
 								  <div class="checkbox product-info__need-painting">
-									  <label>
-									    <input type="checkbox" value="need-painting" name="need-painting">
-									    <!-- ??? -->
-									    Необходимо нанесение
-									  </label>
+									  <%=check_box_tag :painting%> Необходимо нанесение
 								  </div><!-- /.чекбокс -->
 								  <a href="/works" class="product-info__to-portfolio">Посмотреть наши работы</a>
 								  <div class="product-info__note"><%=@product.min_description%></div>
 								  <div class="form-group">
 									    <div class="col-xs-12 col-sm-6 col-md-5">
+												<!-- вставить вместо инпута + стили -->
+												<%=number_field_tag :amount, nil, in: 1..20, step: 1, value: 1, class:"" %>
 									      <div class="input-group product-info__amount_group">
 											  <span class="input-group-btn">
 											  	 <button class="btn btn-default product-info__amount_left" type="button">
@@ -78,11 +78,11 @@
 											</div>
 									    </div>
 									    <div class="col-xs-12 col-sm-6 col-md-7 text-center">
-									      <button class="btn btn__grey-bg btn__product-form" data-toggle="modal" data-target="#form-order">Заказать</button>
+									      <%= submit_tag "Заказать", class: "btn btn__grey-bg btn__product-form"%>
 									    </div>
 								  </div><!-- /.количество и кнопка заказать -->
 
-							</form><!-- /. форма с данными для заказа -->
+							<%end%> <!-- /. форма с данными для заказа -->
 
 
 
