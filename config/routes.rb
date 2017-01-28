@@ -7,13 +7,14 @@ Rails.application.routes.draw do
   resources :products, only:[:index, :show]
   resources :category_products, only:[:show]
   resources :works, only:[:index, :show]
+  resources :questions, only:[:create]
 
   #временные страницы
   get '/delivery', to: 'home#delivery'
 
   # как доставка, но в конце кнопка в конструктор
   get '/to-designers', to: 'home#to-designers'
-  # как доставка, но в конце блоки "наши работы" и "остались вопросы", в блоке наши работы ошибка на "works.each" 
+  # как доставка, но в конце блоки "наши работы" и "остались вопросы", в блоке наши работы ошибка на "works.each"
   # если скопировать страницы наших работ
   get '/services', to: 'home#services'
   # о нас
