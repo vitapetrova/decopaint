@@ -26,15 +26,16 @@
 			</div>
 			<div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-1">
 				<h2 class="contacts__secondary-title">Задать вопрос</h2>
-				<form class="contacts-form">
-					<input type="text" class="form-control contacts-form__input contacts-form__name" name="contacts__name" placeholder="Имя">
-					<input type="text" class="form-control contacts-form__input contacts-form__phone" name="contacts__phone" placeholder="Номер телефона">
-					<input type="email" class="form-control contacts-form__input contacts-form__email" name="contacts__email" placeholder="E-mail">
-					<textarea class="form-control contacts-form__input contacts-form__message" name="contacts__message" rows="3" placeholder="Сообщение"></textarea>
+				<div class="errors"></div>
+				<%= form_for(Question.new, url: questions_path, remote: true) do |f| %>
+					<%= f.text_field :name, placeholder: "Имя", class:"form-control contacts-form__input contacts-form__name" %>
+					<%= f.telephone_field :phone, placeholder: "Номер телефона", class:"form-control contacts-form__input contacts-form__phone"%>
+					<%= f.email_field :email, placeholder: "E-mail", class:"form-control contacts-form__input contacts-form__email" %>
+					<%= f.text_area :message, placeholder: "Cообщение", rows: 3, class:"form-control contacts-form__input contacts-form__message" %>
 					<div class="text-center contacts-form__button-block">
-						<button class="btn btn__grey-bg btn__grey-bg_normal contacts-form__button" type="submit">Отправить</button>
+						<%= f.submit "Отправить", class: 'btn btn__grey-bg btn__grey-bg_normal contacts-form__button' %>
 					</div>
-				</form>
+				<%end%>
 			</div>
 		</div><!-- /.row -->
 

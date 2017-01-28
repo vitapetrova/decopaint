@@ -1,5 +1,14 @@
 <% if flash.now[:errors].present? %>
-  $("#form-ask .errors").html("<%= j(render partial: 'partials/errors', locals: { errors: flash.now[:errors] }) %>")
+  $("#form-ask .errors").html("<%= j(render partial: 'partials/errors', locals: { errors: flash.now[:errors] }) %>");
+  // форма на странице контакты
+  $("#new_question .errors").html("<%= j(render partial: 'partials/errors', locals: { errors: flash.now[:errors] }) %>");
 <%else%>
+  $("#form-ask").modal('show');
   $("#form-ask").find('.modal-body').html("<p>Спасибо за Ваш вопрос.<br>Наши менеджеры свяжутся с Вами в течение получаса.</p>");
+  //очистка формы на странице контакты
+  $("#new_question").find('#question_email').val("");
+  $("#new_question").find('#question_name').val("");
+  $("#new_question").find('#question_phone').val("");
+  $("#new_question").find('#question_message').val("");
+  $("#new_question").find('.errors').html("");
 <%end%>
