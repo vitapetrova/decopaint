@@ -14,12 +14,11 @@ Rails.application.routes.draw do
   get '/about', to: 'home#about'
   get '/contacts', to: 'home#contacts'
   get '/certificates', to: 'home#certificates'
+  get '/to-designers', to: 'home#to_designers'
 
-  # как доставка, но в конце кнопка в конструктор
-  get '/to-designers', to: 'home#to-designers'
-  # как доставка, но в конце блоки "наши работы" и "остались вопросы", в блоке наши работы ошибка на "works.each"
-  # если скопировать страницы наших работ
+# все статичные сервисы?
   get '/services', to: 'home#services'
-  # конструктор
+
+  # конструктор. Большая таска
   get '/constructor', to: 'home#constructor'
 end

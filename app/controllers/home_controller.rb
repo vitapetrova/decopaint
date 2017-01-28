@@ -13,4 +13,8 @@ class HomeController < ApplicationController
   def certificates
     @certificates = Certificate.all
   end
+
+  def services
+    @else_works = CategoryWork.first.works.limit(3)
+  end
 end
