@@ -15,7 +15,7 @@
 						<div class="col-xs-12 col-sm-12 col-md-6 product-info__left-col">
 							<% main_image ||= @product.product_images.main.first || @product.product_images.first%>
 							<img src="<%= main_image.image.url %>" alt="Краска збс" class="img-responsive product-info__main-img product__lg_item" data-src="<%= main_image.image.url %>">
-							<div class="product-slider__block"><!-- сдайдер маленьких изображений -->
+							<div class="product-slider__block"><!-- слайдер маленьких изображений -->
 								<div class="product-slider__navigation"></div>
 								<div class="owl-carousel product-slider">
 									<%@product.product_images.each do |product_image|%>
