@@ -1,6 +1,19 @@
+// вставка цены из выбранного объема в товарах
+function insert_price(){
+  console.log('price');
+  selectBox = document.getElementById("volume");
+  price1 = selectBox.options[selectBox.selectedIndex].getAttribute('data-price1');
+  price2 = selectBox.options[selectBox.selectedIndex].getAttribute('data-price2');
+  $(".product-page .product-info__price").text(price1+"руб.");
+  $(".product-page .discount_price").text(price2+"руб.");
+  // вставка в инпуты
+  $(".product-page #price1").val(price1);
+  $(".product-page #price2").val(price2);
+}
+
 $( document ).ready(function() {
 
-//скрипты общие 
+//скрипты общие
 
     //добавление и настройки выезжающего бокового меню
     $('.offcanvas__toggle-button').sidr({
@@ -219,7 +232,7 @@ $( document ).ready(function() {
       download: false
   });
 
-//разное 
+//разное
 
     //скрипт слайдера доп изображений на страницы товара
     $(".product-slider").owlCarousel({
@@ -344,9 +357,9 @@ function initMap() {
         "stylers": [{"color": "#000000"}, {"lightness": 19}]
     }, {"featureType": "water", "elementType": "geometry", "stylers": [{"color": "#000000"}, {"lightness": 17}]}]);
 
-    var image = new google.maps.MarkerImage('<%= asset_path('contacts/map-marker.png') %>',      
-      new google.maps.Size(50, 70),      
-      new google.maps.Point(0,0),      
+    var image = new google.maps.MarkerImage('<%= asset_path('contacts/map-marker.png') %>',
+      new google.maps.Size(50, 70),
+      new google.maps.Point(0,0),
       new google.maps.Point(0, 70));
 
     // настройки маркера

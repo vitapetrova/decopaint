@@ -1,0 +1,5 @@
+<% if flash.now[:errors].present? %>
+  $("#form-order .errors").html("<%= j(render partial: 'partials/errors', locals: { errors: flash.now[:errors] }) %>");
+<%else%>
+  $("#form-order").find('.modal-body').html("<p>Спасибо за Ваш заказ.<br>Наши менеджеры свяжутся с Вами в течение получаса.</p>");
+<%end%>

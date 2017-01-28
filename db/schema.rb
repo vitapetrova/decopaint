@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170128182648) do
+ActiveRecord::Schema.define(version: 20170128230148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,21 @@ ActiveRecord::Schema.define(version: 20170128182648) do
     t.datetime "updated_at",         null: false
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string   "name_product"
+    t.string   "volume"
+    t.float    "price1"
+    t.float    "price2"
+    t.boolean  "painting"
+    t.integer  "amount"
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.text     "address"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "product_images", force: :cascade do |t|
     t.integer  "product_id"
     t.string   "image_file_name"
@@ -95,6 +110,15 @@ ActiveRecord::Schema.define(version: 20170128182648) do
     t.string   "mini_image_content_type"
     t.integer  "mini_image_file_size"
     t.datetime "mini_image_updated_at"
+    t.string   "volume"
+    t.string   "volume_2"
+    t.string   "volume_3"
+    t.float    "price_2"
+    t.float    "price_22"
+    t.float    "price_3"
+    t.float    "price_32"
+    t.boolean  "painting"
+    t.integer  "amount"
     t.index ["category_product_id"], name: "index_products_on_category_product_id", using: :btree
   end
 

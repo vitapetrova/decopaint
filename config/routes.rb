@@ -4,10 +4,14 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'home#index'
   get 'home/index'
-  resources :products, only:[:index, :show]
+  resources :products, only:[:index, :show] do
+    post 'select', on: :member
+  end
   resources :category_products, only:[:show]
   resources :works, only:[:index, :show]
   resources :questions, only:[:create]
+  resources :orders, only:[:create]
+
 
   #home страницы
   get '/delivery', to: 'home#delivery'

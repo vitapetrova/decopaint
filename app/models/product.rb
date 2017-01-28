@@ -10,7 +10,8 @@ class Product < ApplicationRecord
 
   rails_admin do
     edit do
-      fields :title, :price, :price2, :status, :min_description, :mini_image
+      fields :title, :volume, :price, :price2, :volume_2, :price_2, :price_22, :volume_3, :price_3, :price_32
+      fields :status, :min_description, :mini_image
       field :description, :ck_editor
       field :additional_description, :ck_editor
     end
