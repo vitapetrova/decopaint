@@ -8,20 +8,21 @@
       </div>
 
       <div class="modal-body">
-          <form class="ask-form">
+          <div class="errors"></div>
+          <%= form_for(Question.new, url: questions_path, remote: true) do |f| %>
             <div class="form-group">
-              <input type="text" class="form-control ask-form__input ask-form__name" name="ask-form__name" placeholder="Ваше имя" required="required">
+              <%= f.text_field :name, placeholder: "Ваше имя", class:"form-control ask-form__input ask-form__name" %>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control ask-form__input ask-form__phone" name="ask-form__phone" placeholder="Номер телефона" required="required">
+              <%= f.telephone_field :phone, placeholder: "Ваш телефон", class:"form-control ask-form__input ask-form__phone"%>
             </div>
             <div class="form-group">
-              <textarea class="form-control ask-form__input ask-form__message" name="ask-form__message" rows="3" placeholder="Введите ваше сообщение (также вы можете оставить свой номер телефона, мы перезвоним Вам и ответим на все интересущие вопросы)"></textarea>
+               <%= f.text_area :message, placeholder: "Введите ваше сообщение (также вы можете оставить свой номер телефона, мы перезвоним Вам и ответим на все интересущие вопросы)", rows: 3, class:"form-control ask-form__input ask-form__message" %>
             </div>
             <div class="text-center ask-form__button-block">
-              <button class="btn btn__grey-bg btn__grey-bg_normal ask-form__button" type="submit">Отправить</button>
+               <%= f.submit "Отправить", class: 'btn btn__grey-bg btn__grey-bg_normal ask-form__button' %>
             </div>
-          </form>
+          <%end%>
       </div>
 
     </div><!-- /.modal-content -->

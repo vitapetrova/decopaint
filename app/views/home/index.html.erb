@@ -9,9 +9,9 @@
 			<div class="col-xs-12 reset-paddings">
 				<div class="slider-bg owl-carousel">
 					<%@sliders.each do |slider|%>
-					<div class="slider-bg__item">
-						<div class="slider-bg__img-block slider-bg__img_1" style="background-image:url(<%=slider.image.url%>);"></div>
-					</div>
+						<div class="slider-bg__item">
+							<div class="slider-bg__img-block slider-bg__img_1" style="background-image:url(<%=slider.image.url%>);"></div>
+						</div>
 					<%end%>
 
 				</div><!-- /.back slider	 -->
@@ -343,18 +343,13 @@
 			<div class="col-xs-12">
 
 				<div class="owl-carousel brands__carousel">
-
-					<div class="brands__item brands__item_1"></div>
-					<div class="brands__item brands__item_2"></div>
-					<div class="brands__item brands__item_3"></div>
-					<div class="brands__item brands__item_4"></div>
-					<div class="brands__item brands__item_5"></div>
-					<div class="brands__item brands__item_6"></div>
-					<div class="brands__item brands__item_3"></div>
-					<div class="brands__item brands__item_4"></div>
-					<div class="brands__item brands__item_5"></div>
-					<div class="brands__item brands__item_6"></div>
-
+					<% @manufacturers.each do |manufacturer| %>
+						<div class="brands__item" style="background-image:url(<%=manufacturer.image.url%>) ">
+							<%if manufacturer.link && manufacturer.link.present?%>
+			          <%=link_to "", manufacturer.link, style:'display:block; width:100%; height: 100%', target: :_blank %>
+			        <%end%>
+						</div>
+					<%end%>
 				</div><!-- /.brands carousel -->
 
 			</div>
