@@ -69,15 +69,16 @@
 								  <a href="/works" class="product-info__to-portfolio">Посмотреть наши работы</a>
 								  <div class="product-info__note"><%=@product.min_description%></div>
 								  <div class="form-group">
-									    <div class="col-xs-12 col-sm-6 col-md-5">	
+									    <div class="col-xs-12 col-sm-6 col-md-5">
 									      <div class="input-group product-info__amount_group">
 											  <span class="input-group-btn">
 											  	 <button class="btn btn-default product-info__amount_control product-info__amount_left" type="button">
 											  	 	<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
 											  	 </button>
 											  </span>
-											  <!-- поменять числовое поле на обычное потому что разные браузеры добавляют разные элементы которые меняют вид поля, значения меняются скриптом от 1 до 20 по нажатию на кнопки -->
-											  <%=number_field_tag :amount, nil, in: 1..20, step: 1, value: 1, class:"form-control product-info__amount", disabled: true %>
+
+												<input type="text" name="amount" id="amount" class="form-control product-info__amount" value="1" >
+											  <%#=number_field_tag :amount, nil, in: 1..20, step: 1, value: 1, class:"form-control product-info__amount", disabled: true %>
 											  <span class="input-group-btn"><!-- disabled: true -->
 											  	 <button class="btn btn-default product-info__amount_control product-info__amount_right" type="button">
 											  	 	<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
@@ -123,69 +124,32 @@
 
 				</section>
 
-
+				<%if @complementary_products.count > 0 %>
 				<section class="related-products">
 					<h2 class="related-products__title">Вместе с этим товаром покупают:</h2>
 					<div class="row">
-						<div class="col-xs-12 col-sm-6 col-md-4">
-
-							<a href="#" class="vertical-card__a">
-							    <div class="thumbnail vertical-card related-products__card">
-							      <div class="vertical-card__img_wrap">
-							      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
-									<div class="card__type card__type_chalk">
-									</div>
-							      	</div>
-							      <div class="caption">
-									<div class="vertical-card__description">
-										Грифельная краска с эффектом школьной доски Siberia колеруемая
-									</div>
-									<div class="vertical-card__price">115 руб</div>
-							      </div>
-							    </div>
-							</a>
-
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-4">
-
-							<a href="#" class="vertical-card__a">
-							    <div class="thumbnail vertical-card related-products__card">
-							      <div class="vertical-card__img_wrap">
-							      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
-									<div class="card__type card__type_chalk">
-									</div>
-							      	</div>
-							      <div class="caption">
-									<div class="vertical-card__description">
-										Грифельная краска с эффектом школьной доски Siberia колеруемая
-									</div>
-									<div class="vertical-card__price">115 руб</div>
-							      </div>
-							    </div>
-							</a>
-
-						</div>
-						<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-0">
-
-							<a href="#" class="vertical-card__a">
-							    <div class="thumbnail vertical-card related-products__card">
-							      <div class="vertical-card__img_wrap">
-							      	<img src="<%= asset_path('product/pot-wide1.jpg') %>" class="vertical-card__img" alt="ptoduct title">
-									<div class="card__type card__type_chalk">
-									</div>
-							      	</div>
-							      <div class="caption">
-									<div class="vertical-card__description">
-										Грифельная краска с эффектом школьной доски Siberia колеруемая
-									</div>
-									<div class="vertical-card__price">115 руб</div>
-							      </div>
-							    </div>
-							</a>
-
-						</div>
+						<%@complementary_products.each do |product|%>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<%=link_to product_path(product), class:'vertical-card__a' do%>
+								  <div class="thumbnail vertical-card related-products__card">
+								    <div class="vertical-card__img_wrap">
+								     	<% main_image ||= product.product_images.main.first || product.product_images.first%>
+                      <% hover_image = product.product_images.order("priority").second || product.product_images.first %>
+                      <img src="<%=main_image.image.url %>" class="vertical-card__img" alt="ptoduct title">
+                      <img src="<%= hover_image.image.url %>" class="vertical-card__img_secondary" alt="">
+											<div class="card__type card__type_chalk" style="background-image:url(<%=product.mini_image.url%>);"></div>
+								    </div>
+								    <div class="caption">
+											<div class="vertical-card__description"><%=product.title%></div>
+											<div class="vertical-card__price"><%=product.price%></div>
+								    </div>
+								  </div>
+								<%end%>
+							</div>
+						<%end%>
 					</div><!-- /.row -->
 				</section><!-- /.related-products -->
+				<%end%>
 
 			</div><!-- /.right col -->
 		</div><!-- /.row -->

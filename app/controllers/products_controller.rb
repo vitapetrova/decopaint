@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @category_products_menu = CategoryProduct.where(show_menu: true)
+    @complementary_products = @product.complementary_products
 
     @all_volumes = {}
     @all_volumes[@product.volume] = [@product.price, @product.price2]
