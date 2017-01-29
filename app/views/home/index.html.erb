@@ -290,40 +290,17 @@
 			<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 
 				<div class="owl-carousel reviews__carousel">
-
-				  <div class="reviews__item">
-				  	<div class="reviews__top-line">
-				  			<div class="reviews__img-block">
-				  				<img src="<%= asset_path('home/reviews-slider/epam.png') %>" alt="Company logo" class="reviews__img">
-				  			</div>
-				  			<div class="reviews__title">Компания Epam</div>
-				  	</div>
-					<div class="reviews__review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque facilis, atque reprehenderit rerum. Itaque, doloribus. Alias ut vero deleniti repellat excepturi a atque similique, pariatur rerum iste accusantium impedit ducimus! Alias ut vero deleniti repellat excepturi a atque similique, pariatur rerum iste accusantium impedit ducimus!
-					</div>
-				  </div>
-
-				  <div class="reviews__item">
-				  	<div class="reviews__top-line">
-				  			<div class="reviews__img-block">
-				  				<img src="<%= asset_path('home/reviews-slider/velcom.png') %>" alt="Company logo" class="reviews__img">
-				  			</div>
-				  			<div class="reviews__title">Компания Velcom</div>
-				  	</div>
-					<div class="reviews__review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque facilis, atque reprehenderit rerum. Itaque, doloribus. Alias ut vero deleniti repellat excepturi a atque similique, pariatur rerum iste accusantium impedit ducimus! Alias ut vero deleniti repellat excepturi a atque similique, pariatur rerum iste accusantium impedit ducimus !Alias ut vero deleniti repellat excepturi a atque similique, pariatur rerum iste accusantium impedit ducimus!
-					</div>
-				  </div>
-
-				  <div class="reviews__item">
-				  	<div class="reviews__top-line">
-				  			<div class="reviews__img-block">
-				  				<img src="<%= asset_path('home/reviews-slider/epam.png') %>" alt="Company logo" class="reviews__img">
-				  			</div>
-				  			<div class="reviews__title">Компания Epam</div>
-				  	</div>
-					<div class="reviews__review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque facilis, atque reprehenderit rerum. Itaque, doloribus. Alias ut vero deleniti repellat excepturi a atque similique, pariatur rerum iste accusantium impedit ducimus! Alias ut vero deleniti repellat excepturi a atque similique, pariatur rerum iste accusantium impedit ducimus!
-					</div>
-				  </div>
-
+					<% @reviews.each do |review|%>
+					  <div class="reviews__item">
+					  	<div class="reviews__top-line">
+					  			<div class="reviews__img-block">
+					  				<img src="<%= review.logo.url %>" alt="Company logo" class="reviews__img">
+					  			</div>
+					  			<div class="reviews__title"><%=review.title%></div>
+					  	</div>
+							<div class="reviews__review"><%=review.text%></div>
+					  </div>
+					<%end%>
 				</div><!-- /.owl-carousel -->
 
 			</div>
