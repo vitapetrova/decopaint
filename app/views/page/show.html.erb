@@ -1,0 +1,20 @@
+<!--  заголовки снаружи h1 или h2, заголовки внутри h2 или h3-->
+<div class="static-page__overlay"></div>
+
+<div class="container static-page__container static-page">
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+
+      <%= render "partials/left-menu" %>
+
+    </div><!-- /.left col -->
+
+    <div class="col-xs-12 col-sm-8 col-md-8 col-md-offset-1 col-lg-8 col-lg-offset-1"><!-- внутри этого блока лежит контент страницы, текст должен быть внутри блока .static-page__content-block, чтобы был нужный фон -->
+      <h2><%=@page.title%></h2>
+      <div class="static-page__content-block">
+        <%=@page.text.html_safe%>
+      </div>
+    </div><!-- /.right col -->
+  </div><!-- /.row -->
+</div><!-- /.container -->
