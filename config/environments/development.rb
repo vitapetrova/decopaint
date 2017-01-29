@@ -53,4 +53,10 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+
 end
+Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin; C:\Program Files\ImageMagick-7.0.4-Q16'
+#Paperclip.options[:swallow_stderr] = false
+#OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+Aws.use_bundled_cert!

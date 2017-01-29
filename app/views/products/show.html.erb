@@ -1,3 +1,5 @@
+<div class="overlay overlay__product"></div><!-- блок нужный для затемнения фонового изображения -->
+
 <div class="product-page__bg"></div>
 <div class="product-page">
 	<div class="container">
@@ -14,7 +16,12 @@
 					<div class="row product-info__row">
 						<div class="col-xs-12 col-sm-12 col-md-6 product-info__left-col">
 							<% main_image ||= @product.product_images.main.first || @product.product_images.first%>
-							<img src="<%= main_image.image.url %>" alt="Краска збс" class="img-responsive product-info__main-img product__lg_item" data-src="<%= main_image.image.url %>">
+							<div class="product-info__main-img_block">
+								<img src="<%= main_image.image.url %>" alt="Краска збс" class="img-responsive product-info__main-img " >
+								<div class="product-info__overlay product__lg_item" data-src="<%= main_image.image.url %>">
+									<img src="<%= asset_path('certificates/lupa.png') %>" alt="" class="product-info__overlay_img">
+								</div>
+							</div>
 							<div class="product-slider__block"><!-- слайдер маленьких изображений -->
 								<div class="product-slider__navigation"></div>
 								<div class="owl-carousel product-slider">
@@ -38,7 +45,7 @@
 								<%= hidden_field_tag(:name, "#{@product.title}") %>
 								<div class="product-info__form-text" onclick="insert_price()">Выберите объём*</div>
 								  <div class="form-group">
-								    <div class="col-md-5">
+								    <div class="col-md-4 col-lg-5">
 											<select name="volume" id="volume" class="form-control product-info__volume" onchange="insert_price()">
 													<%@all_volumes.each do |key, value|%>
 														<option data-price1="<%=value[0]%>" data-price2="<%=value[1]%>" value="<%=key%>" ><%=key%></option>
@@ -47,31 +54,32 @@
 											<%= hidden_field_tag(:price1, "#{@all_volumes.first[1][0]}") %>
 											<%= hidden_field_tag(:price2, "#{@all_volumes.first[1][1]}") %>
 								    </div>
-								    <div class="col-md-7">
+								    <div class="col-md-8 col-lg-7">
 								      <div class="product-info__price"><%=@product.price%> руб.</div>
 								      <!-- добавить стили  - зачеркнутая(вторая цена) . Класс сохранить, т.к. на нем завязан js-->
-								      <p class="discount_price"> <%=@product.price2%></p>
+								      <div class="product-info__price_discount discount_price"> <%=@product.price2%> руб.</div>
 								    </div>
 								  </div><!-- /.строка с объемом и ценой -->
 
 								  <div class="checkbox product-info__need-painting">
+								  	<label>
 									  <%=check_box_tag :painting%> Необходимо нанесение
+									</label>
 								  </div><!-- /.чекбокс -->
 								  <a href="/works" class="product-info__to-portfolio">Посмотреть наши работы</a>
 								  <div class="product-info__note"><%=@product.min_description%></div>
 								  <div class="form-group">
-									    <div class="col-xs-12 col-sm-6 col-md-5">
-												<!-- вставить вместо инпута + стили -->
-												<%=number_field_tag :amount, nil, in: 1..20, step: 1, value: 1, class:"" %>
+									    <div class="col-xs-12 col-sm-6 col-md-5">	
 									      <div class="input-group product-info__amount_group">
 											  <span class="input-group-btn">
-											  	 <button class="btn btn-default product-info__amount_left" type="button">
+											  	 <button class="btn btn-default product-info__amount_control product-info__amount_left" type="button">
 											  	 	<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
 											  	 </button>
 											  </span>
-											  <input type="text" class="form-control product-info__amount" value="1" disabled>
-											  <span class="input-group-btn">
-											  	 <button class="btn btn-default product-info__amount_right" type="button">
+											  <!-- поменять числовое поле на обычное потому что разные браузеры добавляют разные элементы которые меняют вид поля, значения меняются скриптом от 1 до 20 по нажатию на кнопки -->
+											  <%=number_field_tag :amount, nil, in: 1..20, step: 1, value: 1, class:"form-control product-info__amount", disabled: true %>
+											  <span class="input-group-btn"><!-- disabled: true -->
+											  	 <button class="btn btn-default product-info__amount_control product-info__amount_right" type="button">
 											  	 	<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
 											  	 </button>
 											  </span>
@@ -98,7 +106,7 @@
 				    	<a href="#pane1" data-toggle="tab" class="product-description__tabs_a">Описание товара</a>
 				    </li>
 				    <li class="product-description__tabs_item">
-				    	<a href="#pane2" data-toggle="tab" class="product-description__tabs_a">Нанесение</a>
+				    	<a href="#pane2" data-toggle="tab" class="product-description__tabs_a pan111">Нанесение</a>
 				    </li>
 				  </ul><!-- / nav tabs for product-description -->
 
@@ -107,13 +115,14 @@
 				    <div class="tab-pane fade in active product-description__pane" id="pane1">
 							<%=@product.description.html_safe%>
 				    </div><!-- / pane1 -->
-				    <div class="tab-pane fade in product-description__pane" id="pane2">
+				    <div class="tab-pane fade product-description__pane" id="pane2">
 							<%=@product.additional_description.html_safe%>
 				    </div><!-- / pane2 -->
 				  </div><!-- /.tab-content -->
 
 
 				</section>
+
 
 				<section class="related-products">
 					<h2 class="related-products__title">Вместе с этим товаром покупают:</h2>
