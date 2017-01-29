@@ -23,6 +23,8 @@ gem 'devise'
 gem 'cancancan', '~> 1.15'
 gem 'rolify'
 
+gem 'friendly_id', '~> 5.1.0'
+
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 

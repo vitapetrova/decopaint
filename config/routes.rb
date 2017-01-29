@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   resources :works, only:[:index, :show]
   resources :questions, only:[:create]
   resources :orders, only:[:create]
-
+  # статичные страницы
+  resources :page, only:[:show]
 
   #home страницы
   get '/delivery', to: 'home#delivery'
