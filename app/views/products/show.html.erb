@@ -76,8 +76,9 @@
 											  	 	<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
 											  	 </button>
 											  </span>
-											  <!-- поменять числовое поле на обычное потому что разные браузеры добавляют разные элементы которые меняют вид поля, значения меняются скриптом от 1 до 20 по нажатию на кнопки -->
-											  <%=number_field_tag :amount, nil, in: 1..20, step: 1, value: 1, class:"form-control product-info__amount", disabled: true %>
+
+												<input type="text" name="amount" id="amount" class="form-control product-info__amount" value="1" >
+											  <%#=number_field_tag :amount, nil, in: 1..20, step: 1, value: 1, class:"form-control product-info__amount", disabled: true %>
 											  <span class="input-group-btn"><!-- disabled: true -->
 											  	 <button class="btn btn-default product-info__amount_control product-info__amount_right" type="button">
 											  	 	<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
