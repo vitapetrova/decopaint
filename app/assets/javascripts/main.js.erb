@@ -36,9 +36,11 @@ $( document ).ready(function() {
     //плавная прокрутка внутри страницы
     $('a[href^="#"]').click(function(){
     //Сохраняем значение атрибута href в переменной:
-    var target = $(this).attr('href');
-    $('html, body').animate({scrollTop: $(target).offset().top}, 500);
-    return false;
+    if ( $(this).attr('href').indexOf("pane") == -1 ){//фикс для работы табов бутстрапа, в адресе не должно быть "pane"
+      var target = $(this).attr('href');
+      $('html, body').animate({scrollTop: $(target).offset().top}, 500);
+      return false;
+    }
   });
 
 
@@ -216,6 +218,26 @@ $( document ).ready(function() {
       remove: false
     });
 
+//скрипты страницы продукта
+    
+    //при клике на кнопки количества изменение количества в поле
+    $( ".product-info__amount_control" ).click(function() {
+      var button = $(this);
+      var numberInput = $(".product-info__amount");
+      var amount = +$(".product-info__amount").val();
+
+
+      //от 1 до двадцати
+      if ( button.hasClass("product-info__amount_left") ){
+          if ( amount > 1 ) numberInput.val(amount-1);
+      }
+      else 
+          if ( button.hasClass("product-info__amount_right") )
+          {
+            if ( +amount < 20 ) numberInput.val(amount+1);
+          }
+
+    });
 
 //скрипты для контактов
 
@@ -372,6 +394,6 @@ function initMap() {
     });
 
 }
-//асинхронно не хочет работать потому что
+//раскоментить если подключение скриптов перенесется вниз страницы, и убрать коллбек с подключения скрипта внутри страницы контактов
 //google.maps.event.addDomListener(window, 'load', initMap);
 

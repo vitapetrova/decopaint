@@ -38,10 +38,14 @@
                   </div>
                       </div>
                     <div class="caption">
-                  <div class="vertical-card__description">
-                    <%=product.title%>
-                  </div>
-                  <div class="vertical-card__price"><%=product.price%> руб</div>
+                      <div class="vertical-card__description">
+                        <%=product.title%>
+                      </div>
+                      <div class="vertical-card__price_block">
+                        <!-- добавил дисконтную цену -->
+                        <div class="vertical-card__price_discount">123 руб</div>
+                        <div class="vertical-card__price"><%=product.price%> руб</div>
+                      </div>
                     </div>
                   </div>
               <%end%>

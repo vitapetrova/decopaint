@@ -127,13 +127,25 @@
 		color: #000;
 	}
 	&__price{
-		position: absolute;
-		bottom: 0;
-		right: 5px;
-		font-family: PrCondBlack, Arial, Helvetica, sans-serif;
+		display: inline-block;
+		vertical-align: middle;
 		font-size: 23px;
-		color: #000;
-		text-align: right;
+
+		&_block{
+			font-family: PrCondBlack, Arial, Helvetica, sans-serif;
+			color: #000;
+			position: absolute;
+			bottom: 0;
+			right: 5px;
+			text-align: right;
+		}
+		&_discount{
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 20px;
+			text-decoration: line-through;
+			margin-right: 10px;
+		}
 	}
 }
 /* нормальная версия горизонтально карточки продукта на флексбоксах, подстраивается под контент, обрезает лишний текст */
@@ -183,7 +195,7 @@
 		align-content: space-between;
 		flex-grow: 1;
 		flex-shrink: 3;
-		padding: 10px;
+		padding: 10px 10px 4px 10px;
 		background: $bg-grey;
 		border-top-right-radius:3px;
 		border-bottom-right-radius:3px;
@@ -195,10 +207,22 @@
 		color: #000;
 	}
 	&__price{
-		align-self: flex-end;
-		font-family: PrCondBlack, Arial, Helvetica, sans-serif;
 		font-size: 16px;
-		color: #000;
+		display: inline-block;
+		vertical-align: middle;
+
+		&_block{
+			align-self: flex-end;
+			font-family: PrCondBlack, Arial, Helvetica, sans-serif;
+			color: #000;
+		}
+		&_discount{
+			font-size: 14px;
+			text-decoration: line-through;
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 10px;
+		}
 	}
 }
 
