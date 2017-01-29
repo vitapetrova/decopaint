@@ -36,7 +36,34 @@
 	}
 	&__main-img{
 		margin: 0 auto;
-		margin-top: 60px;
+		margin-top: 30px;
+
+		&_block{
+			position: relative;
+			z-index: 5;
+			&:hover{
+				& .product-info__overlay{
+					display: flex;
+				}
+			}
+		}
+	}
+	&__overlay{
+		display: none;
+		position: absolute;
+		z-index: 7;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		cursor: pointer;
+
+		&_img{
+			width: 30%;
+			height: auto;
+			margin: auto;
+
+		}
 	}
 	&__title{
 		font-size: 42px;
@@ -78,6 +105,13 @@
 	&__price{
 		font-size: 42px;
 		font-family: PrCondBlack, Arial, Helvetica, sans-serif;
+		line-height: 1.2;
+		&_discount{
+			font-size: 42px;
+			font-family: PrCondBlack, Arial, Helvetica, sans-serif;
+			text-decoration: line-through;
+			line-height: 1;
+		}
 	}
 	&__need-painting{
 		margin-bottom: 20px !important;
@@ -120,6 +154,7 @@
 		padding: 21px 12px;
 		&[disabled]{
 			background-color: rgba(0,0,0,0.8);
+			cursor: default;
 		}
 		&_group{
 			margin: 18px auto 0 auto;
@@ -280,14 +315,17 @@
 		}
 		& .owl-prev{
 			background-image: asset-url("prev.png");
-			top:30%;
+			top: 33%;
 			left: -25px;
 		}
 		& .owl-next{
 			background-image: asset-url("next.png");
-			top:30%;
+			top:33%;
 			right: -25px;
 		}
+	}
+	& .owl-item:last-child{
+		margin-right: 0 !important;
 	}
 	&__block{
 		position: relative;
@@ -343,8 +381,14 @@
 
 /*xs */
 @media all and (max-width: 767px){
+	.product-info__main-img{
+		margin-top: 10px;
+	}
 	.product-slider{
-		margin-top: 430px;
+		margin-top: 15px;
+	}
+	.product-slider__block{
+		width: 60%;
 	}
 	.product-page__bg{
 		background-position: 85% 65%, center 80%;
@@ -353,8 +397,11 @@
 }
 /*sm */
 @media all and (min-width: 768px) and (max-width: 991px){
+	.product-info__main-img{
+		margin-top: 10px;
+	}
 	.product-slider{
-		margin-top: 430px;
+		margin-top: 15px;
 	}
 	.product-page__bg{
 		background-position: 65% 60%, center 80%;
@@ -363,7 +410,9 @@
 }
 /*md */
 @media all and (min-width: 992px) and (max-width: 1199px){
-
+	.product-info__main-img{
+		margin-top: 20px;
+	}
 
 }
 /*lg */

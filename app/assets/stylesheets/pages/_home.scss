@@ -3,7 +3,7 @@
 /*  задний слайдер */
 .slider-bg{
 	position: relative;
-	overflow: hidden;
+	overflow: visible;
 
 	&__wrapper{
 		position: fixed;
@@ -14,7 +14,9 @@
      	opacity: 0.9;
 	}
 	&__item{
-		height: 110vh;
+		height: 115vh;
+		position: relative;
+		top: -30px;
 	}
 	&__inner{
 		position: relative;
@@ -37,6 +39,9 @@
 		&_3{
 			background-image: asset-url("back-slider/bg1.jpg");
 		}
+	}
+	& .owl-stage-outer{
+		overflow: visible;
 	}
 }
 
