@@ -4,6 +4,7 @@ class HomeController < ApplicationController
     @sliders = Slider.all
     @products_menu = Product.where(show_menu: true).limit(5)
     @manufacturers = Manufacturer.all
+    @reviews = Review.all
   end
 
   def about
