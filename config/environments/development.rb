@@ -56,7 +56,7 @@ Rails.application.configure do
 
 
 end
-#Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin; C:\Program Files\ImageMagick-7.0.4-Q16'
+Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin; C:\Program Files\ImageMagick-7.0.4-Q16'
 #Paperclip.options[:swallow_stderr] = false
 #OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
-#Aws.use_bundled_cert!
+Aws.use_bundled_cert!
