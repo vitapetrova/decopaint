@@ -53,13 +53,18 @@ body{
 
 
 /*lg */
-@media all and (min-width: 768px) and (max-width: 1300px){
+@media all and (min-width: 768px) and (max-width: 885px){
 	body{
 		padding-top: 150px;
 	}
 
 }
+@media all and (min-width: 886px) and (max-width: 1300px){
+	body{
+		padding-top: 100px;
+	}
 
+}
 
 
 /*xs */
