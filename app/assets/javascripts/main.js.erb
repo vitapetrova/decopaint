@@ -275,9 +275,34 @@ $( document ).ready(function() {
   });
 
 
+//-------------------------КОНСТРУКТОР--------------------------
+
+//.js__constructor-item на любом айтеме для поиска, .constructor-pane__item_active на родительском блоке айтема
+// для состояния активности, все айтемы лежит внутри .tab-pane, все панели лежат внутри .constructor__tab-content
+
+  //переключение активного состояния айтема во вкладке при клике
+  $( ".js__constructor-item" ).click(function() {
+    var target = $(this);// блок на котором произошло нажатие
+
+    //если элемент уже выбран то отбой 
+    if ( target.parent().hasClass("constructor-pane__item_active") ) return false;
+
+    //текущая вкладка
+    var currentPane = target.closest(".tab-pane"); 
+    //убрали активный класс с предыщущего элемента
+    currentPane.find('.constructor-pane__item_active').removeClass("constructor-pane__item_active");
+    // на кликнутый элемент вешается состояние активности
+    target.parent().addClass("constructor-pane__item_active");
+
+    //Номер выбранного элента на панели можно узнать:
+    //var indexOfSelectedItem = currentPane.find(".col-md-3").index( $(".constructor-pane__item_active") );
+    // от 0 до (количество - 1), .col-md-3 вместо класса на блоке окружающем айтем
+    //Найти выбранный номер на другой панели - заменить currentPane на $('#constructor-pane2') и тд
+
+  });
+
+
 //разное
-
-
 
 
 });
