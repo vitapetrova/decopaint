@@ -33,14 +33,15 @@ $( document ).ready(function() {
           }
     });
 
-    //плавная прокрутка внутри страницы
-    $('a[href^="#"]').click(function(){
-    //Сохраняем значение атрибута href в переменной:
-    if ( $(this).attr('href').indexOf("pane") == -1 ){//фикс для работы табов бутстрапа, в адресе не должно быть "pane"
-      var target = $(this).attr('href');
-      $('html, body').animate({scrollTop: $(target).offset().top}, 500);
-      return false;
-    }
+
+      //плавная прокрутка внутри страницы
+      $('a[href^="#"]').click(function(){
+      //Сохраняем значение атрибута href в переменной:
+      if ( $(this).attr('href').indexOf("profit") >= 0 ){//фикс для работы табов бутстрапа, в адресе не должно быть "pane"
+        var target = $(this).attr('href');
+        $('html, body').animate({scrollTop: $(target).offset().top}, 500);
+        return false;
+      }
   });
 
 
@@ -303,6 +304,18 @@ $( document ).ready(function() {
 
 
 //разное
+      //высота трех блоков на главной
+    $('.our-works-main__slider-item').matchHeight({
+      byRow: false,
+      property: 'height',
+      target: null,
+      remove: false
+    });
+
+    $('#our-works-main__slider').lightGallery({
+      selector: '.our-works-main__slider-img',
+      download: false
+  });
 
 
 });

@@ -1,4 +1,11 @@
 /* стили формы задать вопрос в футере */
+.modal-body{
+	& p{
+		color: #000;
+		font-size: 20px;
+		text-align: center;
+	}
+}
 .form-ask{
 
 	&__title{

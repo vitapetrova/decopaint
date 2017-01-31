@@ -121,6 +121,19 @@
 		}
 	}
 }
+/* слайдер */
+.our-works-main{
+
+	&__slider{
+
+	}
+	&__slider-item{
+		display: flex;
+	}
+	&__slider-img{
+		margin: auto;
+	}
+}
 
 
 /*xs */

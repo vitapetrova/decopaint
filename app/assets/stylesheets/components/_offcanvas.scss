@@ -42,6 +42,7 @@
 	top:55px;
 	width: 100%;
 	background: rgba(0, 0, 0, 0.7);
+	display: block !important;/* часть костыля для того чтобы блок не отображался на экране в начале загрузки */
 
 	&__right-col{
 		padding-left: 30px;
