@@ -21,18 +21,25 @@
       <ul class="nav navbar-nav main-menu__anchors">
         <li class="active"><%=link_to 'Главная', root_path%></li>
         <li><%=link_to 'Каталог', products_path %></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Услуги <span class="caret"></span></a>
-          <ul class="dropdown-menu main-menu__dropdown-menu">
-            <li><a href="#">Нанесение краски</a></li>
-            <li><a href="#">Дизайн-проект</a></li>
-            <li><a href="#">Нанесение краски на мебедь</a></li>
-          </ul>
-        </li>
+        <%if @services %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Услуги <span class="caret"></span></a>
+            <ul class="dropdown-menu main-menu__dropdown-menu">
+              <% @services.each do |page| %>
+                <li><%=link_to page.title, page_path(page) %></li>
+              <%end%>
+            </ul>
+          </li>
+        <%end%>
         <li><%=link_to 'Дизайнерам', to_designers_path %></li>
         <li><%=link_to 'Наши работы', works_path %></li>
-        <li><a href="#">Вопрос-ответ</a></li>
-        <li><%=link_to 'Доставка и оплата', delivery_path%></li>
+        <% if @static_pages%>
+          <% @static_pages.each do |page| %>
+            <li><%=link_to page.title, page_path(page)%></li>
+          <%end%>
+        <%end%>
+        <!-- <li><a href="#">Вопрос-ответ</a></li> -->
+        <li><%#=link_to 'Доставка и оплата', delivery_path%></li>
         <li><%=link_to 'Контакты', contacts_path%></li>
       </ul>
     </div><!-- /.navbar-collapse -->
