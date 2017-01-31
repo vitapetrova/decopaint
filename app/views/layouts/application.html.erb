@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Decopaint</title>
+    <!-- <title>Decopaint</title> -->
+    <title>
+      <%= if content_for?(:title) then yield(:title) + ' | ' end %>
+      Decopaint
+    </title>
+    <meta name='title'
+      content='<%= yield_meta_tag(:title, '') %>' />
+      <meta name='description'
+      content='<%= yield_meta_tag(:description, '') %>' />
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +18,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
