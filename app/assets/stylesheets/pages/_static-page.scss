@@ -25,7 +25,15 @@
 		border: 1px solid $bg-grey;
 		font-size: 16px;
 		background-color: rgba(255,255,255,0.9);
-
+		& h2{
+			font-size: 40px;
+			font-family: PrCondExLight, Arial, Helvetica, sans-serif;
+			margin-bottom: 25px;
+			margin-top: 50px;
+			&:first-child{
+				margin-top: 5px;
+			}	
+		}
 		& h3{
 			font-size: 36px;
 			font-family: PrCondExLight, Arial, Helvetica, sans-serif;
@@ -56,6 +64,9 @@
 		font-size: 58px;
 		margin-top: 25px;
 		margin-bottom: 25px;
+		&:first-child{
+			margin-top: 55px;
+		}
 	}
 	& h2{
 		color:#fff;
@@ -63,6 +74,9 @@
 		font-size: 48px;
 		margin-top: 25px;
 		margin-bottom: 25px;
+		&:first-child{
+			margin-top: 55px;
+		}
 	}
 }
 

@@ -25,6 +25,9 @@
 				background-color: rgba(255,255,255,0.35) !important;
 			}
 		}
+		& li.active a{
+			background-color: rgba(255,255,255,0.55) !important;
+		}
 	}
 	&__dropdown-menu{
 		background-color: rgba(0,0,0,0.8);
