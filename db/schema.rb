@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170129204202) do
+ActiveRecord::Schema.define(version: 20170131084237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(version: 20170129204202) do
     t.text     "description"
     t.text     "description2"
     t.boolean  "show_menu"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "seo_description"
+    t.string   "seo_title"
   end
 
   create_table "category_works", force: :cascade do |t|
@@ -109,6 +111,8 @@ ActiveRecord::Schema.define(version: 20170129204202) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.integer  "category_page_id"
+    t.string   "seo_description"
+    t.string   "seo_title"
     t.index ["category_page_id"], name: "index_pages_on_category_page_id", using: :btree
     t.index ["slug"], name: "index_pages_on_slug", unique: true, using: :btree
   end
@@ -151,6 +155,8 @@ ActiveRecord::Schema.define(version: 20170129204202) do
     t.float    "price_32"
     t.boolean  "painting"
     t.integer  "amount"
+    t.string   "seo_description"
+    t.string   "seo_title"
     t.index ["category_product_id"], name: "index_products_on_category_product_id", using: :btree
   end
 
