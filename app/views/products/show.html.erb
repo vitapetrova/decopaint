@@ -48,7 +48,8 @@
 
 							<%= form_tag(select_product_path, method: :post, remote: true, class:"form-horizontal product-info__form") do |f| %>
 								<%= hidden_field_tag(:name, "#{@product.title}") %>
-								<div class="product-info__form-text" onclick="insert_price()">Выберите объём</div>
+								<% if @all_volumes.first[1][1] %>
+									<div class="product-info__form-text" onclick="insert_price()">Выберите объём</div>
 								  <div class="form-group">
 								    <div class="col-md-4 col-lg-5">
 											<select name="volume" id="volume" class="form-control product-info__volume" onchange="insert_price()">
@@ -65,14 +66,16 @@
 								      <div class="product-info__price_discount discount_price"> <%=@product.price2%> руб.</div>
 								    </div>
 								  </div><!-- /.строка с объемом и ценой -->
-
+								<%end%>
 								  <div class="checkbox product-info__need-painting">
 								  	<label>
 									  <%=check_box_tag :painting%> Необходимо нанесение
 									</label>
 								  </div><!-- /.чекбокс -->
 								  <a href="/works" class="product-info__to-portfolio">Посмотреть наши работы</a>
-								  <div class="product-info__note"><%=@product.min_description%></div>
+								  <% if @product.min_description.present?	%>
+								  	<div class="product-info__note"><%=@product.min_description%></div>
+									<%end%>
 								  <div class="form-group">
 									    <div class="col-xs-12 col-sm-6 col-md-5">
 									      <div class="input-group product-info__amount_group">
