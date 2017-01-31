@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :menu
 
   def menu
-    @static_pages = CategoryPage.static_pages.pages if CategoryPage.static_pages.present?
-    @services = CategoryPage.services.pages if CategoryPage.services.present?
+    @static_pages = CategoryPage.static_pages.pages.show.pages_priority if CategoryPage.static_pages.present?
+    @services = CategoryPage.services.pages.show.pages_priority if CategoryPage.services.present? && CategoryPage.services.pages.show.present?
   end
 end

@@ -1,4 +1,6 @@
 class Page < ApplicationRecord
+  scope :show, ->{ where(show_menu: true) }
+  scope :pages_priority,  ->{ order(:priority) }
 
   belongs_to :category_page
   extend FriendlyId
