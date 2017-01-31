@@ -256,7 +256,7 @@
 		display: block;
 		transition: 1s ease-out ;
 		&:hover{
-			cursor: pointer;
+			/* cursor: pointer; */
 			transform: scale(1.2, 1.2) translateX(10%);
 			& .to-constructor__airplane_img{
 				/*transform: scale(1.2, 1.2) translateX(50px);*/
@@ -270,7 +270,10 @@
 	}
 	&__description{
 		font-size: 23px;
-		color: $text-active;
+		color: #fff;/* $text-active */
+		&_first{
+			margin-bottom: 20px;
+		}
 	}
 	&__airplane{
 

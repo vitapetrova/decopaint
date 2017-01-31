@@ -29,17 +29,17 @@
 				<% end %>
 			</div>
 			<div class="col-xs-12 col-sm-11 col-sm-offset-1 col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-6 header-anchors__col">
-				<a href="#" class="header-anchors__a">
+				<a href="/works" class="header-anchors__a">
 					<div class="header-anchors__title">Помощь в нанесении</div>
 					<div class="header-anchors__small-text">Наши работы</div>
 				</a>
 
-				<a href="#" class="header-anchors__a">
+				<a href="/certificates" class="header-anchors__a">
 					<div class="header-anchors__title">Гарантия качества</div>
 					<div class="header-anchors__small-text">Сертификаты</div>
 				</a>
 
-				<a href="#" class="header-anchors__a">
+				<a href="/page/dostavka" class="header-anchors__a">
 					<div class="header-anchors__title">Бесплатная доставка</div>
 					<div class="header-anchors__small-text">Доставка и оплата</div>
 				</a>
@@ -100,8 +100,8 @@
 						</ul>
 					</div>
 					<div class="big-card__buttons">
-							<a href="#" class="btn btn__grey-bg big-card__button_catalog" type="submit">Краска в каталоге</a>
-							<a href="#" class="btn btn__grey-bg big-card__button_examples" type="submit">Примеры работ</a>
+							<%=link_to 'Каталог', products_path, class:"btn btn__grey-bg big-card__button_catalog" %>
+							<%=link_to 'Каталог', works_path, class:"btn btn__grey-bg big-card__button_examples" %>
 					</div>
 				</div><!-- /.card1 -->
 			</div>
@@ -117,8 +117,8 @@
 						<p>Покрытие хорошо подходит для любых учебных заведений: детских садов, школ, ВУЗов и др.</p>
 					</div>
 					<div class="big-card__buttons">
-							<a href="#" class="btn btn__grey-bg big-card__button_catalog" type="submit">Краска в каталоге</a>
-							<a href="#" class="btn btn__grey-bg big-card__button_examples" type="submit">Примеры работ</a>
+							<%=link_to 'Каталог', products_path, class:"btn btn__grey-bg big-card__button_catalog" %>
+							<%=link_to 'Каталог', works_path, class:"btn btn__grey-bg big-card__button_examples" %>
 					</div>
 				</div><!-- /.card2 -->
 			</div>
@@ -133,8 +133,8 @@
 						<p>Маркерную краску можно наносить на гладкую поверхность в любой части вашего дома. Можно покрыть маркерной краской стены нескольких комнат, например, в детской и в коридоре. Таким образом, привычное помещение каждый день будет необычным и новым.</p>
 					</div>
 					<div class="big-card__buttons">
-							<a href="#" class="btn btn__grey-bg big-card__button_catalog" type="submit">Краска в каталоге</a>
-							<a href="#" class="btn btn__grey-bg big-card__button_examples" type="submit">Примеры работ</a>
+							<%=link_to 'Каталог', products_path, class:"btn btn__grey-bg big-card__button_catalog" %>
+							<%=link_to 'Каталог', works_path, class:"btn btn__grey-bg big-card__button_examples" %>
 					</div>
 				</div><!-- /.card3 -->
 			</div>
@@ -146,17 +146,18 @@
 <!-- блок с самолетом и ссылкой на конструктор -->
 <section class="to-constructor content-block">
 	<div class="container">
-		<a class="row to-constructor__row" href="/constructor" title="Перейти к выбору">
+		<div class="row to-constructor__row">
 			<div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-5">
 				<div class="to-constructor__title">Все сразу - выгоднее!</div>
-				<div class="to-constructor__description">Закажите полный набор для работы - получите скидку до 20%</div>
+				<div class="to-constructor__description to-constructor__description_first">Закажите полный набор для маркерной поверхности и получите скидку до 15%</div>
+				<div class="to-constructor__description">Подробности у наших менеджеров: +375&nbsp;29&nbsp;627&nbsp;627&nbsp;3</div>
 			</div>
 			<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-7 col-md-7">
 				<div class="to-constructor__airplane">
 					<img src="<%= asset_path('home/airplane.png') %>" alt="Конструктор" class="to-constructor__airplane_img">
 				</div>
 			</div>
-		</a><!-- /.row -->
+		</div><!-- /.row -->
 	</div><!-- /.container -->
 </section><!-- ./to-constructor -->
 
