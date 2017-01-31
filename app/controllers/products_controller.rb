@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  after_action :cookies_set_product, only: [:show]
 
   def index
     @products = Product.all
@@ -8,7 +9,6 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @category_products_menu = CategoryProduct.where(show_menu: true)
     @complementary_products = @product.complementary_products
-
     @all_volumes = {}
     @all_volumes[@product.volume] = [@product.price, @product.price2]
     @all_volumes[@product.volume_2] = [@product.price_2, @product.price_22]
@@ -24,4 +24,23 @@ class ProductsController < ApplicationController
     @amount = params[:amount]
     render 'select'
   end
+
+  private
+    def cookies_set_product
+      cookies[:product_id] = '' if cookies[:product_id].nil?
+      products_id = cookies[:product_id] ? cookies[:product_id].split(",") : []
+      if products_id.count < 4
+        cookies[:product_id] = cookies[:product_id] + "#{@product.id}," unless products_id.include?(@product.id)
+      else
+        if !products_id.include?(@product.id)
+          products_id.shift
+          products_id.push(@product.id)
+          products_id = products_id.join(',')
+          cookies[:product_id] = ''
+          cookies[:product_id] = products_id
+        end
+      end
+    end
+
+
 end
