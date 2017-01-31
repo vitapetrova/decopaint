@@ -34,7 +34,7 @@
 							</div><!-- /. product-slider__block -->
 						</div><!-- /.product-info left -->
 						<div class="col-xs-12 col-sm-12 col-md-6 product-info__right-col">
-							<h1 class="product-info__title"><%@product.title%></h1>
+							<h1 class="product-info__title"><%=@product.title%></h1>
 							<!-- варианты для смены картинки - availability_custom, availability_ok, availability_no -->
 							<% class_style = 'availability_custom' if @product.status == 'Под заказ'
 							 	 class_style = 'availability_ok' if @product.status == 'В наличии'
