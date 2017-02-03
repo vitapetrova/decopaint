@@ -18,4 +18,8 @@ class HomeController < ApplicationController
   def services
     @else_works = CategoryWork.first.works.limit(3)
   end
+
+  def blog
+    @blog_pages = CategoryPage.blog.pages
+  end
 end

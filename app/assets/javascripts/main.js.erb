@@ -5,7 +5,13 @@ function insert_price(){
   price1 = selectBox.options[selectBox.selectedIndex].getAttribute('data-price1');
   price2 = selectBox.options[selectBox.selectedIndex].getAttribute('data-price2');
   $(".product-page .product-info__price").text(price1+"руб.");
-  $(".product-page .discount_price").text(price2+"руб.");
+  if ($.isEmptyObject(price2)){
+    $(".product-page .discount_price").css("display", "none");
+  }
+  else{
+    $(".product-page .discount_price").css("display", "block");
+    $(".product-page .discount_price").text(price2+"руб.");
+  }
   // вставка в инпуты
   $(".product-page #price1").val(price1);
   $(".product-page #price2").val(price2);
@@ -220,7 +226,7 @@ $( document ).ready(function() {
     });
 
 //скрипты страницы продукта
-    
+
     //при клике на кнопки количества изменение количества в поле
     $( ".product-info__amount_control" ).click(function() {
       var button = $(this);
@@ -231,7 +237,7 @@ $( document ).ready(function() {
       if ( button.hasClass("product-info__amount_left") ){
           if ( amount > 1 ) numberInput.val(amount-1);
       }
-      else 
+      else
           if ( button.hasClass("product-info__amount_right") )
           {
             if ( +amount < 20 ) numberInput.val(amount+1);
@@ -285,11 +291,11 @@ $( document ).ready(function() {
   $( ".js__constructor-item" ).click(function() {
     var target = $(this);// блок на котором произошло нажатие
 
-    //если элемент уже выбран то отбой 
+    //если элемент уже выбран то отбой
     if ( target.parent().hasClass("constructor-pane__item_active") ) return false;
 
     //текущая вкладка
-    var currentPane = target.closest(".tab-pane"); 
+    var currentPane = target.closest(".tab-pane");
     //убрали активный класс с предыщущего элемента
     currentPane.find('.constructor-pane__item_active').removeClass("constructor-pane__item_active");
     // на кликнутый элемент вешается состояние активности

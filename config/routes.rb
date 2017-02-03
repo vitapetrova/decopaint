@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get '/contacts', to: 'home#contacts'
   get '/certificates', to: 'home#certificates'
   get '/to-designers', to: 'home#to_designers'
+  get '/blog', to: 'home#blog'
 
 # все статичные сервисы?
   get '/services', to: 'home#services'

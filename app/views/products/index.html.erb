@@ -15,7 +15,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12 ">
 
           <h1 class="catalog__title">Каталог</h1>
-          
+
 <!--           <div class="row">
             <div class="col-md-12">
               <div class="catalog__description">
@@ -43,7 +43,9 @@
                         <%=product.title%>
                       </div>
                       <div class="vertical-card__price_block">
-                        <div class="vertical-card__price_discount"><%=product.price2%> руб</div>
+                        <%if product.price2%>
+                          <div class="vertical-card__price_discount"><%=product.price2%> руб</div>
+                        <%end%>
                         <div class="vertical-card__price"><%=product.price%> руб</div>
                       </div>
                     </div>
