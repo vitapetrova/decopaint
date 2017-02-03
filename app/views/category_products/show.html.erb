@@ -42,13 +42,15 @@
 									</div>
 							      	</div>
 							      <div class="caption">
-										<div class="vertical-card__description">
-											<%=product.title%>
-										</div>
-				                        <div class="vertical-card__price_block">
-				                          <div class="vertical-card__price_discount"><%=product.price2%> руб</div>
-				                          <div class="vertical-card__price"><%=product.price%> руб</div>
-				                       </div>
+											<div class="vertical-card__description">
+												<%=product.title%>
+											</div>
+					            <div class="vertical-card__price_block">
+					              <%if product.price2%>
+				                  <div class="vertical-card__price_discount"><%=product.price2%> руб</div>
+				                <%end%>
+					              <div class="vertical-card__price"><%=product.price%> руб</div>
+					            </div>
 							      </div>
 							    </div>
 							<%end%>

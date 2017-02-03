@@ -62,8 +62,10 @@
 								    </div>
 								    <div class="col-md-8 col-lg-7">
 								      <div class="product-info__price"><%=@product.price%> руб.</div>
-								      <!-- добавить стили  - зачеркнутая(вторая цена) . Класс сохранить, т.к. на нем завязан js-->
-								      <div class="product-info__price_discount discount_price"> <%=@product.price2%> руб.</div>
+								      <!--Класс discount_price сохранить, т.к. на нем завязан js-->
+								      	<%if @product.price2%>
+								      		<div class="product-info__price_discount discount_price"> <%=@product.price2%> руб.</div>
+								      	<%end%>
 								    </div>
 								  </div><!-- /.строка с объемом и ценой -->
 								<%end%>

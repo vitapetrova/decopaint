@@ -10,9 +10,9 @@ class ProductsController < ApplicationController
     @category_products_menu = CategoryProduct.where(show_menu: true)
     @complementary_products = @product.complementary_products
     @all_volumes = {}
-    @all_volumes[@product.volume] = [@product.price, @product.price2]
-    @all_volumes[@product.volume_2] = [@product.price_2, @product.price_22]
-    @all_volumes[@product.volume_3] = [@product.price_3, @product.price_32]
+    @all_volumes[@product.volume] = [@product.price, @product.price2] if @product.volume.present?
+    @all_volumes[@product.volume_2] = [@product.price_2, @product.price_22] if @product.volume_2.present?
+    @all_volumes[@product.volume_3] = [@product.price_3, @product.price_32] if @product.volume_3.present?
   end
 
   def select
