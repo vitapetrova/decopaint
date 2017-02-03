@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170131084237) do
+ActiveRecord::Schema.define(version: 20170203114422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,6 +113,7 @@ ActiveRecord::Schema.define(version: 20170131084237) do
     t.integer  "category_page_id"
     t.string   "seo_description"
     t.string   "seo_title"
+    t.text     "preview_text"
     t.index ["category_page_id"], name: "index_pages_on_category_page_id", using: :btree
     t.index ["slug"], name: "index_pages_on_slug", unique: true, using: :btree
   end

@@ -13,7 +13,7 @@ class Page < ApplicationRecord
     end
 
     edit do
-      fields :title, :category_page, :url, :slug, :show_menu, :priority, :seo_title, :seo_description
+      fields :title, :category_page, :url, :slug, :show_menu, :priority, :seo_title, :seo_description, :preview_text
       field :text, :ck_editor
     end
   end

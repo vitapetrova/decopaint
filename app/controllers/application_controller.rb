@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   def menu
     @static_pages = CategoryPage.static_pages.pages.show.pages_priority if CategoryPage.static_pages.present?
     @services = CategoryPage.services.pages.show.pages_priority if CategoryPage.services.present? && CategoryPage.services.pages.show.present?
+    # @bl = CategoryPage.services.pages.show.pages_priority if CategoryPage.services.present? && CategoryPage.services.pages.show.present?
   end
 
 
