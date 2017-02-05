@@ -35,8 +35,12 @@
 							</div>
 							<div class="hcard-flex__price_block">
 								<!-- добавил дисконтную цену -->
-								<div class="hcard-flex__price_discount"><%=product.price2%> руб</div>
-								<div class="hcard-flex__price"><%=product.price%> руб</div>
+								<% if product.price2%>
+									<div class="hcard-flex__price_discount"><%=product.price2%> руб</div>
+								<%end%>
+								<% if product.price%>
+									<div class="hcard-flex__price"><%=product.price%> руб</div>
+								<%end%>
 							</div>
 					  </div>
 					</div>
