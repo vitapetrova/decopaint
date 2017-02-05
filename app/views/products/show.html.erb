@@ -48,7 +48,7 @@
 
 							<%= form_tag(select_product_path, method: :post, remote: true, class:"form-horizontal product-info__form") do |f| %>
 								<%= hidden_field_tag(:name, "#{@product.title}") %>
-								<% if @all_volumes.first[1][1] %>
+								<% if @all_volumes.first && @all_volumes.first[1][0] %>
 									<div class="product-info__form-text" onclick="insert_price()">Выберите объём</div>
 								  <div class="form-group">
 								    <div class="col-md-4 col-lg-5">

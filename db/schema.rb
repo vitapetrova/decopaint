@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170203114422) do
+ActiveRecord::Schema.define(version: 20170205154910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -140,8 +140,8 @@ ActiveRecord::Schema.define(version: 20170203114422) do
     t.text     "description"
     t.text     "additional_description"
     t.integer  "category_product_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.boolean  "show_menu"
     t.string   "mini_image_file_name"
     t.string   "mini_image_content_type"
@@ -158,6 +158,7 @@ ActiveRecord::Schema.define(version: 20170203114422) do
     t.integer  "amount"
     t.string   "seo_description"
     t.string   "seo_title"
+    t.integer  "priority",                default: 1000
     t.index ["category_product_id"], name: "index_products_on_category_product_id", using: :btree
   end
 

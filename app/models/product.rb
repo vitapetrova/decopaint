@@ -11,6 +11,9 @@ class Product < ApplicationRecord
     validates_presence_of :mini_image
 
   rails_admin do
+    list do
+      fields :id, :title, :price, :price2, :status, :priority
+    end
     edit do
       fields :title, :category_product, :volume, :price, :price2, :volume_2, :price_2, :price_22, :volume_3, :price_3, :price_32
       fields :status, :min_description, :mini_image, :complementary_products, :seo_title, :seo_description
