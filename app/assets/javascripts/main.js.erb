@@ -217,7 +217,7 @@ $( document ).ready(function() {
 
 //скрпты для каталога
 
-    //высота карточке в каталоге (дефолтные настройки)
+    //высота карточки в каталоге (дефолтные настройки)
     $('.catalog__card').matchHeight({
       byRow: true,
       property: 'height',
@@ -247,8 +247,7 @@ $( document ).ready(function() {
 
     //скрипт слайдера доп изображений на страницы товара
     $(".product-slider").owlCarousel({
-        loop: true,
-        items: 3,
+        loop: false,
         margin: 7,
         autoWidth: true,
         mouseDrag: true,
@@ -285,7 +284,8 @@ $( document ).ready(function() {
 //-------------------------КОНСТРУКТОР--------------------------
 
 //.js__constructor-item на любом айтеме для поиска, .constructor-pane__item_active на родительском блоке айтема
-// для состояния активности, все айтемы лежит внутри .tab-pane, все панели лежат внутри .constructor__tab-content
+// для состояния активности, все айтемы лежит внутри .tab-pane, все панели лежат внутри .constructor__tab-content, 
+//у каждой панели id с соответствующим номером
 
   //переключение активного состояния айтема во вкладке при клике
   $( ".js__constructor-item" ).click(function() {
@@ -306,7 +306,28 @@ $( document ).ready(function() {
     // от 0 до (количество - 1), .col-md-3 вместо класса на блоке окружающем айтем
     //Найти выбранный номер на другой панели - заменить currentPane на $('#constructor-pane2') и тд
 
-  });
+    // только 1 ВКЛАДКА
+    //действия при нажатии только на первой вкладке
+    if ( target.closest('#constructor-pane1', '.constructor__tab-content').length > 0 )
+    {
+      var imageOnTop = $(".constructor-area__img"); //изображение наверху, в котором будет меняться src при клике
+      var newImg = target.find(".constructor-pane__img");//новая картинка
+      var newSrc = newImg.attr("src");//адрес новой картинки
+      var additionalClass; //класс размера который нужен на изображении
+
+      if ( newImg.hasClass('constructor-pane__img_full') ) additionalClass = "constructor-area__img_full";
+        else if ( newImg.hasClass('constructor-pane__img_wide') ) additionalClass = "constructor-area__img_wide";
+          else additionalClass = "constructor-area__img_tall";
+
+      imageOnTop.attr('src', newSrc);//загрузка новой картинки на место старой
+      imageOnTop.removeClass('constructor-area__img_full constructor-area__img_wide constructor-area__img_tall')
+                .addClass(additionalClass);//удаление всех старых классов оформления и добавление нового
+
+
+    }
+
+
+  });//конец скрипта нажатия на айтем в конструкторе
 
 
 //разное

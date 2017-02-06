@@ -19,7 +19,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse main-menu__navbar-collapse" id="main-menu">
       <ul class="nav navbar-nav main-menu__anchors">
-        <li class="active"><%=link_to 'Главная', root_path%></li>
+        <li><%=link_to 'Главная', root_path%></li><!-- добавить к li class="active" для выделения текущего пункта -->
         <li><%=link_to 'Каталог', products_path %></li>
         <%if @services %>
           <li class="dropdown">
