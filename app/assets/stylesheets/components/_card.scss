@@ -151,6 +151,11 @@
 		}
 	}
 }
+.related-products .vertical-card__description{
+	overflow: hidden;
+	height: 110px;
+	text-align: left;
+}
 /* нормальная версия горизонтально карточки продукта на флексбоксах, подстраивается под контент, обрезает лишний текст */
 .hcard-flex{
 	height: 110px;

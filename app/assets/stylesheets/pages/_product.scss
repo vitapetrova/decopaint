@@ -292,7 +292,10 @@
 /*слайдер маленьких изображений */
 .product-slider{
 	margin-top: 50px;
-
+	
+	& .owl-stage{
+		margin: 0 auto;
+	}
 	&__navigation{
 
 		& .owl-prev,

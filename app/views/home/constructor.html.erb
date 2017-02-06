@@ -1,5 +1,8 @@
-страница конструктора -->
-<!-- добавить на этой странице на body класс .constructor-page-bg чтобы фон вокруг был черный -->
+<!-- страница конструктора -->
+
+<!-- добавить на этой странице на body класс .constructor-page-bg чтобы фон вокруг был черный, иначе по краям просвечивает картинка -->
+
+
 <div class="constructor">
 
 	<!-- верхний блок конструктора -->
@@ -16,8 +19,9 @@
 					
 					<!-- есть три типа картинок - доски во весь размер блока, высокие но узкие предметы, широкие но низкие предметы поэтому нужно три разных класса для отображения по разному -
 					.constructor-area__img_full, .constructor-area__img_tall, .constructor-area__img_wide,
-					предполагается что все картинки будут в png чтобы скриптом генерировать имя -->
-					<img src="<%= asset_path('constructor/surface/constructor-img-1-1-1-1.png') %>" alt="" class="constructor-area__img constructor-area__img_tall">
+					предполагается что все картинки будут в png чтобы скриптом генерировать имя было проще -->
+					<img src="<%= asset_path('constructor/surface/constructor-img-1-1.png') %>" alt="" class="constructor-area__img constructor-area__img_full">
+					<div class="constructor__top_left_shadows"></div>
 										
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4 constructor__top_right">
@@ -86,41 +90,57 @@
 				    		<div class="col-xs-6 col-sm-4 col-md-3 constructor-pane__item_active">
 				    			<div class="constructor-pane__item js__constructor-item">
 				    				<div class="constructor-pane__img-block">
-				    					<img src="<%= asset_path('constructor/surface/constructor-img-1-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_tall">
+				    					<img src="<%= asset_path('constructor/surface/constructor-img-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_full">
 				    				</div>
-				    				<div class="constructor-pane__desc">Дверь</div>
+				    				<div class="constructor-pane__desc">Бетонная стена</div>
 				    			</div>
 				    		</div>
 				    		<div class="col-xs-6 col-sm-4 col-md-3">
 				    			<div class="constructor-pane__item js__constructor-item">
 				    				<div class="constructor-pane__img-block">
-				    					<img src="<%= asset_path('constructor/surface/constructor-img-2-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_full">
+				    					<img src="<%= asset_path('constructor/surface/constructor-img-1-2.png') %>" alt="" class="constructor-pane__img constructor-pane__img_full">
 				    				</div>
-				    				<div class="constructor-pane__desc">Стена</div>
+				    				<div class="constructor-pane__desc">Покрашенная стена</div>
 				    			</div>				    			
 				    		</div>
 				    		<div class="col-xs-6 col-sm-4 col-md-3">
 				    			<div class="constructor-pane__item js__constructor-item">
 				    				<div class="constructor-pane__img-block">
-				    					<img src="<%= asset_path('constructor/surface/constructor-img-3-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_wide">
+				    					<img src="<%= asset_path('constructor/surface/constructor-img-1-3.png') %>" alt="" class="constructor-pane__img constructor-pane__img_full">
 				    				</div>
-				    				<div class="constructor-pane__desc">Кирпич</div>
+				    				<div class="constructor-pane__desc">Деревянная стена</div>
 				    			</div>				    			
 				    		</div>
 				    		<div class="col-xs-6 col-sm-4 col-md-3">
 				    			<div class="constructor-pane__item js__constructor-item">
 				    				<div class="constructor-pane__img-block">
-				    					<img src="<%= asset_path('constructor/surface/constructor-img-2-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_full">
+				    					<img src="<%= asset_path('constructor/surface/constructor-img-1-4.png') %>" alt="" class="constructor-pane__img constructor-pane__img_full">
 				    				</div>
-				    				<div class="constructor-pane__desc">Дверь</div>
+				    				<div class="constructor-pane__desc">Шпатлеванная стена</div>
 				    			</div>				    			
 				    		</div>
 				    		<div class="col-xs-6 col-sm-4 col-md-3">
 				    			<div class="constructor-pane__item js__constructor-item">
 				    				<div class="constructor-pane__img-block">
-				    					<img src="<%= asset_path('constructor/surface/constructor-img-3-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_wide">
+				    					<img src="<%= asset_path('constructor/surface/constructor-img-1-5.png') %>" alt="" class="constructor-pane__img constructor-pane__img_wide">
 				    				</div>
-				    				<div class="constructor-pane__desc">Дверь</div>
+				    				<div class="constructor-pane__desc">Стол</div>
+				    			</div>				    			
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">
+				    			<div class="constructor-pane__item js__constructor-item">
+				    				<div class="constructor-pane__img-block">
+				    					<img src="<%= asset_path('constructor/surface/constructor-img-1-6.png') %>" alt="" class="constructor-pane__img constructor-pane__img_tall">
+				    				</div>
+				    				<div class="constructor-pane__desc">Дверь межкомнатная</div>
+				    			</div>				    			
+				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">
+				    			<div class="constructor-pane__item js__constructor-item">
+				    				<div class="constructor-pane__img-block">
+				    					<img src="<%= asset_path('constructor/surface/constructor-img-1-7.png') %>" alt="" class="constructor-pane__img constructor-pane__img_tall">
+				    				</div>
+				    				<div class="constructor-pane__desc">Шкаф</div>
 				    			</div>				    			
 				    		</div>
 
@@ -129,7 +149,6 @@
 				    <!--  конец панели поверхностей -->
 
 					<!--  2 панель грунтовок -->
-					<!-- первая карточка тут - образец с возможными двумя ценами, остальные с одной, в 4 панели такие же карточки -->
 					<!-- высота картинки фиксированная, текст длиннее 3х строк обрезается, карточки всегда одинаковые по высоте без использования скрипта -->
 
 				    <div class="tab-pane fade" id="constructor-pane2">
@@ -163,7 +182,10 @@
 									<div class="vertical-card__description">
 										Грифельная краска с эффектом школьной доски Siberia колеруемая
 									</div>
-									<div class="vertical-card__price">115 руб</div>
+				                    <div class="vertical-card__price_block">
+				                        <div class="vertical-card__price_discount">123 руб</div>
+				                        <div class="vertical-card__price">132 руб</div>
+				                    </div>
 							      </div>
 							    </div>								
 				    		</div>
@@ -177,7 +199,10 @@
 									<div class="vertical-card__description">
 										Грифельная краска с эффектом школьной доски Siberia колеруемая
 									</div>
-									<div class="vertical-card__price">115 руб</div>
+				                    <div class="vertical-card__price_block">
+				                        <div class="vertical-card__price_discount">123 руб</div>
+				                        <div class="vertical-card__price">132 руб</div>
+				                    </div>
 							      </div>
 							    </div>								
 				    		</div>
@@ -191,7 +216,10 @@
 									<div class="vertical-card__description">
 										Грифельная краска с эффектом школьной доски Siberia колеруемая
 									</div>
-									<div class="vertical-card__price">115 руб</div>
+				                    <div class="vertical-card__price_block">
+				                        <div class="vertical-card__price_discount">123 руб</div>
+				                        <div class="vertical-card__price">132 руб</div>
+				                    </div>
 							      </div>
 							    </div>								
 				    		</div>
@@ -205,7 +233,10 @@
 									<div class="vertical-card__description">
 										Грифельная краска с эффектом школьной доски Siberia колеруемая
 									</div>
-									<div class="vertical-card__price">115 руб</div>
+				                    <div class="vertical-card__price_block">
+				                        <div class="vertical-card__price_discount">123 руб</div>
+				                        <div class="vertical-card__price">132 руб</div>
+				                    </div>
 							      </div>
 							    </div>								
 				    		</div>
@@ -218,46 +249,108 @@
 				    <div class="tab-pane fade" id="constructor-pane3">
 				    	<div class="row reset-margins">
 
-				    		<div class="col-xs-6 col-sm-4 col-md-3">
-				    			<div class="constructor-pane__item js__constructor-item">
-				    				<div class="constructor-pane__img-block">
-				    					<img src="<%= asset_path('constructor/surface/constructor-img-1-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_tall">
-				    				</div>
-				    				<div class="constructor-pane__desc">Дверь</div>
-				    			</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">								
+							    <div class="thumbnail vertical-card constructor-vcard js__constructor-item">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<%= asset_path('product/pot4.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_magnet"></div>								
+							      </div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+				                    <div class="vertical-card__price_block">
+				                        <div class="vertical-card__price_discount">123 руб</div>
+				                        <div class="vertical-card__price">132 руб</div>
+				                    </div>
+							      </div>
+							    </div>								
 				    		</div>
-				    		<div class="col-xs-6 col-sm-4 col-md-3">
-				    			<div class="constructor-pane__item js__constructor-item">
-				    				<div class="constructor-pane__img-block">
-				    					<img src="<%= asset_path('constructor/surface/constructor-img-2-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_full">
-				    				</div>
-				    				<div class="constructor-pane__desc">Стена</div>
-				    			</div>				    			
+				    		<div class="col-xs-6 col-sm-4 col-md-3">								
+							    <div class="thumbnail vertical-card constructor-vcard js__constructor-item">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<%= asset_path('product/pot4.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_magnet"></div>								
+							      </div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+				                    <div class="vertical-card__price_block">
+				                        <div class="vertical-card__price_discount">123 руб</div>
+				                        <div class="vertical-card__price">132 руб</div>
+				                    </div>
+							      </div>
+							    </div>								
 				    		</div>
-				    		<div class="col-xs-6 col-sm-4 col-md-3">
-				    			<div class="constructor-pane__item js__constructor-item">
-				    				<div class="constructor-pane__img-block">
-				    					<img src="<%= asset_path('constructor/surface/constructor-img-3-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_wide">
-				    				</div>
-				    				<div class="constructor-pane__desc">Кирпич</div>
-				    			</div>				    			
+				    		<div class="col-xs-6 col-sm-4 col-md-3">								
+							    <div class="thumbnail vertical-card constructor-vcard js__constructor-item">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<%= asset_path('product/pot4.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_magnet"></div>								
+							      </div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+				                    <div class="vertical-card__price_block">
+				                        <div class="vertical-card__price_discount">123 руб</div>
+				                        <div class="vertical-card__price">132 руб</div>
+				                    </div>
+							      </div>
+							    </div>								
 				    		</div>
-				    		<div class="col-xs-6 col-sm-4 col-md-3">
-				    			<div class="constructor-pane__item js__constructor-item">
-				    				<div class="constructor-pane__img-block">
-				    					<img src="<%= asset_path('constructor/surface/constructor-img-2-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_full">
-				    				</div>
-				    				<div class="constructor-pane__desc">Дверь</div>
-				    			</div>				    			
+				    		<div class="col-xs-6 col-sm-4 col-md-3">								
+							    <div class="thumbnail vertical-card constructor-vcard js__constructor-item">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<%= asset_path('product/pot4.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_magnet"></div>								
+							      </div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+				                    <div class="vertical-card__price_block">
+				                        <div class="vertical-card__price_discount">123 руб</div>
+				                        <div class="vertical-card__price">132 руб</div>
+				                    </div>
+							      </div>
+							    </div>								
 				    		</div>
-				    		<div class="col-xs-6 col-sm-4 col-md-3">
-				    			<div class="constructor-pane__item js__constructor-item">
-				    				<div class="constructor-pane__img-block">
-				    					<img src="<%= asset_path('constructor/surface/constructor-img-3-1-1-1.png') %>" alt="" class="constructor-pane__img constructor-pane__img_wide">
-				    				</div>
-				    				<div class="constructor-pane__desc">Дверь</div>
-				    			</div>				    			
+				    		<div class="col-xs-6 col-sm-4 col-md-3">								
+							    <div class="thumbnail vertical-card constructor-vcard js__constructor-item">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<%= asset_path('product/pot4.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_magnet"></div>								
+							      </div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+				                    <div class="vertical-card__price_block">
+				                        <div class="vertical-card__price_discount">123 руб</div>
+				                        <div class="vertical-card__price">132 руб</div>
+				                    </div>
+							      </div>
+							    </div>								
 				    		</div>
+				    		<div class="col-xs-6 col-sm-4 col-md-3">								
+							    <div class="thumbnail vertical-card constructor-vcard js__constructor-item">
+							      <div class="vertical-card__img_wrap">
+							      	<img src="<%= asset_path('product/pot4.jpg') %>" class="vertical-card__img" alt="ptoduct title">
+									<div class="card__type card__type_magnet"></div>								
+							      </div>
+							      <div class="caption">
+									<div class="vertical-card__description">
+										Грифельная краска с эффектом школьной доски Siberia колеруемая
+									</div>
+				                    <div class="vertical-card__price_block">
+				                        <div class="vertical-card__price_discount">123 руб</div>
+				                        <div class="vertical-card__price">132 руб</div>
+				                    </div>
+							      </div>
+							    </div>								
+				    		</div>				    		
 				    		
 				    	</div>				    	
 				    </div>
@@ -277,7 +370,10 @@
 									<div class="vertical-card__description">
 										Грифельная краска с эффектом школьной доски Siberia колеруемая
 									</div>
-									<div class="vertical-card__price">115 руб</div>
+				                    <div class="vertical-card__price_block">
+				                        <div class="vertical-card__price_discount">123 руб</div>
+				                        <div class="vertical-card__price">132 руб</div>
+				                    </div>
 							      </div>
 							    </div>								
 				    		</div>
@@ -291,7 +387,10 @@
 									<div class="vertical-card__description">
 										Грифельная краска с эффектом школьной доски Siberia колеруемая
 									</div>
-									<div class="vertical-card__price">115 руб</div>
+				                    <div class="vertical-card__price_block">
+				                        <div class="vertical-card__price_discount">123 руб</div>
+				                        <div class="vertical-card__price">132 руб</div>
+				                    </div>
 							      </div>
 							    </div>								
 				    		</div>
@@ -305,7 +404,10 @@
 									<div class="vertical-card__description">
 										Грифельная краска с эффектом школьной доски Siberia колеруемая
 									</div>
-									<div class="vertical-card__price">115 руб</div>
+				                    <div class="vertical-card__price_block">
+				                        <div class="vertical-card__price_discount">123 руб</div>
+				                        <div class="vertical-card__price">132 руб</div>
+				                    </div>
 							      </div>
 							    </div>								
 				    		</div>
@@ -319,7 +421,10 @@
 									<div class="vertical-card__description">
 										Грифельная краска с эффектом школьной доски Siberia колеруемая
 									</div>
-									<div class="vertical-card__price">115 руб</div>
+				                    <div class="vertical-card__price_block">
+				                        <div class="vertical-card__price_discount">123 руб</div>
+				                        <div class="vertical-card__price">132 руб</div>
+				                    </div>
 							      </div>
 							    </div>								
 				    		</div>
@@ -333,7 +438,10 @@
 									<div class="vertical-card__description">
 										Грифельная краска с эффектом школьной доски Siberia колеруемая
 									</div>
-									<div class="vertical-card__price">115 руб</div>
+				                    <div class="vertical-card__price_block">
+				                        <div class="vertical-card__price_discount">123 руб</div>
+				                        <div class="vertical-card__price">132 руб</div>
+				                    </div>
 							      </div>
 							    </div>								
 				    		</div>
@@ -349,4 +457,4 @@
 		</div><!-- /.constainer -->
 	</div><!-- /.constructor__bottom -->
 
-</div><!-- /.constructor
+</div><!-- /.constructor -->
