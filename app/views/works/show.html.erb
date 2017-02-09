@@ -20,51 +20,42 @@
       </div><!-- конец основного содержимого -->
 
       <!-- блок стандартного бутстраповского слайдера с картинками после текста -->
-      <section class="our-works-main__slider">
+      <% if @work.work_images.count > 0%>
+        <section class="our-works-main__slider">
 
-        <div id="our-works-main__slider" class="carousel slide" data-ride="carousel" data-interval="false">
+          <div id="our-works-main__slider" class="carousel slide" data-ride="carousel" data-interval="false">
 
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#our-works-main__slider" data-slide-to="0" class="active"></li>
-            <li data-target="#our-works-main__slider" data-slide-to="1"></li>
-            <li data-target="#our-works-main__slider" data-slide-to="2"></li>
-          </ol>
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <%@work.work_images.each_with_index do |photo, index|%>
+                <li data-target="#our-works-main__slider" data-slide-to="<%=index%>" ></li>
+              <%end%>
+            </ol>
 
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
-
-            <div class="item active ">
-              <div class="our-works-main__slider-item">
-                <img src="<%= asset_path('our-works-main/img1.jpg') %>" alt="" class="img-responsive our-works-main__slider-img" data-src="<%= asset_path('our-works-main/img1.jpg') %>">
-              </div>
-            </div>
-            <div class="item">
-              <div class="our-works-main__slider-item">
-                <img src="<%= asset_path('our-works-main/img2.jpg') %>" alt="" class="img-responsive our-works-main__slider-img" data-src="<%= asset_path('our-works-main/img2.jpg') %>">
-              </div>
-            </div>
-            <div class="item">
-              <div class="our-works-main__slider-item">
-                <img src="<%= asset_path('our-works-main/img3.jpg') %>" alt="" class="img-responsive our-works-main__slider-img" data-src="<%= asset_path('our-works-main/img3.jpg') %>">
-              </div>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <%@work.work_images.each do |photo|%>
+                <div class="item">
+                  <div class="our-works-main__slider-item">
+                    <img src="<%= photo.image.url%>" alt="" class="img-responsive our-works-main__slider-img" data-src="<%= photo.image.url  %>">
+                  </div>
+                </div>
+              <%end%>
             </div>
 
-          </div>
+          <!-- Controls -->
+          <a class="left carousel-control" href="#our-works-main__slider" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Следующее</span>
+          </a>
+          <a class="right carousel-control" href="#our-works-main__slider" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Предыдущее</span>
+          </a>
+        </div>
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#our-works-main__slider" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Следующее</span>
-        </a>
-        <a class="right carousel-control" href="#our-works-main__slider" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Предыдущее</span>
-        </a>
-      </div>
-
-      </section><!-- конец блока слайдера -->
-
+        </section><!-- конец блока слайдера -->
+      <%end%>
       <!-- блок других проектов, блоки с картинками одинаковые с такими же в оффканвасе -->
       <section class="our-works-main__projects">
         <div class="our-works-main-projects__title-block">
