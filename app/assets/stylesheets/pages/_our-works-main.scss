@@ -129,9 +129,12 @@
 	}
 	&__slider-item{
 		display: flex;
+		max-height: 580px;
 	}
 	&__slider-img{
 		margin: auto;
+		max-width: 80%;
+		// height: 100%;
 	}
 }
 
