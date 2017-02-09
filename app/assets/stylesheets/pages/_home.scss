@@ -59,7 +59,7 @@
 	&__a{
 		color: #fff;
 		display: inline-block;
-		width: 31%;
+		width: 29%;
 		margin-right: 1%;
 		&:hover{
 			color:$text-active;
@@ -431,6 +431,8 @@
 			position: absolute;
 			height: 100px;
 			width: 60px;
+			top:50%;
+			transform: translateY(-50%);
 			background-position: center center;
 			background-size: contain;
 			background-repeat: no-repeat;
@@ -438,13 +440,11 @@
 		}
 		& .owl-prev{
 			background-image: asset-url("prev.png");
-			top:30%;
-			left: 20px;
+			left: -40px;
 		}
 		& .owl-next{
 			background-image: asset-url("next.png");
-			top:30%;
-			right: 20px;
+			right: -40px;
 		}
 	}
 	&__item{
@@ -622,16 +622,17 @@
 	}
 	.reviews__item{
 		width: 100%;
+		padding: 10px 15px;
 	}
 	.reviews__slider-nav .owl-prev{
-			top:35%;
-			left: 3px;
+			left: -25px;
 			height: 65px;
+			width: 40px;
 		}
 	.reviews__slider-nav .owl-next{
-			top:35%;
-			right: 3px;
+			right: -25px;
 			height: 65px;
+			width: 40px;
 		}
 }
 /*sm */
@@ -654,9 +655,9 @@
 /*lg */
 @media all and (min-width: 1200px){
 	.reviews__slider-nav .owl-next{
-		right: 13%;
+		right: -60px;
 	}
 	.reviews__slider-nav .owl-prev{
-		left: 13%;
+		left: -60px;
 	}
 }
