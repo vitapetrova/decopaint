@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170205154910) do
+ActiveRecord::Schema.define(version: 20170207131801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,10 +26,11 @@ ActiveRecord::Schema.define(version: 20170205154910) do
     t.text     "description"
     t.text     "description2"
     t.boolean  "show_menu"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "seo_description"
     t.string   "seo_title"
+    t.integer  "priority",        default: 1000
   end
 
   create_table "category_works", force: :cascade do |t|
@@ -230,6 +231,17 @@ ActiveRecord::Schema.define(version: 20170205154910) do
     t.integer "user_id"
     t.integer "role_id"
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
+  end
+
+  create_table "work_images", force: :cascade do |t|
+    t.integer  "work_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["work_id"], name: "index_work_images_on_work_id", using: :btree
   end
 
   create_table "works", force: :cascade do |t|

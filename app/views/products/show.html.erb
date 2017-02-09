@@ -143,10 +143,10 @@
 								<%=link_to product_path(product), class:'vertical-card__a' do%>
 								  <div class="thumbnail vertical-card related-products__card">
 								    <div class="vertical-card__img_wrap">
-								     	<% main_image ||= product.product_images.main.first || product.product_images.first%>
-                      <% hover_image = product.product_images.order("priority").second || product.product_images.first %>
-                      <img src="<%=main_image.image.url %>" class="vertical-card__img" alt="ptoduct title">
-                      <img src="<%= hover_image.image.url %>" class="vertical-card__img_secondary" alt="">
+								     	<% c_main_image ||= product.product_images.main.first || product.product_images.first%>
+                      <% c_hover_image = product.product_images.order("priority").second || product.product_images.first %>
+                      <img src="<%=c_main_image.image.url %>" class="vertical-card__img" alt="ptoduct title">
+                      <img src="<%= c_hover_image.image.url %>" class="vertical-card__img_secondary" alt="">
 											<div class="card__type card__type_chalk" style="background-image:url(<%=product.mini_image.url%>);"></div>
 								    </div>
 								    <div class="caption">

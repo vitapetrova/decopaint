@@ -20,6 +20,14 @@ function insert_price(){
 $( document ).ready(function() {
 
 //скрипты общие
+    // переключение меню(активный)
+    // не работает из-за редиректа, т.к. обновляется страница
+    // $("#main-menu .nav li").click(function () {
+    //   console.log('menu active');
+    //   var nav = $(this).parents('.nav');
+    //   nav.find('.active').removeClass('.active');
+    //   $(this).addClass('.active');
+    // });
 
     //добавление и настройки выезжающего бокового меню
     $('.offcanvas__toggle-button').sidr({
@@ -224,6 +232,10 @@ $( document ).ready(function() {
       target: null,
       remove: false
     });
+//  скрипты для страницы works/:id
+    // со старта активные первые слайды в галерее
+    $(".our-works-main .carousel-inner .item:first-child").addClass("active");
+    $(".our-works-main .carousel-indicators li:first-child").addClass("active");
 
 //скрипты страницы продукта
 
@@ -284,7 +296,7 @@ $( document ).ready(function() {
 //-------------------------КОНСТРУКТОР--------------------------
 
 //.js__constructor-item на любом айтеме для поиска, .constructor-pane__item_active на родительском блоке айтема
-// для состояния активности, все айтемы лежит внутри .tab-pane, все панели лежат внутри .constructor__tab-content, 
+// для состояния активности, все айтемы лежит внутри .tab-pane, все панели лежат внутри .constructor__tab-content,
 //у каждой панели id с соответствующим номером
 
   //переключение активного состояния айтема во вкладке при клике
