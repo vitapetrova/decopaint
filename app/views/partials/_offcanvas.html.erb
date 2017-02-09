@@ -24,42 +24,46 @@
 				<section class="offcanvas-choice">
 					<h3 class="offcanvas-choice__title">Выбор покупателей</h3>
 					<div class="row">
-						<div class="col-sm-6 col-md-6">
-
-							<a href="#" class="horizontal-card__a">
-								<div class="media horizontal-card offcanvas__hcard">
-								  <div class="media-left media-middle horizontal-card__left">
-								      <img class="media-object horizontal-card__img" src="<%= asset_path('product/pot2.jpg') %>" alt="product1">
-								      <div class="card__type card__type_magnet"></div>
-								  </div>
-								  <div class="media-body horizontal-card__right">
-										<div class="horizontal-card__description">
-											Грифельная краска с эффектом школьной доски Siberia колеруемая
-										</div>
-										<div class="horizontal-card__price">115 руб</div>
-								  </div>
-								</div>
-							</a>
-
-						</div>
-						<div class="col-sm-6 col-md-6">
-
-							<a href="#" class="horizontal-card__a">
-								<div class="media horizontal-card offcanvas__hcard">
-								  <div class="media-left media-middle horizontal-card__left">
-								      <img class="media-object horizontal-card__img" src="<%= asset_path('product/pot2.jpg') %>" alt="product1">
-								      <div class="card__type card__type_magnet"></div>
-								  </div>
-								  <div class="media-body horizontal-card__right">
-										<div class="horizontal-card__description">
-											Грифельная краска с эффектом школьной доски Siberia колеруемая
-										</div>
-										<div class="horizontal-card__price">115 руб</div>
-								  </div>
-								</div>
-							</a>
-
-						</div>
+						<% product1 = Product.find_by(id: 3) %>
+						<% if product1 %>
+							<div class="col-sm-6 col-md-6">
+								<%=link_to product_path(product1), class:'horizontal-card__a' do%>
+									<div class="media horizontal-card offcanvas__hcard">
+									  <div class="media-left media-middle horizontal-card__left">
+									  		<% d_main_image ||= product1.product_images.main.first || product1.product_images.first%>
+									      <img class="media-object horizontal-card__img" src="<%=d_main_image.image.url %>" alt="product1">
+									      <div class="card__type card__type_chalk" style="background-image:url(<%=product1.mini_image.url%>);"></div>
+									  </div>
+									  <div class="media-body horizontal-card__right">
+											<div class="horizontal-card__description">
+												<%=product1.title%>
+											</div>
+											<div class="horizontal-card__price"><%=product1.price%> руб</div>
+									  </div>
+									</div>
+								<%end%>
+							</div>
+						<%end%>
+						<% product2 = Product.find_by(id: 32) %>
+						<% if product2 %>
+							<div class="col-sm-6 col-md-6">
+								<%=link_to product_path(product2), class:'horizontal-card__a' do%>
+									<div class="media horizontal-card offcanvas__hcard">
+									  <div class="media-left media-middle horizontal-card__left">
+									  		<% d_main_image ||= product2.product_images.main.first || product2.product_images.first%>
+									      <img class="media-object horizontal-card__img" src="<%=d_main_image.image.url %>" alt="product1">
+									      <div class="card__type card__type_chalk" style="background-image:url(<%=product2.mini_image.url%>);"></div>
+									  </div>
+									  <div class="media-body horizontal-card__right">
+											<div class="horizontal-card__description">
+												<%=product2.title%>
+											</div>
+											<div class="horizontal-card__price"><%=product2.price%> руб</div>
+									  </div>
+									</div>
+								<%end%>
+							</div>
+						<%end%>
 					</div><!-- /.row -->
 				</section><!-- /.offcanvas-choice -->
 
