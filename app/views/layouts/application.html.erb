@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= favicon_link_tag 'favicon.ico' %>
     <%= csrf_meta_tags %>
-
+    <style>.offcanvas{display:none}</style>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
@@ -26,7 +26,6 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MR66H64');</script>
     <!-- End Google Tag Manager -->
-
   </head>
 
   <body <%='class=back-slider-page' if @home_page%>>
