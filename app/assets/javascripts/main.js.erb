@@ -38,12 +38,14 @@ $( document ).ready(function() {
               $('.blur-page').addClass('blur-on');
               $('.offcanvas__toggle-button').find('.icon-bar').css('display', 'none');
               $('.offcanvas__toggle-button').find('.offcanvas__toggle-button_back').css('display', 'block');
+              $('.offcanvas').css('height', "100%");
           },
           onCloseEnd: function(){//поменять кнопку
               $('body').css('overflow', 'auto');
               $('.blur-page').removeClass('blur-on');
               $('.offcanvas__toggle-button').find('.icon-bar').css('display', 'block');
               $('.offcanvas__toggle-button').find('.offcanvas__toggle-button_back').css('display', 'none');
+              $('.offcanvas').css('height', "0");
           }
     });
 
