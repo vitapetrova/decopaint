@@ -221,7 +221,9 @@
 
 .product-description{
 	margin-bottom: 55px;
-
+	a:hover{
+		color:#808080;
+	}
 	&__tabs{
 
 		&_item{
@@ -292,7 +294,7 @@
 /*слайдер маленьких изображений */
 .product-slider{
 	margin-top: 50px;
-	
+
 	& .owl-stage{
 		margin: 0 auto;
 	}
