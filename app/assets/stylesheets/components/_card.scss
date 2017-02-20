@@ -21,6 +21,7 @@
 	&__left{
 		background: #fff;
 		width: 35%;
+		padding-left: 10px;
 		padding-top: 10px;
 		padding-bottom: 10px;
 		position: relative;
@@ -133,6 +134,7 @@
 		display: inline-block;
 		vertical-align: middle;
 		font-size: 23px;
+		color: #333333;
 
 		&_block{
 			font-family: PrCondBlack, Arial, Helvetica, sans-serif;

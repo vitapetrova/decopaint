@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   after_action :cookies_set_product, only: [:show]
 
   def index
-    @products = Product.all
+    @products = Product.all.order(:priority)
   end
 
   def show
