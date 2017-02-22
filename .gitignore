@@ -13,6 +13,7 @@
 !/log/.keep
 !/tmp/.keep
 /config/application.yml
+/config/deploy
 
 # Ignore Byebug command history file.
 .byebug_history
