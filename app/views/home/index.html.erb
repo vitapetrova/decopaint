@@ -177,31 +177,20 @@
 				      	<img src="<%= main_image.image.url%>" class="vertical-card__img" alt="ptoduct title">
 						<div class="card__type card__type_chalk" style="background-image:url(<%=@products_menu[1].mini_image.url%>);">
 						</div>
-						<img src="<%= @products_menu[1].mini_image.url%>" />
+						<!-- вроде лишнее тут -->
+						<!-- <img src="<%# @products_menu[1].mini_image.url%>" /> -->
 				      	</div>
 				      <div class="caption">
 						<div class="vertical-card__description">
 							<%=@products_menu[1].title%>
 						</div>
-						<div class="vertical-card__price"><%=@products_menu[1].price%> руб</div>
+						<div class="vertical-card__price_block">
+							<div class="vertical-card__price"><%=@products_menu[1].price%> руб</div>
+						</div>
 				      </div>
 				    </div>
 				<%end%>
 				<%end%>
-<!-- 				<a href="#" class="horizontal-card__a profit__card_a2">
-					<div class="media horizontal-card profit__hcard profit__card_2">
-					  <div class="media-left media-middle horizontal-card__left">
-					      <img class="media-object horizontal-card__img" src="{{root}}assets/img/product/pot2.jpg" alt="product1">
-					      <div class="card__type card__type_marker"></div>
-					  </div>
-					  <div class="media-body horizontal-card__right">
-							<div class="horizontal-card__description">
-								Грифельная краска с эффектом школьной доски Siberia колеруемая
-							</div>
-							<div class="horizontal-card__price">115 руб</div>
-					  </div>
-					</div>
-				</a> -->
 				<% if @products_menu[2]%>
 				<%=link_to product_path(@products_menu[2]), class:'vertical-card__a profit__card_a2' do %>
 					<div class="hcard-flex ">
@@ -214,7 +203,9 @@
 							<div class="hcard-flex__text">
 								<%=@products_menu[2].title%>
 							</div>
-							<div class="vertical-card__price"><%=@products_menu[2].price%> руб</div>
+							<div class="hcard-flex__price_block">
+									<div class="hcard-flex__price"><%=@products_menu[2].price%> руб</div>
+							</div>
 					  </div>
 					</div>
 				<%end%>
@@ -234,7 +225,9 @@
 						<div class="vertical-card__description">
 							<%=@products_menu[3].title%>
 						</div>
-						<div class="vertical-card__price"><%=@products_menu[3].price%> руб</div>
+						<div class="vertical-card__price_block">
+							<div class="vertical-card__price"><%=@products_menu[3].price%> руб</div>
+						</div>
 				      </div>
 				    </div>
 				<%end%>
@@ -252,7 +245,9 @@
 						<div class="vertical-card__description">
 							<%=@products_menu[4].title%>
 						</div>
-						<div class="vertical-card__price"><%=@products_menu[4].price%> руб</div>
+						<div class="vertical-card__price_block">
+							<div class="vertical-card__price"><%=@products_menu[4].price%> руб</div>
+						</div>
 				      </div>
 				    </div>
 				<%end%>
@@ -273,7 +268,9 @@
 						<div class="vertical-card__description">
 							<%=@products_menu[0].title%>
 						</div>
-						<div class="vertical-card__price"><%=@products_menu[0].price%> руб</div>
+						<div class="vertical-card__price_block">
+							<div class="vertical-card__price"><%=@products_menu[0].price%> руб</div>
+						</div>
 				      </div>
 				    </div>
 				<%end%>

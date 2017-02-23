@@ -387,22 +387,24 @@
 }
 .profit__card{
 	&_a1{
-		flex-basis: 90%;
+		flex-basis: 100%;
 		flex-grow:1;
 		flex-shrink: 3;
+		margin-bottom: 20px;
 	}
 	&_a2{
-		flex-basis: 22%;
 		flex-grow:3;
 		flex-shrink: 1;
-		margin-top: 20px;
 		& .hcard-flex{
 				height: 150px;
 			}
 		& .hcard-flex__img-block{
 				height: 150px;
-				width: 150px;
+				
 			}
+		& .hcard-flex__price{
+			font-size: 23px;
+		}
 	}
 	&_a3{
 		flex-basis: 50%;
@@ -412,7 +414,9 @@
 	}
 	&_a5{
 		flex-basis: 100%;
-
+		& .vertical-card__description{
+			padding-bottom: 43px;
+		}
 	}
 }
 

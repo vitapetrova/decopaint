@@ -20,7 +20,7 @@
 	<div class="recent hidden-xs"><!-- блок недавних, не виден на телефонах, добавить в конец баннер-->
 		<%if @recent_products %>
 			<h3 class="recent__title">Вы недавно смотрели:</h3>
-		<!-- old hor. card catalog -->
+
 			<% @recent_products.each do |product| %>
 				<%=link_to product_path(product) do %>
 					<div class="hcard-flex hcard-catalog">
@@ -34,7 +34,6 @@
 								<%=product.title%>
 							</div>
 							<div class="hcard-flex__price_block">
-								<!-- добавил дисконтную цену -->
 								<% if product.price2%>
 									<div class="hcard-flex__price_discount"><%=product.price2%> руб</div>
 								<%end%>

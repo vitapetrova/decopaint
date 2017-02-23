@@ -140,7 +140,7 @@
 			font-family: PrCondBlack, Arial, Helvetica, sans-serif;
 			color: #000;
 			position: absolute;
-			bottom: 0;
+			bottom: 1px;
 			right: 5px;
 			text-align: right;
 		}
@@ -175,7 +175,7 @@
 		height: 110px;
 		width: 110px;
 		display: flex;
-		flex-grow: 2;
+		flex-grow: 1;
 		background: #fff;
 		border-top-left-radius:3px;
 		border-bottom-left-radius:3px;
@@ -203,7 +203,7 @@
 		flex-direction: column;
 		justify-content: space-between;
 		align-content: space-between;
-		flex-grow: 1;
+		flex-grow: 2;
 		flex-shrink: 3;
 		padding: 10px 10px 4px 10px;
 		background: $bg-grey;
