@@ -4,28 +4,61 @@ $dark-grey: #5f5e5d;
 $text-active: #e02525;
 $bg-grey: #e9e9e9;
 
-/* добавить кроссбраузерные варианты  */
+/* старый вариант шрифтов, не буллетпруф  */
+/*
 @font-face {
-    font-family: PrCondReg; /* Имя шрифта */
+    font-family: PrCondReg;
     src: asset-url("ProximaNovaCond-Reg.otf");
 }
 @font-face {
-    font-family: PrCondBlack; /* Имя шрифта */
+    font-family: PrCondBlack;
     src: asset-url("ProximaNovaCond-Black.otf");
 }
 @font-face {
-    font-family: PrCondExLight; /* Имя шрифта */
+    font-family: PrCondExLight;
     src: asset-url("ProximaNovaExCn-Light.otf");
 }
 @font-face {
-    font-family: PrCondExThin; /* Имя шрифта */
+    font-family: PrCondExThin;
     src: asset-url("ProximaNovaExCn-Thin.otf");
 }
-// @font-face {
-//     font-family: PrCondExThin; /* Имя шрифта */
-//     src: url(../fonts/ProximaNovaExCn-Thin.otf);
-// }
-
+*/
+@font-face {
+	font-family: 'PrCondReg';
+	src: font-url('ProximaNovaCond-Regular.eot');
+	src:font-url('ProximaNovaCond-Regular.eot?#iefix') format('embedded-opentype'),
+		font-url('ProximaNovaCond-Regular.woff2') format('woff2'),
+		font-url('ProximaNovaCond-Regular.woff') format('woff'),
+		font-url('ProximaNovaCond-Regular.ttf') format('truetype'),
+		font-url('ProximaNovaCond-Regular.svg#ProximaNovaCond-Regular') format('svg');
+}
+@font-face {
+	font-family: 'PrCondBlack';
+	src: font-url('ProximaNovaCond-Black.eot');
+	src:font-url('ProximaNovaCond-Black.eot?#iefix') format('embedded-opentype'),
+		font-url('ProximaNovaCond-Black.woff2') format('woff2'),
+		font-url('ProximaNovaCond-Black.woff') format('woff'),
+		font-url('ProximaNovaCond-Black.ttf') format('truetype'),
+		font-url('ProximaNovaCond-Black.svg#ProximaNovaCond-Black') format('svg');
+}
+@font-face {
+	font-family: 'PrCondExLight';
+	src: font-url('ProximaNovaExCn-Light.eot');
+	src:font-url('ProximaNovaExCn-Light.eot?#iefix') format('embedded-opentype'),
+		font-url('ProximaNovaExCn-Light.woff2') format('woff2'),
+		font-url('ProximaNovaExCn-Light.woff') format('woff'),
+		font-url('ProximaNovaExCn-Light.ttf') format('truetype'),
+		font-url('ProximaNovaExCn-Light.svg#ProximaNovaExCn-Light') format('svg');
+}
+@font-face {
+	font-family: 'PrCondExThin';
+	src: font-url('ProximaNovaExCn-Thin.eot');
+	src:font-url('ProximaNovaExCn-Thin.eot?#iefix') format('embedded-opentype'),
+		font-url('ProximaNovaExCn-Thin.woff2') format('woff2'),
+		font-url('ProximaNovaExCn-Thin.woff') format('woff'),
+		font-url('ProximaNovaExCn-Thin.ttf') format('truetype'),
+		font-url('ProximaNovaExCn-Thin.svg#ProximaNovaExCn-Thin') format('svg');
+}
 body, html{
 	height: 100%;
 	min-height: 100%;
