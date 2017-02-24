@@ -58,9 +58,11 @@
 		color: $grey-text;
 
 		&_a{
-			color: $red-text;
+			// color: $red-text;
+			color:#fff;
 			&:hover{
-				color:lighten($red-text, 10%);
+				color:#fff;
+				// color:lighten($red-text, 10%);
 				text-decoration: none;
 			}
 		}
