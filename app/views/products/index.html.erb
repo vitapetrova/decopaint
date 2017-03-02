@@ -58,15 +58,11 @@
           </div><!-- /.product cards row -->
 
           <!-- панигация, пока не нужна -->
-          <!-- <div class="catalog__pagination text-right">
+          <div class="catalog__pagination text-right">
             <ul class="custom-pagination">
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
+                <%= will_paginate @products %>
              </ul>
-          </div> -->
+          </div>
 <!--           <div class="row">
             <div class="col-md-12">
               <div class="catalog__description_bottom">
