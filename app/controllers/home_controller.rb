@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   def index
     @home_page = true
     @sliders = Slider.all
-    @products_menu = Product.where(show_menu: true).limit(5)
+    @products_menu = Product.where(show_menu: true).limit(8)
     @manufacturers = Manufacturer.all
     @reviews = Review.all
   end
