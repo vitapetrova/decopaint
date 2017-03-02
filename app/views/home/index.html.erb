@@ -172,116 +172,34 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-6 col-md-4 profit__col profit__col_1">
-				<% if @products_menu[1]%>
-				<%=link_to product_path(@products_menu[1]), class:'vertical-card__a profit__card_a1' do %>
-				    <div class="thumbnail vertical-card profit__vcard profit__card_1">
-				      <div class="vertical-card__img_wrap">
-				      	<% main_image ||= @products_menu[1].product_images.main.first || @products_menu[1].product_images.first%>
-				      	<img src="<%= main_image.image.url%>" class="vertical-card__img" alt="ptoduct title">
-						<div class="card__type card__type_chalk" style="background-image:url(<%=@products_menu[1].mini_image.url%>);">
-						</div>
-						<!-- вроде лишнее тут -->
-						<!-- <img src="<%# @products_menu[1].mini_image.url%>" /> -->
-				      	</div>
-				      <div class="caption">
-						<div class="vertical-card__description">
-							<%=@products_menu[1].title%>
-						</div>
-						<div class="vertical-card__price_block">
-							<div class="vertical-card__price"><%=@products_menu[1].price%> руб</div>
-						</div>
-				      </div>
-				    </div>
-				<%end%>
-				<%end%>
-				<% if @products_menu[2]%>
-				<%=link_to product_path(@products_menu[2]), class:'vertical-card__a profit__card_a2' do %>
-					<div class="hcard-flex ">
-					  <div class="hcard-flex__img-block">
-					  		<% main_image ||= @products_menu[2].product_images.main.first || @products_menu[2].product_images.first%>
-					      <img class="hcard-flex__img" src="<%= main_image.image.url%>" alt="product1">
-					      <div class="card__type card__type_marker" style="background-image:url(<%=@products_menu[2].mini_image.url%>);"></div>
-					  </div>
-					  <div class="hcard-flex__text-block">
-							<div class="hcard-flex__text">
-								<%=@products_menu[2].title%>
-							</div>
-							<div class="hcard-flex__price_block">
-									<div class="hcard-flex__price"><%=@products_menu[2].price%> руб</div>
-							</div>
-					  </div>
-					</div>
-				<%end%>
-				<%end%>
-			</div>
-			<div class="col-sm-6 col-md-3 profit__col profit__col_2">
-				<% if @products_menu[3]%>
-				<%=link_to product_path(@products_menu[3]), class:'vertical-card__a profit__card_a3' do %>
-				    <div class="thumbnail vertical-card profit__vcard profit__card_3">
-				      <div class="vertical-card__img_wrap">
-				      	<% main_image ||= @products_menu[3].product_images.main.first || @products_menu[3].product_images.first%>
-				      	<img src="<%= main_image.image.url%>" class="vertical-card__img" alt="ptoduct title">
-						<div class="card__type card__type_chalk" style="background-image:url(<%=@products_menu[3].mini_image.url%>);">
-						</div>
-				      	</div>
-				      <div class="caption">
-						<div class="vertical-card__description">
-							<%=@products_menu[3].title%>
-						</div>
-						<div class="vertical-card__price_block">
-							<div class="vertical-card__price"><%=@products_menu[3].price%> руб</div>
-						</div>
-				      </div>
-				    </div>
-				<%end%>
-				<%end%>
-				<% if @products_menu[4]%>
-				<%=link_to product_path(@products_menu[4]), class:'vertical-card__a profit__card_a4' do %>
-				    <div class="thumbnail vertical-card profit__vcard profit__card_4">
-				      <div class="vertical-card__img_wrap">
-				      	<% main_image ||= @products_menu[4].product_images.main.first || @products_menu[4].product_images.first%>
-				      	<img src="<%= main_image.image.url%>" class="vertical-card__img" alt="ptoduct title">
-						<div class="card__type card__type_chalk" style="background-image:url(<%=@products_menu[4].mini_image.url%>);">
-						</div>
-				      	</div>
-				      <div class="caption">
-						<div class="vertical-card__description">
-							<%=@products_menu[4].title%>
-						</div>
-						<div class="vertical-card__price_block">
-							<div class="vertical-card__price"><%=@products_menu[4].price%> руб</div>
-						</div>
-				      </div>
-				    </div>
-				<%end%>
-				<%end%>
-
-			</div>
-			<div class="col-sm-6 col-sm-offset-3 col-md-5 col-md-offset-0 profit__col profit__col_3">
-				<% if @products_menu[0]%>
-				<%=link_to product_path(@products_menu[0]), class:'vertical-card__a profit__card_a5' do %>
-				    <div class="thumbnail vertical-card profit__vcard  profit__card_5">
-				      <div class="vertical-card__img_wrap">
-				      	<% main_image ||= @products_menu[0].product_images.main.first || @products_menu[0].product_images.first%>
-				      	<img src="<%= main_image.image.url%>" class="vertical-card__img" alt="ptoduct title">
-						<div class="card__type card__type_chalk card__type_bigger" style="background-image:url(<%=@products_menu[0].mini_image.url%>);">
-						</div>
-				      	</div>
-				      <div class="caption">
-						<div class="vertical-card__description">
-							<%=@products_menu[0].title%>
-						</div>
-						<div class="vertical-card__price_block">
-							<div class="vertical-card__price"><%=@products_menu[0].price%> руб</div>
-						</div>
-				      </div>
-				    </div>
-				<%end%>
-				<%end%>
-
-
-			</div>
+            <%@products_menu.each do |product|%>
+            <div class="col-xs-12 col-sm-4 col-md-3">
+              <%=link_to product_path(product) do %>
+                  <div class="thumbnail vertical-card catalog__card">
+                    <div class="vertical-card__img_wrap">
+                      <!-- добавить в админке хотя бы одно фото обязательно -->
+                      <% main_image ||= product.product_images.main.first || product.product_images.first%>
+                      <% hover_image = product.product_images.order("priority").second || product.product_images.first %>
+                      <img src="<%=main_image.image.url %>" class="vertical-card__img" alt="ptoduct title">
+                      <img src="<%= hover_image.image.url %>" class="vertical-card__img_secondary" alt="">
+                  <div class="card__type card__type_chalk" style="background-image:url(<%=product.mini_image.url%>);">
+                  </div>
+                      </div>
+                    <div class="caption">
+                      <div class="vertical-card__description">
+                        <%=product.title%>
+                      </div>
+                      <div class="vertical-card__price_block">
+                        <%if product.price2%>
+                          <div class="vertical-card__price_discount"><%=product.price2%> руб</div>
+                        <%end%>
+                        <div class="vertical-card__price"><%=product.price%> руб</div>
+                      </div>
+                    </div>
+                  </div>
+              <%end%>
+            </div>
+            <%end%>
 		</div><!-- /.row -->
 	</div><!-- /.container -->
 </section><!-- /.profit -->
