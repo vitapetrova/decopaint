@@ -2,7 +2,8 @@ class ProductsController < ApplicationController
   after_action :cookies_set_product, only: [:show]
 
   def index
-    @products = Product.paginate(:page => params[:page], :per_page => 9).order(:priority)
+    # @products = Product.paginate(:page => params[:page], :per_page => 9).order(:priority)
+    @products = Product.all.order(:priority)
   end
 
   def show
