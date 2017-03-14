@@ -31,9 +31,11 @@ class ProductsController < ApplicationController
       cookies[:product_id] = '' if cookies[:product_id].nil?
       products_id = cookies[:product_id] ? cookies[:product_id].split(",") : []
       if products_id.count < 4
-        cookies[:product_id] = cookies[:product_id] + "#{@product.id}," unless products_id.include?(@product.id)
+        unless products_id.include?(@product.id.to_s)
+          cookies[:product_id] = cookies[:product_id] + "#{@product.id},"
+        end
       else
-        if !products_id.include?(@product.id)
+        unless products_id.include?(@product.id.to_s)
           products_id.shift
           products_id.push(@product.id)
           products_id = products_id.join(',')
