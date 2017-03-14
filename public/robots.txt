@@ -1,5 +1,2 @@
 User-agent: *
-Allow: /
-
-Host: magmaster.by
-Sitemap: http://magmaster.by/sitemap.xml
+Disallow: /

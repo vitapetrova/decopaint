@@ -30,7 +30,7 @@
 							<div class="product-slider__block"><!-- слайдер маленьких изображений -->
 								<div class="product-slider__navigation"></div>
 								<div class="owl-carousel product-slider">
-									<%@product.product_images.each do |product_image|%>
+									<%@product.product_images.offset(1).each do |product_image|%>
 									<div class="product-slider__item">
 										<img src="<%=product_image.image.url%>" alt="" class="product-slider__img product__lg_item" data-src="<%=product_image.image.url%>" >
 									</div>
