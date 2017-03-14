@@ -1,7 +1,9 @@
 class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
-    unless @question.save
+    if @question.save
+      UserMailer.question(@question).deliver_later
+    else
       flash.now[:errors] = @question.errors.values.flatten
     end
     render 'create'
