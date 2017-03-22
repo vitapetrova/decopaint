@@ -1,7 +1,9 @@
 class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
-    unless @order.save
+    if @order.save
+      UserMailer.order(@order).deliver_later
+    else
       flash.now[:errors] = @order.errors.values.flatten
     end
     render 'create'
