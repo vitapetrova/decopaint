@@ -5,6 +5,7 @@ class HomeController < ApplicationController
     @products_menu = Product.where(show_menu: true).limit(8)
     @manufacturers = Manufacturer.all
     @reviews = Review.all
+    @block_texts = HomePage.first
   end
 
   def about
