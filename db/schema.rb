@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170329223500) do
+ActiveRecord::Schema.define(version: 20170329225230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "about_pages", force: :cascade do |t|
+    t.text     "main_text"
+    t.text     "block1"
+    t.text     "block2"
+    t.text     "block3"
+    t.text     "block4"
+    t.text     "block5"
+    t.text     "block6"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "category_pages", force: :cascade do |t|
     t.string   "title"

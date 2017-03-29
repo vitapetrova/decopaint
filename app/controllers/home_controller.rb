@@ -10,6 +10,7 @@ class HomeController < ApplicationController
 
   def about
     @manufacturers = Manufacturer.all
+    @block_texts = AboutPage.first
   end
 
   def certificates
