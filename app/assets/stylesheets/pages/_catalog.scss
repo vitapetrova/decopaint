@@ -50,6 +50,11 @@
 		& .vertical-card__img_secondary{
 			display: block;
 		}
+		@media screen and (max-width:790px) {
+			&	.vertical-card__img_secondary{
+				display: none;
+			}
+		}
 	}
 }
 
