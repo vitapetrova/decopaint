@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170207131801) do
+ActiveRecord::Schema.define(version: 20170330083017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "about_pages", force: :cascade do |t|
+    t.text     "main_text"
+    t.text     "block1"
+    t.text     "block2"
+    t.text     "block3"
+    t.text     "block4"
+    t.text     "block5"
+    t.text     "block6"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "category_pages", force: :cascade do |t|
     t.string   "title"
@@ -64,6 +76,14 @@ ActiveRecord::Schema.define(version: 20170207131801) do
     t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
   end
 
+  create_table "contacts_pages", force: :cascade do |t|
+    t.text     "phone1"
+    t.text     "phone2"
+    t.text     "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -74,6 +94,14 @@ ActiveRecord::Schema.define(version: 20170207131801) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+  end
+
+  create_table "home_pages", force: :cascade do |t|
+    t.text     "block1"
+    t.text     "block2"
+    t.text     "block3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "manufacturers", force: :cascade do |t|

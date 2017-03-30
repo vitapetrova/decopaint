@@ -43,22 +43,22 @@
 	&:hover{
 		background-color: rgba(255,255,255,0.85);
 
-		& .about-item__title{
+		& h2{
 			color: #000;
 		}
-		& .about-item__text{
+		& p{
 			color: #000;
 		}
 	}
 
-	&__title{
+	h2{
 		font-size: 36px;
 		font-family: PrCondExLight, Arial, Helvetica, sans-serif;
 		text-align: center;
 		margin-top: 30px;
 		margin-bottom: 25px;
 	}
-	&__text{
+	p{
 		overflow: hidden;
 		font-size: 16px;
 		padding-left: 30%;
