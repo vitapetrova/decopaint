@@ -20,11 +20,10 @@
 		<div class="row contacts__main-content">
 			<div class="col-xs-12 col-sm-6 col-md-3 col-md-offset-2 contacts__left-col">
 				<h1 class="contacts__main-title">Контакты</h1>
-				<div class="contacts__phone">+ 375 29 627 627 3</div>
-				<div class="contacts__phone">+ 375 44 7 999 105</div>
+				<div class="contacts__phone"><%=@block_texts.phone1.html_safe if @block_texts && @block_texts.phone1%></div>
+				<div class="contacts__phone"><%=@block_texts.phone2.html_safe if @block_texts && @block_texts.phone2%></div>
 				<div class="contacts__address">
-					info@magmaster.by<br>
-					г. Минск<br>
+					<%=@block_texts.address.html_safe if @block_texts && @block_texts.address%>
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-1">

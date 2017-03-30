@@ -13,6 +13,10 @@ class HomeController < ApplicationController
     @block_texts = AboutPage.first
   end
 
+  def contacts
+    @block_texts = ContactsPage.first
+  end
+
   def certificates
     @certificates = Certificate.all
   end

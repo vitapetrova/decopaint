@@ -1,5 +1,5 @@
 class AboutPage < ApplicationRecord
-    rails_admin do
+  rails_admin do
     edit do
       field :main_text, :ck_editor
       field :block1, :ck_editor
