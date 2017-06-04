@@ -12,13 +12,15 @@
 
     <div class="col-xs-12 col-sm-8 col-md-8 col-md-offset-1 col-lg-8 col-lg-offset-1"><!-- внутри этого блока лежит контент страницы, текст должен быть внутри блока .static-page__content-block, чтобы был нужный фон -->
       <h2>Блог</h2>
-      <%@blog_pages.each do |page|%>
-
-        <div class="static-page__content-block" style="overflow:hidden;">
-          <h3><%=link_to page.title, page_path(page)%></h3>
-          <%=page.preview_text%>
-        </div>
-      <%end%>
+      <div class="blog_wrapper">
+        <%@blog_pages.each do |page|%>
+          <div class="static-page__content-block blog_container" style="overflow:hidden;">
+            <%=image_tag page.image.url, class:'blog_img' if page.image.present? %>
+            <h3><%=link_to page.title, page_path(page)%></h3>
+            <%#=page.preview_text%>
+          </div>
+        <%end%>
+      </div>
     </div><!-- /.right col -->
   </div><!-- /.row -->
 </div><!-- /.container -->

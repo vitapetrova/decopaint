@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170604092406) do
+ActiveRecord::Schema.define(version: 20170604103855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -137,14 +137,18 @@ ActiveRecord::Schema.define(version: 20170604092406) do
     t.text     "text"
     t.string   "url"
     t.boolean  "show_menu"
-    t.integer  "priority",         default: 1000
+    t.integer  "priority",           default: 1000
     t.string   "slug"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "category_page_id"
     t.string   "seo_description"
     t.string   "seo_title"
     t.text     "preview_text"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["category_page_id"], name: "index_pages_on_category_page_id", using: :btree
     t.index ["slug"], name: "index_pages_on_slug", unique: true, using: :btree
   end
