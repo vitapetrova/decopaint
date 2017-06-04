@@ -252,7 +252,8 @@
 /* блок-ссылка на конструктор */
 .to-constructor{
 	margin-bottom: 60px;
-
+	font-family: PrCondExLight, Arial, Helvetica, sans-serif;
+	color:#fff;
 	&__row{
 		display: block;
 		transition: 1s ease-out ;
@@ -263,17 +264,16 @@
 				/*transform: scale(1.2, 1.2) translateX(50px);*/
 			}
 		}
-	}
-	&__title{
-		font-family: PrCondExLight, Arial, Helvetica, sans-serif;
-		font-size: 48px;
-		color:#fff;
-	}
-	&__description{
-		font-size: 23px;
-		color: #fff;/* $text-active */
-		&_first{
-			margin-bottom: 20px;
+		div{
+			p{
+				margin: 0;
+			}
+			p:first-of-type{
+				margin-bottom: 20px;
+			}
+			h1{
+				margin: 0;
+			}
 		}
 	}
 	&__airplane{
@@ -401,7 +401,7 @@
 			}
 		& .hcard-flex__img-block{
 				height: 150px;
-				
+
 			}
 		& .hcard-flex__price{
 			font-size: 23px;

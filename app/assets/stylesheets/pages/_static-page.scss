@@ -32,7 +32,7 @@
 			margin-top: 50px;
 			&:first-child{
 				margin-top: 5px;
-			}	
+			}
 		}
 		& h3{
 			font-size: 36px;
@@ -55,7 +55,22 @@
 			&:focus{
 				text-decoration: underline;
 				color: $text-active;
-			}			
+			}
+		}
+	}
+	.blog_wrapper{
+		display: flex;
+		flex-wrap: wrap;
+		.blog_container{
+			width: 46%;
+			margin: 10px 10px 70px 10px;
+			.blog_img{
+				width: 100%;
+			}
+			h3{
+				text-align: center;
+				margin-top: 20px;
+			}
 		}
 	}
 	& h1{

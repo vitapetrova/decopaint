@@ -5,16 +5,16 @@ class HomeController < ApplicationController
     @products_menu = Product.where(show_menu: true).limit(8)
     @manufacturers = Manufacturer.all
     @reviews = Review.all
-    @block_texts = HomePage.first
+    @block_texts = HomePage.last
   end
 
   def about
     @manufacturers = Manufacturer.all
-    @block_texts = AboutPage.first
+    @block_texts = AboutPage.last
   end
 
   def contacts
-    @block_texts = ContactsPage.first
+    @block_texts = ContactsPage.last
   end
 
   def certificates

@@ -6,6 +6,8 @@ class Page < ApplicationRecord
   extend FriendlyId
   friendly_id :url, :use => :slugged
   validates_presence_of :url, :slug, :title
+  has_attached_file :image
+    validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   rails_admin do
     list do
@@ -13,7 +15,9 @@ class Page < ApplicationRecord
     end
 
     edit do
-      fields :title, :category_page, :url, :slug, :show_menu, :priority, :seo_title, :seo_description, :preview_text
+      fields :title, :category_page
+      field :image
+      fields :url, :slug, :show_menu, :priority, :seo_title, :seo_description, :preview_text
       field :text, :ck_editor
     end
   end

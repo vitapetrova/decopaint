@@ -16,17 +16,21 @@
     </div>
   </div>
   <div class="row our-works-list__row">
-    <% @works.each do |work| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <%=link_to work_path(work), class:'our-works-list__item_a' do %>
-          <div class="our-works-list__item">
-            <div class="our-works-list__item_title"><%=work.title%></div>
-            <img src="<%= work.image.url%>" alt="" class="our-works-list__img">
-          </div>
-        <%end%>
-      </div>
+    <% @categories_work.each do |category| %>
+      <h1 class="category_name col-xs-12 col-sm-12 col-md-12">
+        <%=category.title%>
+      </h1>
+      <% category.works.each do |work| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <%=link_to work_path(work), class:'our-works-list__item_a' do %>
+            <div class="our-works-list__item">
+              <div class="our-works-list__item_title"><%=work.title%></div>
+              <img src="<%= work.image.url%>" alt="" class="our-works-list__img">
+            </div>
+          <%end%>
+        </div>
+      <%end%>
     <%end%>
-
   </div>
 
 <!-- пока не нужно -->
