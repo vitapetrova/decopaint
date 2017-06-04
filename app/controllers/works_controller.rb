@@ -1,6 +1,6 @@
 class WorksController < ApplicationController
   def index
-    @works = Work.all
+    @categories_work = CategoryWork.all
   end
 
   def show

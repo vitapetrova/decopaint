@@ -1,5 +1,8 @@
 .our-works-list{
-	
+	.category_name{
+		color: #fff;
+		text-align: center;
+	}
 	&__logo{
 		position: relative;
 		margin-top: 55px;
@@ -24,7 +27,7 @@
 		width: 280px;
 		margin: 10px auto;
 		&:hover{
-			
+
 			.our-works-list__item_title{
 				display: block;
 			}
