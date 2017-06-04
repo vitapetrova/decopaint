@@ -1,5 +1,4 @@
 <% title 'Декоративная краска с нанесением в Минске и Беларуси.' %>
-<!-- перенёс данные об авторизации чуть ниже, чтобы не смещали фон -->
 
 <!-- фоновый слайдер-скроллер-затемнятель-паралаксер -->
 <div class="slider-bg__wrapper" data-parallax="background" data-opacity="background">
@@ -54,7 +53,9 @@
 	<div class="logo__wrapper">
 		<a href="/products" class="logo logo_big" title="На главную">
 			<div class="logo__title">MAGMASTER.BY</div>
-			<div class="logo__description">декоративная краска и услуги по нанесению</div>
+			<div class="logo__description">
+				<%= @block_texts.logo_description %>
+			</div>
 		</a>
 	</div>
 	<!-- <a class="btn btn__grey-bg btn__constructor" href="#">Конструктор</a> -->
@@ -154,9 +155,7 @@
 	<div class="container">
 		<div class="row to-constructor__row">
 			<div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-5">
-				<div class="to-constructor__title">Все сразу - выгоднее!</div>
-				<div class="to-constructor__description to-constructor__description_first">Закажите полный набор для маркерной поверхности и получите скидку до 10%</div>
-				<div class="to-constructor__description">Подробности у наших менеджеров: +375&nbsp;29&nbsp;627&nbsp;627&nbsp;3</div>
+				<%= @block_texts.block_airplane.html_safe %>
 			</div>
 			<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-7 col-md-7">
 				<div class="to-constructor__airplane">
