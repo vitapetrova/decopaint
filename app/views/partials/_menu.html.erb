@@ -48,7 +48,7 @@
 
     <!-- блок телефона справа -->
     <div class="navbar-right main-menu__phones">
-  	  <a  href="tel:+375296276273" class="main-menu__phone">+375 29 627 627 3</a>
+      <%= link_to_if(@phone, @phone, "tel:#{@phone}", class: 'main-menu__phone') %>
       <div class="main-menu__phones_phone-icon  phone-icon__velcom"></div>
       <div class="main-menu__phones_phone-icon  phone-icon__telegram"></div>
   	  <div class="main-menu__phones_phone-icon  phone-icon__viber"></div>
