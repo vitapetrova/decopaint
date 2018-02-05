@@ -17,9 +17,6 @@
       <div class="our-works-main__main-img_block">
         <img src="<%= @work.image.url %>" alt="" class="our-works-main__main-img">
       </div>
-      <div class="our-works-main__content-block">
-        <%=@work.text_field.html_safe%>
-      </div><!-- конец основного содержимого -->
 
       <!-- блок стандартного бутстраповского слайдера с картинками после текста -->
       <% if @work.work_images.count > 0%>
@@ -58,6 +55,11 @@
 
         </section><!-- конец блока слайдера -->
       <%end%>
+
+      <div class="our-works-main__content-block">
+        <%=@work.text_field.html_safe%>
+      </div><!-- конец основного содержимого -->
+
       <!-- блок других проектов, блоки с картинками одинаковые с такими же в оффканвасе -->
       <section class="our-works-main__projects">
         <div class="our-works-main-projects__title-block">
