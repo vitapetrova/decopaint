@@ -13,10 +13,10 @@
     </div><!-- /.left col -->
 
     <div class="col-xs-12 col-sm-8 col-md-9 col-lg-8 col-lg-offset-1"><!-- контент -->
-      <h1 class="our-works-main__title"><%=@work.title%></h1>
-      <div class="our-works-main__main-img_block">
-        <img src="<%= @work.image.url %>" alt="" class="our-works-main__main-img">
-      </div>
+      <h1 class="our-works-main__title"><%= @work.title %></h1>
+<!--       <div class="our-works-main__main-img_block">
+        <img src="<%#= @work.image.url %>" alt="" class="our-works-main__main-img">
+      </div> -->
 
       <!-- блок стандартного бутстраповского слайдера с картинками после текста -->
       <% if @work.work_images.count > 0%>
